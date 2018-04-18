@@ -1,0 +1,61 @@
+body{
+    background-color: #f6f6f6;
+}
+.selected_case{
+    margin-top: 22px;
+    margin-bottom: 66px;
+}
+.top-full-img{
+    position: relative;
+}
+.selected_case .row .thumbnail-img img{
+    width: 100%;
+    height: 264px;
+    border-radius: 5px 5px 0 0 ;
+}
+
+/*顶部分裂筛选*/
+.categories_wrap{
+    width: 100%;
+    position: absolute;
+    z-index: 222;
+    bottom: 0;
+}
+.categories{
+    height: 295px;
+    background-color: white;
+    padding: 35px 28px;
+}
+.categories a{
+    color: black;
+}
+
+.categories h2{
+    color: #CCCCCC;
+    border-right: 1px dashed;
+}
+.categories .type .col-sm-8,.categories .area .col-sm-8{
+    margin-top: 20px;
+}
+/*虚线*/
+.hr{
+    border: 0.05rem dashed #CCCCCC;
+}
+.categories .type,.categories .style{
+    margin-bottom: 11px;
+}
+.categories ul li{
+    float: left;
+    width: 25%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.categories ul li a{
+    font-size: 1.9rem;
+    color: black;
+    display: block;
+}
+.categories ul .active a{
+    color: red;
+}

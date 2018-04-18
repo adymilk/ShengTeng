@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<!--公共模板 head 开始-->
+    {include file="./tpl/head"}
+<!--公共模板 head 结束-->
+
+<!--引入业务相关css 开始-->
+{block name="custom_css"}{/block}
+<!--引入业务相关css 结束-->
+
+<!--自定义当前页面title-->
+<title>{block name="title"}{/block}——盛腾家装科技集团</title>
+</head>
+<body>
+
+<!--公共模块 header 开始-->
+    {include file="./tpl/header"}
+<!--公共模块 header 结束-->
+
+<!--公共模块 section 开始-->
+    {block name="content"}{/block}
+<!--公共模块 section 结束-->
+
+<!--公共模块 footer 开始-->
+    {include file="./tpl/footer"}
+<!--公共模块 footer 结束-->
+
+<!--业务相关 js 开始-->
+    {block name="custom_js"}{/block}
+<!--业务相关 js 结束-->
+</body>
+</html>

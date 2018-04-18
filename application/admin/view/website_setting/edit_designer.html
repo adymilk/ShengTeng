@@ -1,0 +1,114 @@
+{extend name="tpl/base"}
+
+<!--新闻动态 开始-->
+{block name="content"}
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('Index/index')}" class="maincolor">首页</a>
+        <span class="c-gray en">&gt;</span>
+        网站设置
+        <span class="c-gray en">&gt;</span>
+        <a href="{:url('WebsiteSetting/designer_list')}">设计师列表</a>
+        <span class="c-gray en">&gt;</span>
+        修改设计师信息
+
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+    </nav>
+    <div class="Hui-article">
+        <article class="page-container">
+            <form class="form form-horizontal" enctype="multipart/form-data" id="form-case-add" action="{:url('WebsiteSetting/add_designer')}" method="post">
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>基本信息（必填）：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <table class="table table-border table-bordered ">
+                            {volist name="list" id="designer"}
+                            <tbody>
+
+                            <tr>
+                                <th>设计师姓名</th>
+                                <td><input type="text" class="input-text" placeholder="示例：何金杰" name="name" required value="{$designer.name}"></td>
+                                <th>所属门店</th>
+                                <td>
+                                    <span class="select-box">
+                                        <select class="select" size="1" name="company" required title="选择店面">
+                                            <option value="{$designer.company}">{$designer.company}</option>
+                                            {volist name="company_list" id="vo"}
+                                                <option value="{$vo.company_name}">{$vo.company_name}</option>
+                                            {/volist}
+                                        </select>
+                                    </span>
+                                </td>
+                                <th>工作年限 /年</th>
+                                <td><input type="tel" class="input-text" placeholder="示例：10 " name="years" required value="{$designer.years}"></td>
+                            </tr>
+                            <tr>
+                                <th>头像</th>
+                                <td><input type="file" class="input-text" placeholder="示例：设计师头像" name="avatar" required accept="image/png, image/jpeg, image/jpg" value="{$designer.avatar}" id="file" onchange="selected_img()"></td>
+                                <th>职位</th>
+                                <td><input type="text" class="input-text" placeholder="示例：设计总监" name="position" required value="{$designer.position}"></td>
+                                <th>个性签名</th>
+                                <td><input type="text" class="input-text" placeholder="示例：品质打响品牌，经工成就精彩" name="motto" required value="{$designer.motto}"></td>
+                            </tr>
+                            <tr>
+                                <th>自我介绍</th>
+                                <td colspan="5"><textarea name="introduction" cols="" rows="" class="textarea radius" placeholder="设计师的自我介绍..."  required>{$designer.introduction}</textarea></td>
+                                <input type="hidden" name="action" value="do_modify">
+                                <input type="hidden" name="id" value="{$designer.id}">
+                            </tr>
+                            </tbody>
+                            {/volist}
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row cl">
+                    <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                        <button  class="btn btn-primary radius" type="submit" name="submit"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button>
+                        <button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </article>
+    </div>
+</section>
+{/block}
+<!--新闻动态 结束-->
+<!--业务相关 js 开始-->
+{block name="custom_js"}
+<script type="text/javascript">
+    $(document).ready(function() {
+        //表单验证
+        //$("#form-case-add").validate();
+
+        //左侧菜单展开
+        $("#menu-website").find("dt").addClass('selected');
+        $("#menu-website").find("dd").show();
+        $("#menu-website").find("dd ul li:eq(3)").addClass("current");
+
+        //表格内容居中
+        $('th,td').addClass('text-c');
+        $('th').css('background-color', '#f6f6f6');
+        //图片上传样式
+        $('.case_upload_pic img').css('width', '100%');
+        $('.case_upload_pic img').css('height', '100%');
+    });
+
+    //返回前一个页面
+    function removeIframe() {
+        history.back();
+    }
+
+    //上传图片大小限制
+    function selected_img() {
+        var fileSize = document.getElementById("file").files[0].size;
+        if (fileSize > 524288){
+            alert("上传图片大小不要超过 512 kb！！");
+            $("#file").val(null);
+        }
+    }
+
+
+</script>
+{/block}
+<!--业务相关 js 结束-->

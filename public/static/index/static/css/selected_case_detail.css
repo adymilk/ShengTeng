@@ -1,0 +1,122 @@
+body{
+    background-color: white;
+}
+.case_detail_img,.thumbnail-img img,#right_form img{
+    width: 100%;
+}
+#main_pic{
+    height: 568px;
+}
+@media only screen and (max-width: 767px){
+    #main_pic{
+        max-height: 255px;
+    }
+    .thumbnail img{
+        max-height: 68px;
+    }
+}
+.zoom-pic img{
+    display: none;
+}
+.zoom-pic img:first-child{
+    display: block;
+}
+.thumbnail{
+    border: 1px solid #FFFFFF;
+    cursor: pointer;
+    padding: 5px 5px;
+}
+.thumbnail img{
+    height: 137px;
+}
+.photos .active{
+    box-shadow: 0 6px 13px -4px #a2a2a1;
+}
+/*设计师圆角头像*/
+.designer_circle{
+    position: absolute;
+    width: 53px;
+    height: 53px;
+    border-radius: 100%;
+    top: 50%;
+}
+.case{
+    box-shadow: 0 6px 13px -4px #cccccc;
+    border-radius: 9px;
+}
+.thumbnail-img img{
+    border-radius: 9px 9px 0 0;
+}
+/*相似案例*/
+.similar-case{
+    margin-bottom: 110px;
+}
+.similar-case .thumbnail-img img{
+    height: 190px;
+}
+.similar-case .text{
+    margin: 10px 8px;
+}
+.similar-case .title{
+    font-size: 15px;
+    color: #4c4c4c;
+}
+.btn-group{
+    width: 100%;
+    padding: 0 20px 20px 8px;
+}
+.look_detail{
+    border: 1px solid #CCC;
+    font-weight: normal;
+}
+.look_detail a{
+    color: #CCCCCC;
+}
+.order_design,.order_design a{
+    font-weight: normal;
+    background-color: red;
+    border: 1px solid red;
+    color: white;
+}
+
+/*右侧*/
+.designer-big-pic{
+    height: 305px;
+}
+.content{
+    border: 1px solid #cccccc;
+}
+#right_box .text{
+    height: 122px;
+}
+
+/*预约设计*/
+#order_design_img{
+    width: 100%;
+    height:125px;
+}
+/*右侧表单*/
+#right_form{
+    margin-top: 18px;
+}
+#designer_big_pic{
+    height: 305px;
+}
+.content .text{
+    padding: 8px;
+}
+/*预约设计表单banner*/
+#order_design_img{
+    height: 125px;
+}
+.design_concept{
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #3f3e3e;
+    font-size: 14px;
+}
+.breadcrumb{
+    background-color: white;
+}

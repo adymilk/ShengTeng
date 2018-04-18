@@ -1,0 +1,252 @@
+{extend name="tpl/base"}
+{block name="custom_css"}
+<link rel="stylesheet" href="__CSS__/designer_info.css">
+{/block}
+{block name="title"}案例详情{/block}
+
+{block name="content"}
+<div id="top_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <!--当前位置 开始-->
+                <ol class="breadcrumb">
+                    <li>当前位置：</li>
+                    <li><a href="{:url('Index/index')}">首页</a></li>
+                    <li><a href="{:url('TeamServices/index')}">团队服务</a></li>
+                    <li class="active"><a href="#">{$list[0]['name']}</a></li>
+                </ol>
+                <!--当前位置 结束-->
+            </div>
+        </div>
+        {volist name="designer" id="vo"}
+            <div class="row">
+            <div class="col-sm-12 center">
+                <img src="__ROOT__/uploads/{$vo.avatar}" alt="设计师头像" id="designer_avatar">
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="center">{$vo.name}</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4 class="center">{$vo.position}</h4>
+                </div>
+            </div>
+        <div class="row center">
+            <div class="col-sm-6">
+                <p  class="pull-right">
+                    <span>案例作品：</span>
+                    <span class="numbers">{$vo.numbers}</span> 套
+                </p>
+
+            </div>
+            <div class="col-sm-6">
+                <p  class="pull-left">
+                    <span>从业经验：</span>
+                    <span class="years">{$vo.years}</span> 年
+                </p>
+            </div>
+        </div>
+        <div class="row center">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 col-xs-12">
+                <!--设计理念-->
+                <h5 class="designer_introduction">{$vo.introduction}</h5>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        {/volist}
+    </div>
+</div>
+<div class="container selected_case content">
+
+
+    <div class="row">
+        <!--左侧 开始-->
+        <div class="col-sm-8">
+            <div class="row">
+                {volist name="list" id="vo" mod="2"}
+
+                <div class="col-sm-6">
+                    <div class="case">
+                        <div class="thumbnail-img">
+                            <a href="{:url('SelectedCase/selected_case_detail')}?case_id={$vo.case_id}"><img src="__ROOT__/uploads/{$vo.case_photo1}" alt="{$vo.style}"></a>
+                        </div>
+                        <div class="text clearfix">
+                            <p class="center title">
+                                <span class="proprietor_address">{$vo.community_name}{$vo.area} ㎡</span>
+                                <span class="design_style pull-right">{$vo.style}</span>
+                            </p>
+                            <div class="btn-group">
+                                <h3 class="inline pull-left"><span class="look_detail label"><a href="{:url('SelectedCase/selected_case_detail')}?case_id={$vo.case_id}">查看详情</a></span></h3>
+                                <h3 class="inline pull-right"><span class="order_design  label"><a href="">预约设计</a></span></h3>
+                            </div>
+                            <span><img src="__ROOT__/uploads/{$vo.avatar}" alt="设计师" class="designer img-circle"></span>
+                        </div>
+                    </div>
+                </div>
+                {eq name="mod" value="1"}</div> <div class="row">{/eq}
+
+            {/volist}
+            <!--分页-->
+            <div class="row page center">
+                {$list->render()}
+            </div>
+            </div>
+        </div>
+        <!--左侧 结束-->
+
+
+        <!--右侧 开始-->
+        <div class="col-sm-4" id="right_box">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="right_form">
+                        <form onsubmit="return submit_form()" class="form-horizontal" role="form" id="selected_case_detail_form">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <img src="__IMG__/comm/right_order_form_banner.png" alt="右侧预约设计" id="order_design_img">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="name" class="col-sm-4 control-label">您的姓名：</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="name" placeholder="您的姓名" name="name" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name" class="col-sm-4 control-label">小区名称：</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="address" placeholder="小区名称" name="address" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name" class="col-sm-4 control-label">装修面积：</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="area" placeholder="装修面积" name="area" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name" class="col-sm-4 control-label">联系电话：</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="tel" placeholder="联系电话" name="tel" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <p class="text"><button type="submit" class="btn btn-lg btn-danger btn-block" id="selected_case_detail_btn_order">预约设计</button></p>
+                                </div>
+                            </div>
+                            <input type="hidden" name="from" value="PC">
+                            <input type="hidden" name="remark" value="设计师详情">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--推荐设计师-->
+            <div class="row">
+                {volist name="suggest_designer" id="suggest_designer"}
+                <div class="col-sm-12">
+                    <div class="case">
+                        <ul class="suggest_title">
+                            <li><h4>推荐设计师</h4></li>
+                        </ul>
+                        <div class="thumbnail-img">
+                            <a href="{:url('SelectedCase/selected_case_detail')}?id={$suggest_designer.id}"><img src="__ROOT__/uploads/{$suggest_designer.avatar}" alt="设计师头像"></a>
+                        </div>
+                        <div class="text">
+                            <p class="center"><span class="designer_name">{$suggest_designer.name}</span> &nbsp;{$suggest_designer.position}</p>
+                            <p class="center">案例作品：{$suggest_designer.numbers} 套&nbsp;&nbsp; 从业经验：{$suggest_designer.years} 年</p>
+                            <!--设计理念-->
+                            <h5 class="designer_introduction center">{$suggest_designer.introduction}</h5>
+                        </div>
+                    </div>
+                </div>
+            {/volist}
+            </div>
+            <!--推荐案例-->
+            <div class="row">
+                <div class="col-sm-12">
+                    {volist name="suggest_case" id="vo"}
+                        <div class="case">
+                            <ul class="suggest_title">
+                                <li><h4>推荐案例</h4></li>
+                            </ul>
+                            <div class="thumbnail-img">
+                                <a href="{:url('SelectedCase/selected_case_detail')}?case_id={$vo.case_id}"><img src="__ROOT__/uploads/{$vo.case_photo1}" alt="{$vo.style}"></a>
+                            </div>
+                            <div class="text clearfix">
+                                <p class="center title">
+                                    <span class="proprietor_address">{$vo.community_name}&nbsp;{$vo.area} ㎡</span>
+                                    <span class="design_style pull-right">{$vo.style}</span>
+                                </p>
+                                <div class="btn-group">
+                                    <h3 class="inline pull-left"><span class="look_detail label"><a href="{:url('SelectedCase/selected_case_detail')}?case_id={$vo.case_id}">查看详情</a></span></h3>
+                                    <h3 class="inline pull-right"><span class="order_design label"><a href="">预约设计</a></span></h3>
+                                </div>
+                                <span><img src="__ROOT__/uploads/{$vo.avatar}" alt="设计师" class="designer"></span>
+                            </div>
+                        </div>
+
+                {/volist}
+            </div>
+                </div>
+
+        </div>
+        <!--右侧 结束-->
+    </div>
+
+
+
+</div>
+{/block}
+
+{block name="custom_js"}
+<script>
+    <!--导航菜单-->
+    $('header nav ul li').removeClass('active');
+    $('header nav ul li:eq(2)').addClass('active');
+
+    //表格文字居中
+    $('th ,td').css('text-align','center');
+    $('th').css('background-color', '#f6f6f6');
+    $('td').css('background-color', '#ffffff');
+
+    //案例详情点击图片切换（Tab 切换）
+    $('.thumbnail').click(function () {
+        var i = $(this).index();
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.zoom-pic img').eq(i).show().siblings().hide();
+    });
+
+    //提交用户预约设计信息
+    function submit_form() {
+        $.ajax({
+            type: "POST",
+            url: "{:url('admin/DataCenter/orderAdd')}",
+            data : $("#selected_case_detail_form").serialize(),
+            beforeSend:function(){
+                $('#selected_case_detail_form').attr('onsubmit','return false;');
+                $('#selected_case_detail_btn_order').html("数据提交中...");
+            },
+            success: function(data) {
+                alert(data.msg);
+                $('#selected_case_detail_btn_order').html("预约成功").removeClass('btn-danger').addClass('btn-success');
+            },
+            error:function (data) {
+                alert(data.msg);
+            }
+        });
+        return false;
+    }
+</script>
+{/block}

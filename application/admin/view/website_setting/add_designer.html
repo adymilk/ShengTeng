@@ -1,0 +1,176 @@
+{extend name="tpl/base"}
+
+<!--新闻动态 开始-->
+{block name="content"}
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('Index/index')}" class="maincolor">首页</a>
+        <span class="c-gray en">&gt;</span>
+        网站设置
+        <span class="c-gray en">&gt;</span>
+        <a href="{:url('WebsiteSetting/designer_list')}">设计师列表</a>
+        <span class="c-gray en">&gt;</span>
+        添加设计师
+
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+    </nav>
+    <div class="Hui-article">
+        <article class="page-container">
+            <form class="form form-horizontal" onsubmit="return add_case_submit();" enctype="multipart/form-data" id="form-case-add" action="{:url('WebsiteSetting/add_designer')}" method="post">
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>基本信息（必填）：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <table class="table table-border table-bordered ">
+                            <tbody>
+
+                            <tr>
+                                <th>设计师姓名</th>
+                                <td><input type="text" onchange="is_Exist_Designer()" class="input-text" id="designer" placeholder="示例：何金杰" name="name" required></td>
+                                <th>所属门店</th>
+                                <td>
+                                    <span class="select-box">
+                                        <select class="select" size="1" name="company" required title="选择店面">
+                                            <option value="">选择店面</option>
+                                            {volist name="company_list" id="vo"}
+                                                <option value="{$vo.company_name}">{$vo.company_name}</option>
+                                            {/volist}
+                                        </select>
+                                    </span>
+                                </td>
+                                <th>工作年限 /年</th>
+                                <td><input type="text" class="input-text" placeholder="示例：10 " name="years" required></td>
+                            </tr>
+                            <tr>
+                                <th>头像（358px * 305px）</th>
+                                <td><input type="file" class="input-text" placeholder="示例：设计师头像" name="avatar" required accept="image/png, image/jpeg, image/jpg" id="file" onchange="selected_img();"></td>
+                                <th>职位</th>
+                                <td>
+                                    <span class="select-box">
+                                        <select class="select" size="1" name="position" required title="选择职位">
+                                            <option value="">选择职位</option>
+                                                <option value="设计总监">设计总监</option>
+                                                <option value="原创设计">原创设计</option>
+                                                <option value="设计部长">设计部长</option>
+                                                <option value="首席设计师">首席设计师</option>
+                                                <option value="主任设计师">主任设计师</option>
+                                                <option value="实习设计师">实习设计师</option>
+                                        </select>
+                                    </span>
+                                </td>
+                                <th>个性签名</th>
+                                <td><input type="text" class="input-text" placeholder="示例：设计并非随心所欲，而是追寻自然法则，在各个元素中取得平衡。" name="motto" required></td>
+                            </tr>
+                            <tr>
+                                <th>自我评价</th>
+                                <td colspan="5"><textarea name="introduction" cols="" rows="" class="textarea radius" placeholder="示例：每个人都是一名设计师，每天都在用时间和经历绘制一张属于自己的生命蓝图，或者风平浪静，宠辱不惊，或者沽名钓誉，悔恨一生，或者烟花怒放，大煞旁人。"  required></textarea></td>
+                                <input type="hidden" name="action" value="do_add">
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row cl">
+                    <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                        <button  class="btn btn-primary radius btn_submit" type="submit" name="submit"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button>
+                        <button onClick="removeIframe();" class="btn btn-default radius btn_cancel" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </article>
+    </div>
+
+</section>
+
+<!--弹出模态框 开始-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <div class="alert alert-info" role="alert"><h2><strong>亲、</strong>请稍等片刻</h2></div>
+            </div>
+            <div class="modal-body">
+                <div class="spinner">
+                    <h3 style="display: inline-block">数据正在玩命上传中 &nbsp;</h3>
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出模态框 结束-->
+{/block}
+<!--新闻动态 结束-->
+<!--业务相关 js 开始-->
+{block name="custom_js"}
+<script type="text/javascript">
+    $(document).ready(function() {
+        //表单验证
+        //$("#form-case-add").validate();
+
+        //左侧菜单展开
+        $("#menu-website").find("dt").addClass('selected');
+        $("#menu-website").find("dd").show();
+        $("#menu-website").find("dd ul li:eq(3)").addClass("current");
+
+        //表格内容居中
+        $('th,td').addClass('text-c');
+        $('th').css('background-color', '#f6f6f6');
+        //图片上传样式
+        $('.case_upload_pic img').css('width', '100%');
+        $('.case_upload_pic img').css('height', '100%');
+    });
+
+    //返回前一个页面
+    function removeIframe() {
+        history.back();
+    }
+
+    //上传图片大小限制
+    function selected_img() {
+        var fileSize = document.getElementById("file").files[0].size;
+        if (fileSize > 524288){
+            alert("上传图片大小不要超过 512 kb！！");
+            $("#file").val(null);
+        }
+    }
+
+
+    //判断输入的设计师是否存在
+    function is_Exist_Designer(){
+        var designer = $('#designer').val();
+        $.ajax({
+            type: 'POST',
+            url: "{:url('WebsiteSetting/is_Exist_Designer')}",
+            data: {designer: designer},
+            dataType: 'json',
+            success: function (data) {
+                if (data.isExist === "否"){
+                    console.log("设计师不存在，可以添加！");
+                }else if (data.isExist === "是") {
+                    alert("此设计师已经存在了，不要重复录入！点击确定开始添加案例吧");
+                    location.href = "{:url('WebsiteSetting/add_decoration_case')}"
+                }
+            },
+            error: function (data) {
+                alert(data.msg);
+            }
+        });
+    }
+
+
+    //表单提交
+    function add_case_submit() {
+        $('#myModal').modal('show');
+        //TODO: 数据正在上传中 动画效果
+        $('.btn_submit, .btn_cancel').hide();
+        return true;
+    }
+
+</script>
+{/block}
+<!--业务相关 js 结束-->

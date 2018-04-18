@@ -1,0 +1,253 @@
+{extend name="tpl/base"}
+{block name="custom_css"}
+<link rel="stylesheet" href="__CSS__/decoration_strategy.css">
+{/block}
+{block name="title"}装修攻略{/block}
+
+{block name="content"}
+<div class="top-full-img">
+    <img src="__IMG__/decoration_strategy/index/top-banner.png" alt="">
+</div>
+
+<div class="container">
+    <!--新闻分类 TAB 切换-->
+    <div class="row">
+        <div class="col-sm-12">
+            <ul class="category_box clearfix">
+                <li class="active"><a href="javascript:void(0);">家装指南</a></li>
+                <li><a href="javascript:void(0);">家具配饰</a></li>
+                <li><a href="javascript:void(0);">家具风水</a></li>
+                <li><a href="javascript:void(0);">家装设计</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <!--左侧 开始-->
+        <div class="category_tab_content selected_case">
+            <div class="col-sm-8 category_tab_content_item active">
+                <div class="news_box">
+                    {volist name="list1" id="vo" empty="暂时没有数据..."}
+                    <div class="row">
+                        <!--新闻缩略图-->
+                        <div class="col-sm-6">
+                            <a href="{:url('news_detail')}?id={$vo.id}"><img src="__ROOT__/uploads/{$vo.thumbnail}" alt="新闻缩略图" class="thumbnail"></a>
+                        </div>
+                        <!--新闻简介-->
+                        <div class="col-sm-6">
+                            <a href="{:url('news_detail')}?id={$vo.id}"><h2 class="news_title">{$vo.title}</h2></a>
+                            <p class="description">{$vo.description}<b><a href="{:url('news_detail')}?id={$vo.id}"></a></b></p>
+                            <p class="publish_time">发布时间：{$vo.time}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    {/volist}
+                    <!--分页-->
+                    <div class="row">
+                        <div class="col-sm-12 center">{$list1->render()}</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="category_tab_content">
+            <div class="col-sm-8 category_tab_content_item">
+                <div class="news_box">
+                    {volist name="list2" id="vo" empty="暂时没有数据..."}
+                    <div class="row">
+                        <!--新闻缩略图-->
+                        <div class="col-sm-6">
+                            <a href="{:url('news_detail')}?id={$vo.id}"><img src="__ROOT__/uploads/{$vo.thumbnail}" alt="新闻缩略图" class="thumbnail"></a>
+                        </div>
+                        <!--新闻简介-->
+                        <div class="col-sm-6">
+                            <a href="{:url('news_detail')}?id={$vo.id}"><h3 class="news_title">{$vo.title}</h3></a>
+                            <p class="description">{$vo.description}<b><a href="{:url('news_detail')}?id={$vo.id}"></a></b></p>
+                            <p class="publish_time">发布时间：{$vo.time}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    {/volist}
+                </div>
+                <!--分页-->
+                {$list2->render()}
+            </div>
+        </div>
+        <div class="category_tab_content">
+            <div class="col-sm-8 category_tab_content_item">
+                <div class="news_box">
+                    {volist name="list3" id="vo" empty="暂时没有数据..."}
+                    <div class="row">
+                        <!--新闻缩略图-->
+                        <div class="col-sm-6">
+                            <a href="{:url('news_detail')}?id={$vo.id}"><img src="__ROOT__/uploads/{$vo.thumbnail}" alt="新闻缩略图" class="thumbnail"></a>
+                        </div>
+                        <!--新闻简介-->
+                        <div class="col-sm-6">
+                            <a href="{:url('news_detail')}?id={$vo.id}"><h2 class="news_title">{$vo.title}</h2></a>
+                            <p class="description">{$vo.description}<b><a href="{:url('news_detail')}?id={$vo.id}">[详情]</a></b></p>
+                            <p class="publish_time">发布时间：{$vo.time}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    {/volist}
+                </div>
+                <!--分页-->
+                {$list3->render()}
+            </div>
+        </div>
+        <div class="category_tab_content">
+            <div class="col-sm-8 category_tab_content_item">
+                <div class="news_box">
+                    {volist name="list4" id="vo" empty="暂时没有数据..."}
+                    <div class="row">
+                        <!--新闻缩略图-->
+                        <div class="col-sm-6">
+                            <a href="{:url('news_detail')}?id={$vo.id}"><img src="__ROOT__/uploads/{$vo.thumbnail}" alt="新闻缩略图" class="thumbnail"></a>
+                        </div>
+                        <!--新闻简介-->
+                        <div class="col-sm-6">
+                            <a href="{:url('news_detail')}?id={$vo.id}"><h3 class="news_title">{$vo.title}</h3></a>
+                            <p class="description">{$vo.description}<b><a href="{:url('news_detail')}?id={$vo.id}">[详情]</a></b></p>
+                            <p class="publish_time">发布时间：{$vo.time}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    {/volist}
+                </div>
+                <!--分页-->
+                <div class="row page">
+                    {$list4->render()}
+                </div>
+
+            </div>
+        </div>
+
+        <!--左侧 结束-->
+
+        <!--右侧 开始-->
+        <div class="col-sm-4 selected_case content" id="right_box">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="right_form">
+                        <form onsubmit="return submit_form()" class="form-horizontal" role="form" id="selected_case_detail_form">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <img src="__IMG__/comm/right_order_form_banner.png" alt="右侧预约设计" id="order_design_img">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="name" class="col-sm-4 control-label">您的姓名：</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="name" placeholder="您的姓名" name="name" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name" class="col-sm-4 control-label">小区名称：</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="address" placeholder="小区名称" name="address" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name" class="col-sm-4 control-label">装修面积：</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="area" placeholder="装修面积" name="area" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name" class="col-sm-4 control-label">联系电话：</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="tel" placeholder="联系电话" name="tel" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <p class="text"><button type="submit" class="btn btn-lg btn-danger btn-block" id="selected_case_detail_btn_order">预约设计</button></p>
+                                </div>
+                            </div>
+                            <input type="hidden" name="from" value="PC">
+                            <input type="hidden" name="remark" value="设计师详情">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--推荐设计师-->
+            <div class="row">
+                {volist name="suggest_designer" id="suggest_designer"}
+                <div class="col-sm-12">
+                    <div class="case">
+                        <ul class="suggest_title">
+                            <li><h4>推荐设计师</h4></li>
+                        </ul>
+
+                        <div class="thumbnail-img">
+                            <a href="{:url('TeamServices/designer_info')}?id={$suggest_designer.id}"><img src="__ROOT__/uploads/{$suggest_designer.avatar}" alt="设计师头像"></a>
+                        </div>
+                        <div class="text">
+                            <p class="center"><span class="designer_name">{$suggest_designer.name}</span> &nbsp;{$suggest_designer.position}</p>
+                            <p class="center">案例作品：{$suggest_designer.numbers} 套&nbsp;&nbsp; 从业经验：{$suggest_designer.years} 年</p>
+                            <!--设计理念-->
+                            <h5 class="designer_introduction center">{$suggest_designer.introduction}</h5>
+                        </div>
+                    </div>
+                </div>
+                {/volist}
+            </div>
+            <!--推荐案例-->
+            <div class="row">
+                <div class="col-sm-12">
+                    {volist name="suggest_case" id="vo"}
+                    <div class="case">
+                        <ul class="suggest_title">
+                            <li><h4>推荐案例</h4></li>
+                        </ul>
+                        <div class="thumbnail-img">
+                            <a href="{:url('SelectedCase/selected_case_detail')}?case_id={$vo.case_id}"><img src="__ROOT__/uploads/{$vo.case_photo1}" alt="{$vo.style}"></a>
+                        </div>
+                        <div class="text clearfix">
+                            <p class="center title">
+                                <span class="proprietor_address">{$vo.community_name}&nbsp;{$vo.area} ㎡</span>
+                                <span class="design_style pull-right">{$vo.style}</span>
+                            </p>
+                            <div class="btn-group">
+                                <h3 class="inline pull-left"><span class="look_detail label"><a href="{:url('SelectedCase/selected_case_detail')}?case_id={$vo.case_id}">查看详情</a></span></h3>
+                                <h3 class="inline pull-right"><span class="order_design  label"><a href="">预约设计</a></span></h3>
+                            </div>
+                            <span><img src="__ROOT__/uploads/{$vo.avatar}" alt="设计师" class="designer"></span>
+                        </div>
+                    </div>
+
+                    {/volist}
+                </div>
+            </div>
+
+        </div>
+        <!--右侧 结束-->
+
+    </div>
+
+</div>
+{/block}
+
+{block name="custom_js"}
+<script>
+    <!--导航菜单-->
+    $('header nav ul li').removeClass('active');
+    $('header nav ul li:eq(3)').addClass('active');
+
+    //新闻分类 tab 切换
+    $('.category_box li').click(function () {
+        var  i = $(this).index();
+        $('.category_tab_content .category_tab_content_item').removeClass('active').eq(i).addClass('active');
+        $(this).addClass('active').siblings().removeClass('active');
+    });
+
+
+</script>
+{/block}

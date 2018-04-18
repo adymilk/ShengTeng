@@ -1,0 +1,170 @@
+{extend name="tpl/base"}
+{block name="custom_css"}
+<link rel="stylesheet" href="__CSS__/team_services.css">
+{/block}
+{block name="title"}团队服务{/block}
+
+{block name="content"}
+<div class="container">
+    <!--当前位置 开始-->
+
+    <ol class="breadcrumb">
+        <li>当前位置：</li>
+        <li><a href="{:url('Index/index')}">首页</a></li>
+        <li>团队服务</li>
+    </ol>
+    <!--当前位置 结束-->
+
+    <div class="row">
+        <div class="col-sm-12 case_nav_box">
+            <table class="table table-border table-container">
+                <tbody>
+                <tr id="case_nav_style">
+                        <th>擅长风格</th>
+                        <td class="active"><a href="{:url('index')}">全部</a></td>
+                        <td><a href="{:url('index')}?c=style&style=<?php echo urlencode('乡村')?>">乡村</a></td>
+                        <td><a href="{:url('index')}?c=style&style=<?php echo urlencode('地中海')?>">地中海</a></td>
+                        <td><a href="{:url('index')}?c=style&style=<?php echo urlencode('欧式')?>">欧式</a></td>
+                        <td><a href="{:url('index')}?c=style&style=<?php echo urlencode('现代简约')?>">现代简约</a></td>
+                        <td><a href="{:url('index')}?c=style&style=<?php echo urlencode('田园')?>">田园</a></td>
+                        <td><a href="{:url('index')}?c=style&style=<?php echo urlencode('简欧')?>">简欧</a></td>
+                        <td><a href="{:url('index')}?c=style&style=<?php echo urlencode('雅典主义')?>">雅典主义</a></td>
+                        <td><a href="{:url('index')}?c=style&style=<?php echo urlencode('其他')?>">其他</a></td>
+
+                    </tr>
+                <tr id="case_nav_type">
+                    <th>擅长户型</th>
+                    <td class="active"><a href="{:url('index')}">全部</a></td>
+                    <td><a href="{:url('index')}?c=type&type=<?php echo urlencode('两居室')?>">两居室</a></td>
+                    <td><a href="{:url('index')}?c=type&type=<?php echo urlencode('三居室')?>">三居室</a></td>
+                    <td><a href="{:url('index')}?c=type&type=<?php echo urlencode('公寓')?>">公寓</a></td>
+                    <td><a href="{:url('index')}?c=type&type=<?php echo urlencode('别墅')?>">别墅</a></td>
+                    <td><a href="{:url('index')}?c=type&type=<?php echo urlencode('小户型')?>">小户型</a></td>
+                    <td><a href="{:url('index')}?c=type&type=<?php echo urlencode('其他')?>">其他</a></td>
+                    <td><a href="#"></a></td>
+                    <td><a href="#"></a></td>
+
+                </tr>
+                <tr id="case_nav_city">
+                    <th>服务店面</th>
+                    <td class="active"><a href="{:url('index')}">全部</a></td>
+                    <td><a href="{:url('index')}?c=city&city=<?php echo urlencode('合肥')?>">合肥</a></td>
+                    <td><a href="{:url('index')}?c=city&city=<?php echo urlencode('蚌埠')?>">蚌埠</a></td>
+                    <td><a href="{:url('index')}?c=city&city=<?php echo urlencode('呼和浩特')?>">呼市</a></td>
+                    <td><a href="{:url('index')}?c=city&city=<?php echo urlencode('烟台')?>">烟台</a></td>
+                    <td><a href="{:url('index')}?c=city&city=<?php echo urlencode('石家庄')?>">石家庄</a></td>
+                    <td><a href="{:url('index')}?c=city&city=<?php echo urlencode('西安')?>">西安</a></td>
+                    <td><a href="{:url('index')}?c=city&city=<?php echo urlencode('杭州')?>">杭州</a></td>
+                    <td><a href="#"></a></td>
+
+
+                </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="selected_case content">
+        <div class="row">
+            {volist name="list" id="designer_list" mod="4" empty="暂时没有数据"}
+            <div class="col-sm-3">
+                <div class="case">
+                    <div class="thumbnail-img">
+                        <a href="{:url('designer_info')}?id={$designer_list.id}"><img src="__ROOT__/uploads/{$designer_list.avatar}" alt="设计师头像"></a>
+                        <div>
+                            <span class=" label-gray pull-left"><a href="{:url('designer_info')}?id={$designer_list.id}">了解更多</a></span>
+                            <span class=" label-danger pull-right"><a href="">立即预约</a></span>
+                        </div>
+
+                    </div>
+                    <div class="text">
+                        <ul>
+                            <li class="designer_name">{$designer_list.name}</li>
+                            <li>&nbsp;&nbsp;</li>
+                            <li class="designer_position">{$designer_list.position}</li>
+                        </ul>
+                        <ul>
+                            <li>案例作品：<span class="numbers">{$designer_list.numbers}</span> 套</li>
+                            <li>&nbsp;&nbsp;</li>
+                            <li>从业经验：<span class="years">{$designer_list.years}</span> 年</li>
+                        </ul>
+                        <!--设计理念-->
+                        <h5 class="designer_introduction center">{$designer_list.introduction}</h5>
+                    </div>
+                </div>
+            </div>
+            {eq name="mod" value="3"}</div><div class="row">{/eq}
+        {/volist}
+    </div>
+        <div class="row page center">
+            {$list->render()}
+        </div>
+    </div>
+
+</div>
+{/block}
+
+{block name="custom_js"}
+<script>
+    <!--导航菜单-->
+    $('header nav ul li').removeClass('active');
+    $('header nav ul li:eq(2)').addClass('active');
+
+    //表格文字居中
+    $('th ,td').css('text-align','center');
+    $('th').css('background-color', '#f6f6f6');
+    $('td').css('background-color', '#ffffff');
+
+
+    //案例导航选择样式
+
+    $('#case_nav_style').find('td').click(function () {
+        var i = $(this).index();
+        if (i === 1){
+            localStorage.clear();
+        }else {
+            localStorage.setItem('case_nav_style',i-1);
+        }
+    });
+    $('#case_nav_type').find('td').click(function () {
+        var i = $(this).index();
+        if (i === 1){
+            localStorage.clear();
+        }else {
+            localStorage.setItem('case_nav_type',i-1);
+        }
+    });
+    $('#case_nav_city').find('td').click(function () {
+        var i = $(this).index();
+        if (i === 1){
+            localStorage.clear();
+        }else {
+            localStorage.setItem('case_nav_city',i-1);
+        }
+    });
+
+
+    console.log(localStorage.getItem('case_nav_style'));
+
+        if(localStorage.getItem('case_nav_style') !== null){
+            $('#case_nav_style').find('td').removeClass('active')
+                .eq(localStorage.getItem('case_nav_style')).addClass('active')
+        }
+        if(localStorage.getItem('case_nav_type') !== null){
+            $('#case_nav_type').find('td').removeClass('active')
+                .eq(localStorage.getItem('case_nav_type')).addClass('active')
+        }
+        if(localStorage.getItem('case_nav_city') !== null){
+            $('#case_nav_city').find('td').removeClass('active')
+                .eq(localStorage.getItem('case_nav_city')).addClass('active')
+        }
+
+
+
+
+
+
+
+</script>
+{/block}

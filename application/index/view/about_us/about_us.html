@@ -1,0 +1,28 @@
+{extend name="tpl/base"}
+{block name="custom_css"}
+<link rel="stylesheet" href="__CSS__/about_us.css">
+{/block}
+{block name="title"}关于盛腾{/block}
+
+{block name="content"}
+<div class="content">
+    <div class="photo_items">
+        <video src="__ROOT__/uploads/shengteng-group.mp4" autoplay="autoplay" type="video/mp4" class="img-responsive" poster="" width="100%" controls >您的浏览器不支持html5视频</video>
+        <hr>
+        <img src="__IMG__/about_us/top-banner.png" alt="">
+        <img src="__IMG__/about_us/1.png" alt="">
+        <img src="__IMG__/about_us/2.png" alt="">
+        <img src="__IMG__/about_us/3.png" alt="">
+        <img src="__IMG__/about_us/4.png" alt="">
+        <img src="__IMG__/about_us/5.png" alt="">
+    </div>
+</div>
+{/block}
+
+{block name="custom_js"}
+<script>
+    <!--导航菜单-->
+    $('header nav ul li').removeClass('active');
+    $('header nav ul li:eq(7)').addClass('active');
+</script>
+{/block}

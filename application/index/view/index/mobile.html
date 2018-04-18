@@ -1,0 +1,390 @@
+{extend name="tpl/base"}
+{block name="custom_css"}
+    <link rel="stylesheet" href="__CSS__/index.css">
+{/block}
+{block name="title"}盛腾家装科技集团官网{/block}
+
+{block name="content"}
+
+
+<!--手机端 端显示的内容 开始-->
+<div class="visible-xs" id="show-on-mobile">
+    <!-- 侧边栏内容 -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+            	<a href="http://0551shengteng.com/public/pages/mobile/0551/"><img src="__IMG__/index/Mobile-banner1.jpg" alt="最新活动"></a>
+            </div>
+            <div class="swiper-slide"><a href="#"><img src="__IMG__/index/Mobile-banner2.png" alt=""></a></div>
+            <div class="swiper-slide"><a href="#"><img src="__IMG__/index/Mobile-banner3.png" alt=""></a></div>
+            <div class="swiper-slide"><a href="#"><img src="__IMG__/index/Mobile-banner4.png" alt=""></a></div>
+            <div class="swiper-slide"><a href="{:url('activity/mobile')}"><img src="__IMG__/index/Mobile-banner5.jpg" alt=""></a></div>
+        </div>
+        <!--分页-->
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 menu">
+                <ul class="clearfix">
+                    <li class="pull-left"><a href="{:url('SelectedCase/index')}"><div class="menu-wrap center box-shadow"><img src="__IMG__/index/mobile-menu1.png" alt="精选" class="img-circle box-shadow"></div><div class="center title">精选</div></a></li>
+                    <li class="pull-left"><a href="{:url('TeamServices/index')}"><div class="menu-wrap center"><img src="__IMG__/index/mobile-menu2.png" alt="团队服务" class="img-circle"></div><div class="center title">团队服务</div></a></li>
+                    <li class="pull-left"><a href="#"><div class="menu-wrap center"><img src="__IMG__/index/mobile-menu3.png" alt="最新活动" class="img-circle"></div><div class="center title">最新活动</div></a></li>
+                    <li class="pull-left"><a href="{:url('DecorationStrategy/index')}"><div class="menu-wrap center"><img src="__IMG__/index/mobile-menu4.png" alt="家装攻略" class="img-circle"></div><div class="center title">家装攻略</div></a></li>
+                    <li class="pull-left"><a href="{:url('AllShops/index')}"><div class="menu-wrap center"><img src="__IMG__/index/mobile-menu5.png" alt="工厂店" class="img-circle"></div><div class="center title">工厂店</div></a></li>
+                    <li class="pull-left"><a href="#"><div class="menu-wrap center"><img src="__IMG__/index/taocan.png" alt="工厂店" class="img-circle"></div><div class="center title">装修套餐</div></a></li>
+                    <li class="pull-left"><a href="#"><div class="menu-wrap center"><img src="__IMG__/index/da-quan-bao.png" alt="工厂店" class="img-circle"></div><div class="center title">大全包</div></a></li>
+                    <li class="pull-left"><a href="{:url('index/business_cooperation')}"><div class="menu-wrap center"><img src="__IMG__/index/zhaoshang.png" alt="工厂店" class="img-circle"></div><div class="center title">招商加盟</div></a></li>
+                    <li class="pull-left"><a href="#"><div class="menu-wrap center"><img src="__IMG__/index/zhaopin.png" alt="工厂店" class="img-circle"></div><div class="center title">人才招聘</div></a></li>
+                    <li class="pull-left"><a href="{:url('AboutUs/about_us')}"><div class="menu-wrap center"><img src="__IMG__/index/about.png" alt="工厂店" class="img-circle"></div><div class="center title">关于盛腾</div></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--盛腾模式，视频宣传-->
+        <div class="row">
+            <div class="col-xs-12 brand clearfix">
+                <h4 class="red-font pull-left">盛腾模式</h4><span>第六代买家模式</span><span class="pull-right">更多&nbsp;></span>
+            </div>
+            <div class="col-xs-12">
+                <video src="__ROOT__/uploads/shengteng-group.mp4" type="video/mp4" controls="controls" class="img-responsive" poster="__IMG__/index/video-thumbnail.png">您的浏览器不支持html5视频</video>
+            </div>
+        </div>
+
+        <!--装修建材品牌-->
+        <div class="row">
+            <div class="col-xs-12 brand clearfix">
+                <h4 class="red-font pull-left">品牌建材</h4><span>盛腾的装修材料</span> <span class="pull-right">更多&nbsp;></span>
+            </div>
+            <div class="col-xs-12 brand-tab ">
+                <ul class="clearfix">
+                    <li class="active">综合</li>
+                    <li>瓷砖</li>
+                    <li>地板</li>
+                    <li>房门</li>
+                    <li>卫浴</li>
+                    <li>家具家居</li>
+                    <li>移门衣柜</li>
+                    <li>家用电器</li>
+                </ul>
+            </div>
+            <div class="col-xs-12">
+                <div class="swiper-brand">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide img-rounded">
+                            <div class="top bg-success">
+                                <img src="__IMG__/index/brand-logo1.png" alt="品牌" class="img-circle img-responsive">
+                            </div>
+                            <div class="bottom center">
+                                <h4 class="center"><strong>多乐士</strong></h4>
+                                <p class="center">油漆大品牌</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide img-rounded">
+                            <div class="top bg-info">
+                                <img src="__IMG__/index/brand-logo2.png" alt="品牌" class="img-circle img-responsive">
+                            </div>
+                            <div class="bottom center">
+                                <h4 class="center"><strong>金牌卫浴</strong></h4>
+                                <p class="center">卫浴大品牌</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide img-rounded">
+                            <div class="top bg-primary">
+                                <img src="__IMG__/index/brand-logo3.png" alt="品牌" class="img-circle img-responsive">
+                            </div>
+                            <div class="bottom center">
+                                <h4 class="center"><strong>天涯丽珠</strong></h4>
+                                <p class="center">家具大品牌</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide img-rounded">
+                            <div class="top bg-info">
+                                <img src="__IMG__/index/brand-logo4.png" alt="品牌" class="img-circle img-responsive">
+                            </div>
+                            <div class="bottom center">
+                                <h4 class="center"><strong>苏宁易购</strong></h4>
+                                <p class="center">百货龙头</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide img-rounded">
+                            <div class="top bg-primary">
+                                <img src="__IMG__/index/brand-logo5.png" alt="品牌" class="img-circle img-responsive">
+                            </div>
+                            <div class="bottom center">
+                                <h4 class="center"><strong>海尔</strong></h4>
+                                <p class="center">家店大品牌</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide img-rounded">
+                            <div class="top bg-danger">
+                                <img src="__IMG__/index/brand-logo6.png" alt="品牌" class="img-circle img-responsive">
+                            </div>
+                            <div class="bottom center">
+                                <h4 class="center"><strong>东方雨虹</strong></h4>
+                                <p class="center">防水大品牌</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide img-rounded">
+                            <div class="top bg-warning">
+                                <img src="__IMG__/index/brand-logo7.png" alt="品牌" class="img-circle img-responsive">
+                            </div>
+                            <div class="bottom center">
+                                <h4 class="center"><strong>圣象地板</strong></h4>
+                                <p class="center">地板大品牌</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide img-rounded">
+                            <div class="top bg-success">
+                                <img src="__IMG__/index/brand-logo8.png" alt="品牌" class="img-circle img-responsive">
+                            </div>
+                            <div class="bottom center">
+                                <h4 class="center"><strong>安信地板</strong></h4>
+                                <p class="center">地板大品牌</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide img-rounded">
+                            <div class="top bg-primary">
+                                <img src="__IMG__/index/brand-logo9.png" alt="品牌" class="img-circle img-responsive">
+                            </div>
+                            <div class="bottom center">
+                                <h4 class="center"><strong>新中源陶瓷</strong></h4>
+                                <p class="center">陶瓷大品牌</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide img-rounded">
+                            <div class="top bg-success">
+                                <img src="__IMG__/index/brand-logo10.png" alt="品牌" class="img-circle img-responsive">
+                            </div>
+                            <div class="bottom center">
+                                <h4 class="center"><strong>科勒</strong></h4>
+                                <p class="center">卫浴大品牌</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide img-rounded">
+                            <div class="top bg-warning">
+                                <strong><a href="#">点击查看更多&nbsp;></a></strong>
+                            </div>
+                            <div class="bottom center">
+                                <h4 class="center"></h4>
+                                <p class="center">亲、我是有底线的~</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--装修风格-->
+        <div class="row style">
+            <div class="col-xs-12 brand clearfix">
+                <h4 class="red-font pull-left">看样板房</h4><span>海量装修效果图</span> <span class="pull-right"><a href="{:url('SelectedCase/index')}">更多&nbsp;></a></span>
+            </div>
+            <div class="col-xs-12">
+                <div class="swiper-style">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide img-rounded">
+                            <div class="top bg-success">
+                                <img src="http://mued3.jia.com/image/mobile/m_sygb/first_page/fengge_1.png" alt="品牌" class="img-responsive">
+                                <strong class="style-name">简约</strong>
+                                <span class="style-num">2130&nbsp;套</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide img-rounded">
+                            <div class="top bg-success">
+                                <img src="http://mued3.jia.com/image/mobile/m_sygb/first_page/fengge_2.png" alt="品牌" class="img-responsive">
+                                <strong class="style-name">欧式</strong>
+                                <span class="style-num">2350&nbsp;套</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide img-rounded">
+                            <div class="top bg-success">
+                                <img src="http://mued3.jia.com/image/mobile/m_sygb/first_page/fengge_3.png" alt="品牌" class="img-responsive">
+                                <strong class="style-name">田园</strong>
+                                <span class="style-num">1530&nbsp;套</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide img-rounded">
+                            <div class="top bg-success">
+                                <img src="http://mued3.jia.com/image/mobile/m_sygb/first_page/fengge_4.png" alt="中式风格" class="img-responsive">
+                                <strong class="style-name">中式</strong>
+                                <span class="style-num">1640&nbsp;套</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide img-rounded">
+                            <div class="top bg-success">
+                                <img src="http://mued3.jia.com/image/mobile/m_sygb/first_page/fengge_5.png" alt="地中海风格" class="img-responsive">
+                                <strong class="style-name">地中海</strong>
+                                <span class="style-num">1240&nbsp;套</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide img-rounded">
+                            <div class="top bg-success">
+                                <strong><a href="{:url('SelectedCase/index')}">点击查看更多&nbsp;></a></strong>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <p class="center"><a href="{:url('SelectedCase/index')}">查看全部装修案例</a></p>
+                <hr>
+            </div>
+            <br>
+            <!--优惠券-->
+            <div class="col-xs-12 clearfix">
+                <h4>装修优惠券</h4>
+                <div class="col-xs-5 ticket_part img-rounded">
+                    <a href="#">
+                        <ul>
+                            <li>¥<em> 60000</em></li>
+                            <li class="get-ticket">立即领取</li>
+
+                        </ul>
+                    </a>
+                </div>
+                <div class="col-xs-5 ticket_part img-rounded">
+                    <a href="#">
+                        <ul>
+                            <li>¥<em> 60000</em></li>
+                            <li class="get-ticket">立即领取</li>
+
+                        </ul>
+                    </a>
+                </div>
+
+
+            </div>
+
+            <!--报价-->
+            <div class="col-xs-12 order">
+                <h4>在盛腾，装修需要多少钱？</h4>
+                <div class="col-xs-4">
+                    <img src="http://mued3.jia.com/image/mobile/m_sygb/bendi/bendi_img/baojia_tu.png" alt="计算报价" class="img-responsive">
+                </div>
+                <div class="col-xs-8">
+                    <form action="">
+                        <div class="col-xs-6">
+                            <input type="text" minlength="2" class="form-control" id="name" placeholder="面积" name="name" required="" >
+                        </div>
+                        <div class="col-xs-6">
+                            <input type="text" minlength="11" class="form-control" id="name" placeholder="电话" name="name" required="" >
+                        </div>
+                        <br><br>
+                        <button type="submit" class="btn btn-info col-xs-12 get-ticket">获取报价</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row news">
+            <div class="col-xs-12 brand clearfix">
+                <h4 class="red-font pull-left">装修干货</h4><span>看清装修行情</span> <span class="pull-right"><a href="{:url('DecorationStrategy/index')}">更多&nbsp;></a></span>
+            </div>
+            <div class="col-xs-12">
+                <div class="swiper-news">
+                    <div class="swiper-wrapper">
+                        {volist name="list1" id="vo" empty="暂时没有数据..."}
+                        <div class="swiper-slide img-rounded">
+                            <div class="top bg-success">
+                                <a href="{:url('DecorationStrategy/news_detail')}?id={$vo.id}"><img src="__ROOT__/uploads/{$vo.thumbnail}" alt="新闻缩略图" class="img-responsive"></a>
+                            </div>
+                            <div class="bottom center">
+                                <a href="{:url('DecorationStrategy/news_detail')}?id={$vo.id}"><h2 class="news_title">{$vo.title}</h2></a>
+                                <p class="description">{$vo.description}<b><a href="{:url('DecorationStrategy/news_detail')}?id={$vo.id}">[详情]</a></b></p>
+                            </div>
+                        </div>
+                        {/volist}
+                        <div class="swiper-slide img-rounded">
+                            <div class="top bg-success">
+                                <strong><a href="#">点击查看更多&nbsp;></a></strong>
+                            </div>
+                            <div class="bottom center">
+                                <h4 class="center"></h4>
+                                <p class="center">亲、我是有底线的~</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 brand clearfix">
+                <h4>报名咨询</h4>
+            </div>
+            <div class="col-xs-12">
+                <form onsubmit="return modal_form()" class="form-horizontal" id="modal_form" method="post">
+                    <div class="form-group">
+                        <input type="text" minlength="2" class="form-control" id="name" placeholder="您的姓名" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" minlength="2"  class="form-control" id="area" placeholder="装修面积 ㎡" name="area" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" minlength="11"   class="form-control" id="tel" placeholder="联系电话" name="tel" required>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p class="text"><button type="submit" class="btn btn-lg btn-danger btn-block" id="modal_form_btn">给您回电</button></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="from" value="mobile">
+                    <input type="hidden" name="remark" value="手机端首页底部报名">
+                    <div class="form-group">
+                        <input type="hidden" value="隐藏域" minlength="2"   class="form-control" id="address" placeholder="小区名称" name="address" required>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 brand clearfix">
+                <h4 class="center"><strong>盛腾家装</strong></h4>
+                <h6 class="center">让装修变得更简单</h6>
+            </div>
+        </div>
+    </div>
+</div>
+<!--手机端样式 结束-->
+{/block}
+
+{block name="custom_js"}
+<!--手机端样式 开始-->
+<script src="//cdn.bootcss.com/Swiper/3.4.2/js/swiper.min.js"></script>
+<link href="//cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css" rel="stylesheet">
+<script>
+    <!--顶部banner滑动-->
+    new Swiper('.swiper-container',{
+        autoplay:3000,//1000ms自动播放一次
+        loop: true,//循环播放
+        initialSlide :4,//设定初始化时slide的索引。
+        direction : 'horizontal',//	Slides的滑动方向，可设置水平(horizontal)或垂直(vertical)。
+        speed:1000,//
+        width : window.innerWidth,//全屏
+        pagination : '.swiper-pagination',//分页器容器
+    });
+//    品牌商
+    new Swiper('.swiper-brand,.swiper-style', {
+        slidesPerView: "auto",
+        spaceBetween: 10,
+        direction : 'horizontal',
+
+    });
+
+    new Swiper('.swiper-news', {
+        slidesPerView: "auto",
+        spaceBetween: 10,
+    });
+
+//    品牌tab切换
+    $('.brand-tab ul li').click(function () {
+        $(this).addClass('active').siblings().removeClass('active');
+    });
+</script>
+
+<!--手机端样式 结束-->
+{/block}

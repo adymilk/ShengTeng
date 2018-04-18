@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--头部区 开始-->
+    {include file="./tpl/head" /}
+    <!--头部区 结束-->
+    {block name="title"}<title>后台管理</title>{/block}
+</head>
+<body>
+<!--header 开始-->
+{include file="./tpl/header"}
+<!--header 结束-->
+
+<!--左侧菜单 开始-->
+{include file="./tpl/menu"}
+<!--左侧菜单 结束-->
+
+<!--内容区 开始-->
+{block name="content"}{/block}
+<!--内容区 结束-->
+
+<!--footer 区 开始-->
+{include file="./tpl/footer" /}
+<!--footer 区 结束-->
+
+<!--自定义JS 开始-->
+{block name="custom_js"}{/block}
+<!--自定义JS 结束-->
+</body>
+</html>

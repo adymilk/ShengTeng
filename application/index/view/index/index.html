@@ -1,0 +1,1011 @@
+{extend name="tpl/base"}
+{block name="custom_css"}
+    <link rel="stylesheet" href="__CSS__/index.css">
+    <script>
+    if (navigator.userAgent.match(/(iPhone|Android.*Mobile)/) || navigator.userAgent.match(/MSIE [6,7,8,9]/)) {
+      window.location.replace("{:url('index/mobile')}");
+  }
+</script>
+{/block}
+{block name="title"}盛腾家装科技集团官网{/block}
+
+{block name="content"}
+
+
+
+<!--pc 端显示的内容 开始-->
+<div class="hidden-xs" id="show-on-pc">
+    <!--banner 开始-->
+    <div class="banner">
+        <!-- slider start -->
+        <div class="fnc-slider example-slider">
+            <div class="fnc-slider__slides">
+                <!-- slide start -->
+                <div class="fnc-slide m--blend-green m--active-slide">
+                    <a href="{:url('activity/pc')}" target="_blank">
+                        <div class="fnc-slide__inner">
+
+                            <div class="fnc-slide__content wow bounceInUp">
+                                <h2 class="fnc-slide__heading">
+                                    <div class="fnc-slide__heading-line">
+                                        <span class="animated zoomInDown">豪装</span>
+                                    </div>
+                                    <div class="fnc-slide__heading-line">
+                                        <span class="animated zoomInDown">不豪价</span>
+                                    </div>
+                                </h2>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- slide end -->
+                <!-- slide start -->
+                <div class="fnc-slide m--blend-dark">
+                    <div class="fnc-slide__inner">
+
+                        <div class="fnc-slide__content">
+                            <h2 class="fnc-slide__heading">
+                                <div class="fnc-slide__heading-line">
+                                    <span>豪装</span>
+                                </div>
+                                <div class="fnc-slide__heading-line">
+                                    <span>不豪价</span>
+                                </div>
+                            </h2>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- slide end -->
+                <!-- slide start -->
+                <div class="fnc-slide m--blend-red">
+                        <div class="fnc-slide__inner">
+                            <div class="fnc-slide__content">
+                                <h2 class="fnc-slide__heading">
+                                    <div class="fnc-slide__heading-line">
+                                        <span>豪装</span>
+                                    </div>
+                                    <div class="fnc-slide__heading-line">
+                                        <span>不豪价</span>
+                                    </div>
+                                </h2>
+
+                            </div>
+                        </div>
+                </div>
+                <!-- slide end -->
+                <!-- slide start -->
+                <div class="fnc-slide m--blend-blue">
+                    <a href="{:url('index/business_cooperation')}">
+                        <div class="fnc-slide__inner">
+                        <div class="fnc-slide__content">
+                            <h2 class="fnc-slide__heading">
+                                <div class="fnc-slide__heading-line">
+                                    <span>豪装</span>
+                                </div>
+                                <div class="fnc-slide__heading-line">
+                                    <span>不豪价</span>
+                                </div>
+                            </h2>
+
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <!-- slide end -->
+            </div>
+
+            <!--底部导航-->
+            <nav class="fnc-nav">
+                <div class="fnc-nav__bgs">
+                    <div class="fnc-nav__bg m--navbg-green m--active-nav-bg"></div>
+                    <div class="fnc-nav__bg m--navbg-dark"></div>
+                    <div class="fnc-nav__bg m--navbg-red"></div>
+                    <div class="fnc-nav__bg m--navbg-blue"></div>
+                </div>
+                <div class="fnc-nav__controls">
+                    <button class="fnc-nav__control">
+                        最新活动
+                        <span class="fnc-nav__control-progress"></span>
+                    </button>
+                    <button class="fnc-nav__control">
+                        样板房征集
+                        <span class="fnc-nav__control-progress"></span>
+                    </button>
+                    <button class="fnc-nav__control">
+                        大全包
+                        <span class="fnc-nav__control-progress"></span>
+                    </button>
+                    <button class="fnc-nav__control">
+                        招商加盟
+                        <span class="fnc-nav__control-progress"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <!-- slider end -->
+
+    </div>
+    <!--banner 结束-->
+    <!--媒体新闻 开始-->
+    <div class="section section1 hidden-xs" id="tvShow">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="text-r">全国主流媒体深度推荐品牌</h1>
+                    <p class="text-r"><span id="bg_red">全国各地媒体实时报道</span></p>
+                    <p class="text-r">用品质见证盛腾</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 tv_bg">
+                    <video src="http://0551shengteng.cn/Public/images/zaijia/599a9d215117a.mp4" controls >你的浏览器不支持html5播放</video>
+                    <video src="__ROOT__/uploads/shengteng-group.mp4" controls>你的浏览器不支持html5播放</video>
+                    <video src="__ROOT__/uploads/shengteng-group.mp4" controls>你的浏览器不支持html5播放</video>
+                    <video src="__ROOT__/uploads/shengteng-group.mp4" controls>你的浏览器不支持html5播放</video>
+                    <video src="__ROOT__/uploads/shengteng-group.mp4" controls>你的浏览器不支持html5播放</video>
+                    <video src="__ROOT__/uploads/shengteng-group.mp4" controls>你的浏览器不支持html5播放</video>
+                    <video src="__ROOT__/uploads/shengteng-group.mp4" controls>你的浏览器不支持html5播放</video>
+                </div>
+                <div class="col-sm-3 tvs col-sm-offset-1">
+                    <ul>
+                        <li class="active"><img src="__IMG__/index/anhuiTv-active.png" alt=""></li>
+                        <li><img src="__IMG__/index/zhejiangTv.png" alt=""></li>
+                        <li><img src="__IMG__/index/education_technology.png" alt=""></li>
+                        <li><img src="__IMG__/index/yantaiTv.png" alt=""></li>
+                        <li><img src="__IMG__/index/bengbuTv.png" alt=""></li>
+                        <li><img src="__IMG__/index/hebeiTv.png" alt=""></li>
+                        <li><img src="__IMG__/index/neimengguTv.png" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--媒体新闻 结束-->
+
+    <!--工厂价直达你家 开始-->
+    <div class="section section2 hidden-xs" >
+        <div class="col-sm-12">
+            <img src="__IMG__/index/section2_item01.png" alt="" class="">
+            <img src="__IMG__/index/section2_item02.png" alt="" class="">
+            <img src="__IMG__/index/section2_item03.png" alt="飞机" class="wow bounceInDown">
+            <img src="__IMG__/index/section2_item04.png" alt="" class="">
+            <img src="__IMG__/index/section2_item05.png" alt="工厂价" class="wow bounceInLeft">
+            <img src="__IMG__/index/section2_item06.png" alt="" class="">
+
+        </div>
+    </div>
+    <!--工厂价直达你家 结束-->
+
+    <!--真正的全包豪装-->
+    <div class="section section3 hidden-xs" >
+        <div class="slide_text">
+            <ul class="clearfix">
+                <li>1.8米大床</li>
+                <li>床屏</li>
+                <li>床箱</li>
+                <li>床头柜</li>
+                <li>大衣柜</li>
+                <li>单开</li>
+                <li>单开</li>
+                <li>双开</li>
+                <li>单开双控</li>
+                <li>水电开槽</li>
+                <li>水管</li>
+                <li>电管</li>
+                <li>电线</li>
+                <li>螺栓管</li>
+                <li>弯头</li>
+                <li>线槽粉平</li>
+                <li>水泥</li>
+                <li>沙子</li>
+                <li>人工</li>
+                <li>铺满木地板</li>
+                <li>木地板扣条</li>
+                <li>收边条</li>
+                <li>防潮垫</li>
+                <li>胶水</li>
+                <li>钉子</li>
+                <li>钉子踢脚线</li>
+                <li>人工费</li>
+                <li>床头柜</li>
+                <li>大衣柜</li>
+                <li>实木复合免漆门</li>
+                <li>一张餐桌</li>
+                <li>六把餐椅</li>
+                <li>六把餐椅</li>
+                <li>主照明</li>
+                <li>筒灯</li>
+                <li>筒灯</li>
+                <li>毛巾架</li>
+                <li>抽纸盒</li>
+                <li>皂液器</li>
+                <li>五金件</li>
+                <li>五金件</li>
+                <li>1.5米大床</li>
+                <li>床头柜</li>
+                <li>1.8米大床</li>
+                <li>床屏</li>
+                <li>床箱</li>
+                <li>床头柜</li>
+                <li>大衣柜</li>
+                <li>大衣柜</li>
+                <li>带裤抽</li>
+                <li>抽屉</li>
+                <li>烤漆门</li>
+                <li>门锁</li>
+                <li>门吸</li>
+                <li>合页</li>
+                <li>门套 </li>
+                <li>压条</li>
+                <li>局部找平</li>
+                <li>水泥</li>
+                <li>砂浆</li>
+                <li>人工</li>
+                <li>插座</li>
+                <li>底盒</li>
+                <li>开关</li>
+                <li>双开</li>
+                <li>单开双控</li>
+                <li>水电开槽</li>
+                <li>水管</li>
+                <li>电管</li>
+                <li>电线</li>
+                <li>螺栓管</li>
+                <li>弯头</li>
+                <li>线槽粉平</li>
+                <li>水泥</li>
+                <li>沙子</li>
+                <li>大衣柜</li>
+                <li>带裤抽</li>
+                <li>抽屉</li>
+                <li>烤漆门</li>
+                <li>门锁</li>
+                <li>门吸</li>
+                <li>合页</li>
+                <li>门套 </li>
+                <li>压条</li>
+                <li>局部找平</li>
+                <li>水泥</li>
+                <li>砂浆</li>
+                <li>人工</li>
+                <li>插座</li>
+                <li>底盒</li>
+                <li>开关</li>
+                <li>人工</li>
+                <li>铺满木地板</li>
+                <li>木地板扣条</li>
+                <li>收边条</li>
+                <li>防潮垫</li>
+                <li>胶水</li>
+                <li>钉子</li>
+                <li>钉子踢脚线</li>
+                <li>人工费</li>
+                <li>坐便器</li>
+                <li>淋雨花洒</li>
+                <li>淋雨隔断</li>
+                <li>淋雨隔断挡水台</li>
+                <li>浴室柜</li>
+                <li>上水软管</li>
+                <li>角阀</li>
+                <li>龙头</li>
+                <li>浴室镜</li>
+                <li>水电开槽</li>
+                <li>线槽粉平</li>
+                <li>局部找平</li>
+                <li>防水处理</li>
+                <li>门槛石</li>
+                <li>地漏</li>
+                <li>红砖包下水管</li>
+                <li>满铺防滑地砖</li>
+                <li>墙砖</li>
+                <li>防水门</li>
+                <li>门锁</li>
+                <li>门吸、合页</li>
+                <li>门套</li>
+                <li>插座</li>
+                <li>插座开关</li>
+                <li>集成吊顶</li>
+                <li>吊筋</li>
+                <li>照明模块</li>
+                <li>辅料</li>
+                <li>油工</li>
+                <li>腻子粉</li>
+                <li>石膏粉</li>
+                <li>砂纸打磨</li>
+                <li>乳胶漆</li>
+                <li>局部找平</li>
+                <li>搬运工</li>
+                <li>运输费</li>
+                <li>安装费</li>
+                <li>自攻钉</li>
+                <li>防锈漆</li>
+                <li>轻钢龙骨</li>
+                <li>吊筋</li>
+                <li>主龙骨</li>
+                <li>副龙骨</li>
+                <li>边骨</li>
+                <li>瓦工</li>
+                <li>水泥</li>
+                <li>黄沙</li>
+                <li>木工</li>
+                <li>集成吊顶</li>
+                <li>吊筋</li>
+                <li>照明模块</li>
+                <li>毛巾架</li>
+                <li>抽纸盒</li>
+                <li>皂液器</li>
+                <li>五金件</li>
+                <li>五金件</li>
+                <li>1.5米大床</li>
+                <li>床头柜</li>
+                <li>1.8米大床</li>
+                <li>床屏</li>
+                <li>床箱</li>
+                <li>水泥</li>
+                <li>黄沙</li>
+                <li>安装工</li>
+                <li>清洁工</li>
+                <li>防水</li>
+                <li>打压检验</li>
+                <li>水管</li>
+                <li>电管</li>
+                <li>电线</li>
+                <li>网线</li>
+                <li>有限电视线</li>
+                <li>水电工</li>
+                <li>辅料</li>
+                <li>木工板</li>
+                <li>石膏板</li>
+                <li>纸绷带</li>
+                <li>木工</li>
+                <li>集成吊顶</li>
+                <li>吊筋</li>
+                <li>照明模块</li>
+                <li>毛巾架</li>
+                <li>抽纸盒</li>
+                <li>皂液器</li>
+                <li>五金件</li>
+                <li>五金件</li>
+                <li>床头柜</li>
+                <li>大衣柜</li>
+                <li>大衣柜</li>
+                <li>带裤抽</li>
+                <li>抽屉</li>
+                <li>烤漆门</li>
+                <li>吊筋</li>
+                <li>照明模块</li>
+                <li>毛巾架</li>
+                <li>抽纸盒</li>
+                <li>皂液器</li>
+                <li>五金件</li>
+                <li>1.5米大床</li>
+                <li>床头柜</li>
+                <li>1.8米大床</li>
+                <li>床屏</li>
+                <li>床箱</li>
+                <li>水泥</li>
+                <li>黄沙</li>
+                <li>木工</li>
+                <li>集成吊顶</li>
+                <li>吊筋</li>
+                <li>照明模块</li>
+                <li>毛巾架</li>
+                <li>抽纸盒</li>
+                <li>皂液器</li>
+                <li>水泥</li>
+                <li>黄沙</li>
+                <li>木工</li>
+                <li>集成吊顶</li>
+                <li>吊筋</li>
+                <li>照明模块</li>
+                <li>毛巾架</li>
+                <li>抽纸盒</li>
+                <li>皂液器</li>
+                <li>五金件</li>
+                <li>五金件</li>
+                <li>1.5米大床</li>
+                <li>床头柜</li>
+                <li>1.8米大床</li>
+                <li>床屏</li>
+                <li>床箱</li>
+                <li>水泥</li>
+                <li>满铺防滑地砖</li>
+                <li>墙砖</li>
+                <li>防水门</li>
+                <li>门锁</li>
+                <li>门吸、合页</li>
+                <li>门套</li>
+                <li>插座</li>
+                <li>插座开关</li>
+                <li>集成吊顶</li>
+                <li>吊筋</li>
+                <li>照明模块</li>
+                <li>辅料</li>
+                <li>油工</li>
+                <li>腻子粉</li>
+                <li>石膏粉</li>
+                <li>砂纸打磨</li>
+                <li>乳胶漆</li>
+                <li>局部找平</li>
+                <li>搬运工</li>
+                <li>运输费</li>
+                <li>安装费</li>
+                <li>自攻钉</li>
+                <li>防锈漆</li>
+                <li>轻钢龙骨</li>
+                <li>吊筋</li>
+                <li>主龙骨</li>
+                <li>副龙骨</li>
+                <li>边骨</li>
+                <li>瓦工</li>
+                <li>水泥</li>
+                <li>黄沙</li>
+                <li>木工</li>
+                <li>集成吊顶</li>
+                <li>吊筋</li>
+                <li>照明模块</li>
+
+                <li>电管</li>
+                <li>电线</li>
+                <li>螺栓管</li>
+                <li>弯头</li>
+                <li>线槽粉平</li>
+                <li>水泥</li>
+                <li>沙子</li>
+                <li>大衣柜</li>
+                <li>带裤抽</li>
+                <li>抽屉</li>
+                <li>烤漆门</li>
+                <li>门锁</li>
+                <li>门吸</li>
+                <li>合页</li>
+                <li>门套 </li>
+                <li>压条</li>
+                <li>局部找平</li>
+                <li>水泥</li>
+                <li>砂浆</li>
+                <li>人工</li>
+                <li>插座</li>
+                <li>底盒</li>
+                <li>开关</li>
+                <li>人工</li>
+                <li>铺满木地板</li>
+                <li>木地板扣条</li>
+                <li>收边条</li>
+                <li>防潮垫</li>
+                <li>胶水</li>
+                <li>钉子</li>
+                <li>钉子踢脚线</li>
+                <li>人工费</li>
+                <li>坐便器</li>
+                <li>淋雨花洒</li>
+                <li>淋雨隔断</li>
+                <li>淋雨隔断挡水台</li>
+                <li>浴室柜</li>
+                <li>上水软管</li>
+                <li>角阀</li>
+                <li>龙头</li>
+                <li>浴室镜</li>
+                <li>水电开槽</li>
+                <li>线槽粉平</li>
+                <li>局部找平</li>
+                <li>防水处理</li>
+                <li>门槛石</li>
+                <li>地漏</li>
+                <li>红砖包下水管</li>
+                <li>满铺防滑地砖</li>
+                <li>墙砖</li>
+                <li>防水门</li>
+                <li>门锁</li>
+                <li>门吸、合页</li>
+                <li>门套</li>
+                <li>插座</li>
+                <li>插座开关</li>
+                <li>集成吊顶</li>
+                <li>吊筋</li>
+                <li>照明模块</li>
+                <li>辅料</li>
+                <li>油工</li>
+                <li>腻子粉</li>
+                <li>石膏粉</li>
+                <li>砂纸打磨</li>
+                <li>乳胶漆</li>
+                <li>局部找平</li>
+                <li>搬运工</li>
+                <li>毛巾架</li>
+                <li>抽纸盒</li>
+                <li>皂液器</li>
+                <li>五金件</li>
+                <li>五金件</li>
+                <li>1.5米大床</li>
+                <li>床头柜</li>
+                <li>1.8米大床</li>
+                <li>床屏</li>
+                <li>床箱</li>
+                <li>水泥</li>
+                <li>黄沙</li>
+                <li>安装工</li>
+                <li>清洁工</li>
+                <li>防水</li>
+                <li>打压检验</li>
+                <li>水管</li>
+                <li>电管</li>
+                <li>电线</li>
+                <li>网线</li>
+                <li>有限电视线</li>
+                <li>水电工</li>
+                <li>辅料</li>
+                <li>木工板</li>
+                <li>石膏板</li>
+                <li>纸绷带</li>
+                <li>木工</li>
+                <li>集成吊顶</li>
+                <li>吊筋</li>
+                <li>照明模块</li>
+                <li>毛巾架</li>
+                <li>抽纸盒</li>
+                <li>皂液器</li>
+                <li>五金件</li>
+                <li>五金件</li>
+                <li>床头柜</li>
+                <li>大衣柜</li>
+                <li>大衣柜</li>
+                <li>带裤抽</li>
+                <li>抽屉</li>
+                <li>烤漆门</li>
+                <li>吊筋</li>
+                <li>照明模块</li>
+                <li>毛巾架</li>
+                <li>抽纸盒</li>
+                <li>皂液器</li>
+                <li>五金件</li>
+                <li>1.5米大床</li>
+                <li>床头柜</li>
+                <li>1.8米大床</li>
+                <li>床屏</li>
+                <li>床箱</li>
+                <li>水泥</li>
+                <li>黄沙</li>
+                <li>木工</li>
+                <li>集成吊顶</li>
+                <li>吊筋</li>
+                <li>照明模块</li>
+                <li>毛巾架</li>
+                <li>抽纸盒</li>
+                <li>皂液器</li>
+                <li>地漏</li>
+                <li>红砖包下水管</li>
+                <li>满铺防滑地砖</li>
+                <li>墙砖</li>
+                <li>防水门</li>
+                <li>门锁</li>
+                <li>门吸、合页</li>
+                <li>门套</li>
+                <li>插座</li>
+                <li>插座开关</li>
+                <li>集成吊顶</li>
+                <li>吊筋</li>
+                <li>照明模块</li>
+                <li>辅料</li>
+                <li>油工</li>
+                <li>腻子粉</li>
+                <li>石膏粉</li>
+                <li>砂纸打磨</li>
+                <li>乳胶漆</li>
+                <li>局部找平</li>
+                <li>搬运工</li>
+                <li>运输费</li>
+                <li>安装费</li>
+                <li>自攻钉</li>
+                <li>防锈漆</li>
+                <li>轻钢龙骨</li>
+                <li>吊筋</li>
+                <li>主龙骨</li>
+                <li>副龙骨</li>
+                <li>边骨</li>
+                <li>瓦工</li>
+                <li>水泥</li>
+                <li>黄沙</li>
+                <li>木工</li>
+                <li>集成吊顶</li>
+                <li>吊筋</li>
+                <li>照明模块</li>
+                <li>毛巾架</li>
+                <li>抽纸盒</li>
+                <li>皂液器</li>
+                <li>五金件</li>
+                <li>五金件</li>
+                <li>1.5米大床</li>
+                <li>床头柜</li>
+                <li>1.8米大床</li>
+                <li>床屏</li>
+                <li>床箱</li>
+                <li>水泥</li>
+                <li>黄沙</li>
+                <li>安装工</li>
+                <li>清洁工</li>
+                <li>防水</li>
+                <li>打压检验</li>
+                <li>水管</li>
+                <li>电管</li>
+                <li>电线</li>
+                <li>网线</li>
+                <li>有限电视线</li>
+                <li>水电工</li>
+                <li>辅料</li>
+                <li>木工板</li>
+                <li>石膏板</li>
+                <li>纸绷带</li>
+                <li>木工</li>
+                <li>集成吊顶</li>
+                <li>吊筋</li>
+                <li>照明模块</li>
+                <li>毛巾架</li>
+                <li>抽纸盒</li>
+                <li>皂液器</li>
+                <li>五金件</li>
+                <li>五金件</li>
+                <li>床头柜</li>
+                <li>大衣柜</li>
+                <li>大衣柜</li>
+                <li>带裤抽</li>
+                <li>抽屉</li>
+                <li>烤漆门</li>
+                <li>吊筋</li>
+                <li>照明模块</li>
+                <li>毛巾架</li>
+                <li>抽纸盒</li>
+                <li>皂液器</li>
+                <li>五金件</li>
+                <li>1.5米大床</li>
+                <li>床头柜</li>
+                <li>1.8米大床</li>
+                <li>床屏</li>
+                <li>床箱</li>
+                <li>水泥</li>
+                <li>黄沙</li>
+                <li>木工</li>
+                <li>集成吊顶</li>
+                <li>吊筋</li>
+                <li>照明模块</li>
+                <li>毛巾架</li>
+                <li>抽纸盒</li>
+                <li>皂液器</li>
+                <li>水泥</li>
+                <li>黄沙</li>
+                <li>木工</li>
+                <li>1.8米大床</li>
+                <li>床屏</li>
+                <li>床箱</li>
+                <li>床头柜</li>
+                <li>大衣柜</li>
+                <li>单开</li>
+                <li>单开</li>
+                <li>双开</li>
+                <li>单开双控</li>
+                <li>水电开槽</li>
+                <li>水管</li>
+                <li>电管</li>
+                <li>电线</li>
+                <li>螺栓管</li>
+                <li>弯头</li>
+                <li>线槽粉平</li>
+                <li>水泥</li>
+                <li>沙子</li>
+                <li>人工</li>
+                <li>铺满木地板</li>
+                <li>木地板扣条</li>
+                <li>收边条</li>
+                <li>防潮垫</li>
+                <li>胶水</li>
+                <li>钉子</li>
+                <li>钉子踢脚线</li>
+                <li>人工费</li>
+                <li>床头柜</li>
+                <li>大衣柜</li>
+                <li>实木复合免漆门</li>
+                <li>一张餐桌</li>
+                <li>六把餐椅</li>
+                <li>六把餐椅</li>
+                <li>主照明</li>
+                <li>筒灯</li>
+                <li>筒灯</li>
+                <li>毛巾架</li>
+                <li>抽纸盒</li>
+                <li>皂液器</li>
+                <li>五金件</li>
+                <li>五金件</li>
+                <li>1.5米大床</li>
+                <li>床头柜</li>
+                <li>1.8米大床</li>
+                <li>床屏</li>
+                <li>床箱</li>
+                <li>床头柜</li>
+                <li>大衣柜</li>
+                <li>大衣柜</li>
+                <li>带裤抽</li>
+                <li>抽屉</li>
+                <li>烤漆门</li>
+                <li>门锁</li>
+                <li>门吸</li>
+                <li>合页</li>
+                <li>门套 </li>
+                <li>压条</li>
+                <li>局部找平</li>
+                <li>水泥</li>
+                <li>砂浆</li>
+                <li>人工</li>
+                <li>插座</li>
+                <li>底盒</li>
+                <li>开关</li>
+                <li>双开</li>
+                <li>单开双控</li>
+                <li>水电开槽</li>
+                <li>水管</li>
+                <li>运输费</li>
+                <li>安装费</li>
+                <li>自攻钉</li>
+                <li>防锈漆</li>
+                <li>轻钢龙骨</li>
+                <li>吊筋</li>
+                <li>主龙骨</li>
+                <li>副龙骨</li>
+                <li>边骨</li>
+                <li>瓦工</li>
+                <li>水泥</li>
+                <li>黄沙</li>
+                <li>木工</li>
+                <li>集成吊顶</li>
+                <li>吊筋</li>
+                <li>照明模块</li>
+                <li>毛巾架</li>
+                <li>抽纸盒</li>
+                <li>皂液器</li>
+                <li>五金件</li>
+                <li>五金件</li>
+                <li>1.5米大床</li>
+                <li>床头柜</li>
+                <li>1.8米大床</li>
+                <li>床屏</li>
+                <li>床箱</li>
+                <li>水泥</li>
+                <li>黄沙</li>
+                <li>安装工</li>
+                <li>清洁工</li>
+                <li>防水</li>
+                <li>打压检验</li>
+                <li>水管</li>
+                <li>电管</li>
+                <li>电线</li>
+                <li>网线</li>
+                <li>有限电视线</li>
+                <li>水电工</li>
+                <li>辅料</li>
+                <li>木工板</li>
+                <li>石膏板</li>
+                <li>纸绷带</li>
+                <li>木工</li>
+                <li>集成吊顶</li>
+                <li>吊筋</li>
+                <li>照明模块</li>
+                <li>毛巾架</li>
+                <li>抽纸盒</li>
+                <li>皂液器</li>
+                <li>五金件</li>
+                <li>床头柜</li>
+                <li>大衣柜</li>
+
+            </ul>
+        </div>
+
+
+        <div class="center">
+            <img src="__IMG__/index/section3_item02.png" alt="字" class="wow zoomInDown">
+            <h2>人工、基材、主材、家具连水龙头都包了</h2>
+            <h4>不让您多买一粒沙一颗钉</h4>
+        </div>
+        <div class="center">
+            <img src="__IMG__/index/section3_item01.png" alt="床" class="animated infinite bounce">
+        </div>
+        <div class="center">
+            <img src="__IMG__/index/section3_item03.png" alt="光" class="animated infinite flash">
+        </div>
+
+    </div>
+
+    <!--白皮书-->
+    <div class="section section4 hidden-xs" >
+        <div class="container">
+            <div class="center">
+                <div class="row">
+                    <img src="__IMG__/index/section4_item09.png" alt="" class="animated infinite flip">
+                </div>
+                <div id="r1">
+                    <img src="__IMG__/index/section4_item02.png" alt="" >
+                </div>
+            </div>
+            <br>
+            <div class="row center">
+                <p>盛腾按 <b>白皮书ISO9001规范施工</b></p>
+                <p>施工为设计效果保驾护航</p>
+            </div>
+            <br>
+            <div class="row section4_hover">
+                <div class="col-sm-4"><img src="__IMG__/index/section4_item04.png" alt=""></div>
+                <div class="col-sm-4"><img src="__IMG__/index/section4_item05.png" alt=""></div>
+                <div class="col-sm-4"><img src="__IMG__/index/section4_item06.png" alt=""></div>
+            </div>
+            <div class="row section4_hover">
+                <div class="col-sm-4 col-sm-offset-2"><img src="__IMG__/index/section4_item07.png" alt=""></div>
+                <div class="col-sm-6"><img src="__IMG__/index/section4_item08.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+
+    <!--大牌联手 品质升级-->
+    <div class="section section5 hidden-xs">
+        <img src="__IMG__/index/section5_item01.png" alt="大牌联手、品质升级" class="active">
+    </div>
+</div>
+<!--pc 端显示的内容 结束-->
+{/block}
+
+{block name="custom_js"}
+<script>
+    $(document).ready(function () {
+        $('.section4_hover img').addClass('wow bounceInLeft');
+        $('.section5_hover img').addClass('wow rotateIn');
+
+        // 初始化wow 动画
+        new WOW().init();
+
+
+//        随机整数
+        function rnd(n, m){
+            var random = Math.floor(Math.random()*(m-n+1)+n);
+            return random;
+        }
+
+
+        var section3 = jQuery('.section3').offset().top - 1000;
+
+        $(window).scroll(function(){
+            if ($(document).scrollTop() > section3){
+                var li = $(".section3 ul li");
+                li.eq(rnd(0,li.length)).addClass("active animated flash infinite");
+                li.eq(rnd(0,li.length)).addClass("active animated flash infinite");
+                li.eq(rnd(0,li.length)).addClass("active animated flash infinite");
+                li.eq(rnd(0,li.length)).addClass("active animated flash infinite");
+
+                // setInterval(function () {
+                //
+                // },2000);
+
+                // setInterval(function () {
+                //     li.eq(rnd(0,li.length)).css("color","rgba(255,255,255,.15)");
+                // },700);
+            }
+    });
+
+        //section4 白皮书 鼠标经过 动画
+        $('.section4_hover img,.section5_hover img').hover(function () {
+            $(this).removeAttr("style");
+            $(this).removeClass('wow bounceInLeft');
+            $(this).removeClass('wow rotateIn');
+            $(this).addClass('animated pulse');
+        },function () {
+            $(this).removeClass('animated pulse');
+        });
+
+
+        //section1 选择电视节目媒体（Tab切换）
+        $('.section1 ul li').click(function () {
+            $('video').trigger('pause');
+            var imgArray_active = [
+                "__IMG__/index/anhuiTv-active.png","__IMG__/index/zhejiangTv-active.png",
+                "__IMG__/index/education_technology-active.png",
+                "__IMG__/index/yantaiTv-active.png","__IMG__/index/bengbuTv-active.png",
+                "__IMG__/index/hebeiTv-active.png","__IMG__/index/neimengguTv-active.png"
+            ];
+            var imgArray = [
+                "__IMG__/index/anhuiTv.png","__IMG__/index/zhejiangTv.png",
+                "__IMG__/index/education_technology.png",
+                "__IMG__/index/yantaiTv.png","__IMG__/index/bengbuTv.png",
+                "__IMG__/index/hebeiTv.png","__IMG__/index/neimengguTv.png"
+            ];
+            var i = $(this).index();//定义下标
+            $(this).addClass("active").siblings().removeClass("active");//当前点击添加 active 类,其余兄弟元素移除 active 类
+            $('#tvShow').find('video').eq(i).show().siblings().hide();//显示当前Tab对应的 video ，其他隐藏
+            $('.section1 ul li').eq(i).find('img').attr('src',imgArray_active[i]);
+
+
+            switch (i) {
+                case 0:
+                    $('.section1 ul li').eq(1).find('img').attr('src',imgArray[1]);
+                    $('.section1 ul li').eq(2).find('img').attr('src',imgArray[2]);
+                    $('.section1 ul li').eq(3).find('img').attr('src',imgArray[3]);
+                    $('.section1 ul li').eq(4).find('img').attr('src',imgArray[4]);
+                    $('.section1 ul li').eq(5).find('img').attr('src',imgArray[5]);
+                    $('.section1 ul li').eq(6).find('img').attr('src',imgArray[6]);
+                    break;
+
+                case 1:
+                    $('.section1 ul li').eq(0).find('img').attr('src',imgArray[0]);
+                    $('.section1 ul li').eq(2).find('img').attr('src',imgArray[2]);
+                    $('.section1 ul li').eq(3).find('img').attr('src',imgArray[3]);
+                    $('.section1 ul li').eq(4).find('img').attr('src',imgArray[4]);
+                    $('.section1 ul li').eq(5).find('img').attr('src',imgArray[5]);
+                    $('.section1 ul li').eq(6).find('img').attr('src',imgArray[6]);
+                    break;
+
+                case 2:
+                    $('.section1 ul li').eq(0).find('img').attr('src',imgArray[0]);
+                    $('.section1 ul li').eq(1).find('img').attr('src',imgArray[1]);
+                    $('.section1 ul li').eq(3).find('img').attr('src',imgArray[3]);
+                    $('.section1 ul li').eq(4).find('img').attr('src',imgArray[4]);
+                    $('.section1 ul li').eq(5).find('img').attr('src',imgArray[5]);
+                    $('.section1 ul li').eq(6).find('img').attr('src',imgArray[6]);
+
+                    break;
+
+                case 3:
+                    $('.section1 ul li').eq(0).find('img').attr('src',imgArray[0]);
+                    $('.section1 ul li').eq(1).find('img').attr('src',imgArray[1]);
+                    $('.section1 ul li').eq(2).find('img').attr('src',imgArray[2]);
+                    $('.section1 ul li').eq(4).find('img').attr('src',imgArray[4]);
+                    $('.section1 ul li').eq(5).find('img').attr('src',imgArray[5]);
+                    $('.section1 ul li').eq(6).find('img').attr('src',imgArray[6]);
+                    break;
+
+                case 4:
+                    $('.section1 ul li').eq(0).find('img').attr('src',imgArray[0]);
+                    $('.section1 ul li').eq(1).find('img').attr('src',imgArray[1]);
+                    $('.section1 ul li').eq(2).find('img').attr('src',imgArray[2]);
+                    $('.section1 ul li').eq(3).find('img').attr('src',imgArray[3]);
+                    $('.section1 ul li').eq(5).find('img').attr('src',imgArray[5]);
+                    $('.section1 ul li').eq(6).find('img').attr('src',imgArray[6]);
+                    break;
+
+                case 5:
+                    $('.section1 ul li').eq(0).find('img').attr('src',imgArray[0]);
+                    $('.section1 ul li').eq(1).find('img').attr('src',imgArray[1]);
+                    $('.section1 ul li').eq(2).find('img').attr('src',imgArray[2]);
+                    $('.section1 ul li').eq(3).find('img').attr('src',imgArray[3]);
+                    $('.section1 ul li').eq(4).find('img').attr('src',imgArray[4]);
+                    $('.section1 ul li').eq(6).find('img').attr('src',imgArray[6]);
+                    break;
+
+                case 6:
+                    $('.section1 ul li').eq(0).find('img').attr('src',imgArray[0]);
+                    $('.section1 ul li').eq(1).find('img').attr('src',imgArray[1]);
+                    $('.section1 ul li').eq(2).find('img').attr('src',imgArray[2]);
+                    $('.section1 ul li').eq(3).find('img').attr('src',imgArray[3]);
+                    $('.section1 ul li').eq(4).find('img').attr('src',imgArray[4]);
+                    $('.section1 ul li').eq(5).find('img').attr('src',imgArray[5]);
+                    break;
+                default:
+                    break;
+            }
+
+        });
+
+        //section5 图片自动播放
+        var imgArray = ["__IMG__/index/section5_item02.png", "__IMG__/index/section5_item01.png"];
+        var index=0;
+        setInterval(function(){
+            $(".section5 img").attr("src",imgArray[index]);
+            if(index>=imgArray.length){
+                index=0;
+            }
+            else{
+                index++;
+            }
+        },3000);
+
+
+    });
+</script>
+
+{/block}

@@ -1,0 +1,28 @@
+{extend name="tpl/base"}
+{block name="custom_css"}
+<!--<link rel="stylesheet" href="__CSS__/comments.css">-->
+{/block}
+{block name="title"}品质工程{/block}
+
+{block name="content"}
+<div class="top-full-img">
+    <img src="__IMG__/quality_engineering/QualityEngineering.jpg" alt="">
+</div>
+
+{/block}
+
+{block name="custom_js"}
+<script>
+    <!--导航菜单-->
+    $('header nav ul li').removeClass('active');
+    $('header nav ul li:eq(4)').addClass('active');
+
+//全屏图片样式
+    $('.top-full-img img').css('width','100%');
+
+
+
+
+
+</script>
+{/block}

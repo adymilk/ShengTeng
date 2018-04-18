@@ -1,0 +1,259 @@
+{extend name="tpl/base"}
+{block name="custom_css"}
+{/block}
+{block name="title"}招商加盟{/block}
+
+{block name="content"}
+<style>
+   .top, section{
+        color: white;
+    }
+    section{
+        width: 100%;
+        background-size: inherit;
+        background: no-repeat;
+    }
+    .section2{
+        height: 746px;
+        -o-background-size: cover;
+        background: url("__IMG__/index/business_cooperation-1.png") center;
+    }
+    .section2 h1{
+        font-size: 3rem;
+    }
+    .section2 p{
+        font-size: 1.6rem;
+        color: white;
+    }
+    .section3{
+        height: 888px;
+        background: url("__IMG__/index/business_cooperation-2.png") center;
+        position: relative;
+    }
+    .section4{
+        height: 888px;
+        background: url("__IMG__/index/business_cooperation-3.png") center no-repeat;
+        position: relative;
+        background-size: cover;
+    }
+    .section4 .media_wrap{
+        position: relative;
+        height: 691px;
+        background: url("__IMG__/index/business_cooperation-3_1.png") center no-repeat;
+    }
+    .section5{
+        height: 845px;
+        background: url("__IMG__/index/business_cooperation-4.png") center no-repeat;
+    }
+    .section6{
+        height: 1557px;
+        background: url("__IMG__/index/business_cooperation-5.png") center no-repeat;
+    }
+    .section7{
+        height: 1071px;
+        background: url("__IMG__/index/business_cooperation-6.png") center no-repeat;
+    }
+
+    .top video{
+        overflow-y: hidden;
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: auto;
+        filter: blur(2px);
+        -webkit-filter: blur(2px);
+        -moz-filter: blur(2px);
+        -ms-filter: blur(2px);
+        -o-filter: blur(2px);
+    }
+    .top{
+        background-size: cover;
+        display: table;
+        width: 100%;
+        position: relative;
+    }
+    .top .lines{
+        border-top:1px solid white ;
+        border-bottom: 1px solid white;
+        display: inline-block;
+        margin: 0 auto;
+        padding: 2px 0;
+    }
+    .text-wrap{
+        margin: 10%;
+    }
+        .top{
+            height: 500px;
+        }
+        h2{
+            font-size: 3rem;
+        }
+
+        h1{
+            font-size:7rem;
+        }
+
+
+    @media screen and (max-width: 767px){
+        .top{
+            height: auto;
+        }
+        h1{
+            font-size: 2.2rem;
+        }
+        h2{
+            display: inline-block;
+            font-size: 2rem;
+        }
+    }
+
+    .section3 .location{
+        position: absolute;
+        width: 500px;
+        right: 18%;
+        bottom: 251px;
+    }
+
+    .section3 .location img:first-child{
+        position: absolute;
+        bottom: -35px;
+        right: 299px;
+    }
+    .section3 .location img:nth-child(2){
+        position: absolute;
+        right: 390px;
+        bottom: -45px;
+    }
+    .section3 .location img:nth-child(3){
+        position: absolute;
+        right: 360px;
+        bottom: -60px;
+    }
+    .section3 .location img:last-child{
+        position: absolute;
+        right: 310px;
+        bottom: -60px;
+    }
+    .section3 .location img:nth-child(5){
+        position: absolute;
+        right: 390px;
+        bottom: -60px;
+    }
+    .section3 .location img:nth-child(4){
+        position: absolute;
+        right: 340px;
+        bottom: -75px;
+    }
+    /*咨询按钮*/
+    .consult{
+        color: white;
+        background-color: #3385FF;
+        padding: 10px 18px;
+        border-radius: 20px;
+        font-size: 1.6rem;
+    }
+</style>
+
+<!--video-->
+<div class="top">
+    <video src="http://www.yidengxuetang.com/recruit/images/bg.mp4" autoplay loop></video>
+    <div class="text-wrap">
+        <div class="row center">
+            <h2 class="lines">盛腾家装 - 让家装变得更省心</h2>
+        </div>
+        <br>
+        <div class="row">
+            <h1 class="center">盛腾家装科技集团招商加盟</h1>
+            <h2 class="center">盛腾家装，已遍布全国 7 大城市</h2>
+            <p class="center"><span class="btn consult">招商加盟咨询</span></p>
+        </div>
+    </div>
+
+</div>
+
+<!--盛腾简介-->
+<section class="section2">
+    <div class="container" style="position: relative; height: 100%">
+        <div class="row" style="position: absolute; top: 13%;">
+            <div class="col-md-6 col-xs-10 col-xs-offset-1">
+                <h1>盛腾简介</h1>
+                <br>
+                <p>
+                    中国家装航母——盛腾家装科技集团以“工厂化模式、工厂价装修”的模式问世以来，彻底颠覆了传统家装行业的格局，其超前的第六代“买”家模式，通过打通家装行业上下游供应链，整合所有家装环节和要素，构建一站式泛家居平台。设计、施工、监理、安装、物流、保洁等统统全包，人工、基材、主材、全房卫浴、全房软装、灯具、窗帘、整体厨房、橱柜等全部包含，预算等于决算，施工途中不加一分钱，让老百姓真正省钱、省心、更省力！
+                    我们旨在打造中国最大的“移动互联网+实体店”家装平台，以全新的营销模式、全新的售后服务体系，服务于更多的业主。目前，盛腾已经布局全国，华中、华南、华北、西北、华东都有盛腾人忙碌的身影。2017年，集团公司规划未来3年内在全国开设30多个年产值过亿元的家装工厂店，打造全新的共享家装经济新形态，让全中国的业主一起分享盛腾家装新公社带来的实惠，将省钱进行到底！
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--全国布局店面展示-->
+<section class="section3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-offset-1">
+                <h1>全国布局店面展示</h1>
+                <div class="col-md-6">
+                    <img src="__IMG__/index/business_cooperation-2_2.png" alt="" class="img-responsive" style="height: 191px">
+                </div>
+                <div class="col-md-6">
+                    <img src="__IMG__/index/business_cooperation-2_3.png" alt="" class="img-responsive">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 location ">
+                <img src="__IMG__/index/business_cooperation-2_1.png" alt=""><span style="color: white; position: absolute; right: 290px; ">蚌埠</span>
+                <img src="__IMG__/index/business_cooperation-2_1.png" alt=""><span style="color: white; position: absolute; right: 390px; top: -10px;">杭州</span>
+                <img src="__IMG__/index/business_cooperation-2_1.png" alt=""><span style="color: white; position: absolute; right: 490px; top: 30px;">烟台</span>
+                <img src="__IMG__/index/business_cooperation-2_1.png" alt=""><span style="color: white; position: absolute; right: 410px; top: 130px;">石家庄</span>
+                <img src="__IMG__/index/business_cooperation-2_1.png" alt=""><span style="color: white; position: absolute; right: 350px; top: 140px;">呼和浩特</span>
+                <img src="__IMG__/index/business_cooperation-2_1.png" alt=""><span style="color: white; position: absolute; right: 290px; top: 100px;">合肥</span>
+            </div>
+        </div>
+        <div style="border: 1px solid #cccccc; height: 331px;width: 1px; position: absolute; right: 665px; top: 281px;"></div>
+    </div>
+</section>
+<section class="section4">
+    <div class="media_wrap">
+        <div class="container" style="height: 100%">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-2">
+                    <br>
+                    <h2 style="color: #00aef3;">安徽合作媒体</h2>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-12">
+                        <img src="__IMG__/index/business_cooperation-3_5.png" alt="台标" class="img-responsive" style="margin: 15px auto">
+                    </div>
+                </div>
+
+            <div class="row" style="margin-top: 87px;">
+                <div class="col-md-4 col-md-offset-2">
+                    <img src="__IMG__/index/business_cooperation-3_3.png" alt="" style="width: 230px; height: 95px">
+                </div>
+                <div class="col-md-4 col-md-offset-2">
+                    <img src="__IMG__/index/business_cooperation-3_3.png" alt="" style="width: 230px; height: 95px">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section5"></section>
+<section class="section6"></section>
+<section class="section7"></section>
+{/block}
+
+{block name="custom_js"}
+<script>
+    <!--导航菜单-->
+    $('header nav ul li').removeClass('active');
+    $('header nav ul li:eq(0)').addClass('active');
+//    招商加盟咨询
+    $(".section7,.consult").click(function () {
+        $('#nb_icon_wrap').click();
+    });
+</script>
+{/block}

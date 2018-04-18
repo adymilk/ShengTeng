@@ -1,0 +1,23 @@
+a{
+    color: black;
+}
+body{
+    background-color: #ECF0F1;
+}
+.contact_us .card{
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 25px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+.contact_us .row:first-child{
+    margin-top: 54px;
+}
+.contact_us .row:not(:first-child){
+    margin-top: 4px;
+}
+
+.contact_us{
+    margin-bottom: 33px;
+}

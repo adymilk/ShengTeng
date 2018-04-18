@@ -1,0 +1,62 @@
+.table tr:first-child th,.table tr:first-child td{
+    width: 10%;
+}
+.case{
+    box-shadow: 0 6px 13px -11px #a2a2a1;
+    background-color: white;
+    border-radius: 5px;
+}.case .text{
+    padding: 7px;
+ }
+.thumbnail-img img{
+    height: 306px;
+    width: 100%;
+}
+.thumbnail-img div{
+    position: relative;
+    bottom: 30px;
+
+}
+.thumbnail-img span,.thumbnail-img span a{
+    padding: 5px 10px;
+    color: white;
+    border-radius: 0;
+}
+
+.page{
+    margin-top: 66px;
+    margin-bottom: 110px;
+}
+table{
+    border: 1px solid #cccccc;
+}
+
+th{
+    border-right: 1px solid #cccccc;
+    width: 10px;
+}
+
+
+/*设计理念*/
+.designer_introduction{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    color: #cccccc;
+}
+.margin_top{
+    margin-top: 30px;
+}
+.content{
+    margin-top: 34px;
+}
+
+/*顶部案例筛选导航*/
+.case_nav_box tbody tr td a{
+    color: #222222;
+    font-size: 1.5rem;
+    display: block;
+}
+.case_nav_box .active a {
+    color: red;
+}

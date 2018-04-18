@@ -1,0 +1,18 @@
+{extend name="tpl/base"}
+
+<!--样板房 开始-->
+{block name="content"}
+
+{/block}
+<!--样板房 结束-->
+
+
+<!--业务相关 js 结束-->
+{block name="custom_js"}
+<script>
+    $("#menu-article dt").addClass('selected');
+    $("#menu-article dd").show();
+    $("#menu-article dd ul li:eq(3)").addClass("current");
+</script>
+{/block}
+<!--业务相关 js 结束-->

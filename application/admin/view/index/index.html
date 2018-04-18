@@ -1,0 +1,288 @@
+{extend name="tpl/base"}
+<!--后台管理首页 开始-->
+{block name="content"}
+<style>
+    .card{
+        height: 130px;
+        margin: 5px 10px;
+        color: white;
+        border-radius: 4px;
+        padding: 3vw 1vw;
+        font-size: 1.2rem;
+    }
+    .quick_enter .title,.quick_enter .total{
+        float: right;
+    }
+    .quick_enter .total{
+        font-size: 1.6rem;
+    }
+
+    .clearfix{
+        clear: both;
+    }
+</style>
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont"></i> <a href="{:url('Index/index')}" class="maincolor">首页</a>
+        <span class="c-999 en">&gt;</span>
+        <span class="c-666">我的桌面</span>
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <p class="f-20 text-success">欢迎登陆盛腾
+                <span class="f-14">v1.0</span>
+                后台管理系统！</p>
+            <p>登录次数：18 </p>
+            <p>上次登录IP：{$ip} &nbsp; 上次登录时间：{:date('Y-m-d H:i:s',$curTime)}</p>
+
+            <h3 style="border-bottom: 1px solid #cccccc">快捷入口</h3>
+            <div class="quick_enter">
+                <a href="{:url('NewsManager/menu_manager_news')}" title="新闻动态">
+                    <div class="col-md-2 card" style="background-color: #10AEF7">
+                        <img src="__IMG__/comm/news.png" alt="新闻管理">
+                        <span class="title">新闻管理</span>
+                        <div class="clearfix total">{$news_count}</div>
+                    </div></a>
+                <a href="{:url('WebsiteSetting/decoration_case_list')}"><div class="col-md-2 card" style="background-color: #7CC422">
+                    <img src="__IMG__/comm/house.png" alt="新闻管理" >
+                    <span class="title">案例管理</span>
+                    <div class="clearfix total">{$decoration_case_count}</div>
+
+                </div></a>
+                <a href="{:url('DataCenter/order_manager')}" title="预约装修"><div class="col-md-2 card" style="background-color: #FFA060">
+                    <img src="__IMG__/comm/order.png" alt="报名管理" >
+                    <span class="title">报名管理</span>
+                    <div class="clearfix total">{$order_count}</div>
+                    </div></a>
+                <a href="{:url('WebsiteSetting/designer_list')}"><div class="col-md-2 card" style="background-color: #FEC107">
+                    <img src="__IMG__/comm/designer.png" alt="设计师" >
+                    <span class="title">设计师</span>
+                    <div class="clearfix total">{$designer_count}</div>
+                    </div></a>
+                <a href="javascript:void(0)" onClick="modify_banner()"><div class="col-md-2 card" style="background-color: #46D1E4">
+                    <img src="__IMG__/comm/pic.png" alt="banner" >
+                    <span class="title">banner</span>
+                    <div class="clearfix total">4</div>
+                    </div></a>
+            </div>
+
+
+            <table class="table table-border table-bordered table-bg">
+                <thead>
+                <tr>
+                    <th colspan="7" scope="col">信息统计</th>
+                </tr>
+                <tr class="text-c">
+                    <th>统计</th>
+                    <th>资讯库</th>
+                    <th>图片库</th>
+                    <th>产品库</th>
+                    <th>用户</th>
+                    <th>管理员</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="text-c">
+                    <td>总数</td>
+                    <td>92</td>
+                    <td>9</td>
+                    <td>0</td>
+                    <td>8</td>
+                    <td>20</td>
+                </tr>
+                <tr class="text-c">
+                    <td>今日</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr class="text-c">
+                    <td>昨日</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr class="text-c">
+                    <td>本周</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr class="text-c">
+                    <td>本月</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table table-border table-bordered table-bg mt-20">
+                <thead>
+                <tr>
+                    <th colspan="2" scope="col">服务器信息</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th width="30%">服务器计算机名</th>
+                    <td><span id="lbServerName">http://127.0.0.1/</span></td>
+                </tr>
+                <tr>
+                    <td>服务器IP地址</td>
+                    <td>192.168.1.1</td>
+                </tr>
+                <tr>
+                    <td>服务器域名</td>
+                    <td>{$serverMsg.SERVER_NAME}</td>
+                </tr>
+                <tr>
+                    <td>服务器端口 </td>
+                    <td>{$serverMsg.SERVER_PORT}</td>
+                </tr>
+                <tr>
+                    <td>服务器环境 </td>
+                    <td>{$serverMsg.SERVER_SOFTWARE}</td>
+                </tr>
+                <tr>
+                    <td>服务器管理员</td>
+                    <td>{SERVER_ADMIN}</td>
+                </tr>
+                <tr>
+                    <td>服务器操作系统 </td>
+                    <td>Microsoft Windows NT 5.2.3790 Service Pack 2</td>
+                </tr>
+                <tr>
+                    <td>系统所在文件夹 </td>
+                    <td>{$serverMsg.DOCUMENT_ROOT}</td>
+                </tr>
+                <tr>
+                    <td>服务器脚本超时时间 </td>
+                    <td>30000秒</td>
+                </tr>
+                <tr>
+                    <td>服务器的语言种类 </td>
+                    <td>Chinese (People's Republic of China)</td>
+                </tr>
+                <tr>
+                    <td>.NET Framework 版本 </td>
+                    <td>2.050727.3655</td>
+                </tr>
+                <tr>
+                    <td>服务器当前时间 </td>
+                    <td>{:date('Y-m-d H:i:s',$curTime)}</td>
+                </tr>
+                <tr>
+                    <td>服务器IE版本 </td>
+                    <td>6.0000</td>
+                </tr>
+                <tr>
+                    <td>服务器上次启动到现在已运行 </td>
+                    <td>7210分钟</td>
+                </tr>
+                <tr>
+                    <td>逻辑驱动器 </td>
+                    <td>C:\D:\</td>
+                </tr>
+                <tr>
+                    <td>CPU 总数 </td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>CPU 类型 </td>
+                    <td>x86 Family 6 Model 42 Stepping 1, GenuineIntel</td>
+                </tr>
+                <tr>
+                    <td>虚拟内存 </td>
+                    <td>52480M</td>
+                </tr>
+                <tr>
+                    <td>当前程序占用内存 </td>
+                    <td>3.29M</td>
+                </tr>
+                <tr>
+                    <td>Asp.net所占内存 </td>
+                    <td>51.46M</td>
+                </tr>
+                <tr>
+                    <td>当前Session数量 </td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>当前SessionID </td>
+                    <td>gznhpwmp34004345jz2q3l45</td>
+                </tr>
+                <tr>
+                    <td>当前系统用户名 </td>
+                    <td>NETWORK SERVICE</td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+        <footer class="footer">
+            <p>技术支持：企划部 王恒 电话：17601322524</p>
+        </footer>
+    </div>
+</section>
+<!--修改banner 弹出层-->
+<div id="modify_banner" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <form action="{:url('WebsiteSetting/modify_banner')}" enctype="multipart/form-data" method="post">
+        <div class="modal-dialog">
+            {volist name="banners_list" id="vo"}
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">修改banner图片</h3>
+                    <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-border table-bordered">
+                        <tr>
+                            <th><img src="__ROOT__/uploads/{$vo.banner1}" alt="banner1" class="img-responsive" style="max-height: 110px; max-width: 600px"></th>
+                            <th><input type="file" name="banner1" accept="image/*"></th>
+                        </tr>
+                        <tr>
+                            <th><img src="__ROOT__/uploads/{$vo.banner2}" alt="banner2" class="img-responsive" style="max-height: 110px; max-width: 600px"></th>
+                            <th><input type="file" name="banner2" accept="image/*"></th>
+                        </tr>
+                        <tr>
+                            <th><img src="__ROOT__/uploads/{$vo.banner3}" alt="banner3" class="img-responsive" style="max-height: 110px; max-width: 600px"></th>
+                            <th><input type="file" name="banner3" accept="image/*"></th>
+                        </tr>
+                        <tr>
+                            <th><img src="__ROOT__/uploads/{$vo.banner4}" alt="banner4" class="img-responsive" style="max-height: 110px; max-width: 600px"></th>
+                            <th><input type="file" name="banner4" accept="image/*"></th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer" style="padding: 0">
+                    <button class="btn btn-danger submit" type="submit" name="submit" style="width: 100%; height: 100%; padding: 13px"><strong>确定修改</strong></button>
+                </div>
+            </div>
+            {/volist}
+        </div>
+    </form>
+</div>
+
+{/block}
+<!--后台管理首页 结束-->
+
+<!--业务相关 js 开始-->
+{block name="custom_js"}
+<script>
+    //    修改banner
+    function modify_banner(){
+        $("#modify_banner").modal("show")
+    }
+
+    $(".submit").click(function () {
+        $(".submit").hide();
+    });
+</script>
+{/block}
+<!--业务相关 js 结束-->

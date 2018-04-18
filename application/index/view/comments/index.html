@@ -1,0 +1,328 @@
+{extend name="tpl/base"}
+{block name="custom_css"}
+<link rel="stylesheet" href="__CSS__/comments.css">
+{/block}
+{block name="title"}业主评价{/block}
+
+{block name="content"}
+<div class="top-full-img">
+    <img src="__IMG__/comments/comments_top_banner.png" alt="">
+</div>
+
+<div class="container">
+
+
+    <div class="row comment-wrap">
+        <!--左侧 开始-->
+      <div class="col-sm-8">
+          <div class="row">
+              <div class="col-md-12">
+                  <span class="label label-default">服务周到</span>
+                  <span class="label label-primary">态度好</span>
+                  <span class="label label-success">装修好</span>
+                  <span class="label label-info">价格便宜</span>
+                  <span class="label label-warning">效果好</span>
+              </div>
+
+          </div>
+            <div class="row">
+                <div class="col-sm-12 comment">
+                    <ul class="clearfix">
+                        <li class="active"><a href="{:url('index')}?type=all">全部评价({$countAll})</a></li>
+                        <li><a href="{:url('index')}?type=pic&num=1">晒图({$countPic})</a></li>
+                        <li><a href="{:url('index')}?type=all&num=2">服务周到(0)</a></li>
+                        <li><a href="{:url('index')}?type=all&num=3">态度好(0)</a></li>
+                        <li class="hidden-xs"><a href="{:url('index')}?type=all&num=4">价格便宜(0)</a></li>
+                    </ul>
+                </div>
+            </div>
+          {volist name="list" id="vo" empty="暂时没有数据"}
+            <div class="row">
+              <div class="col-sm-12 comment-list">
+                  <img src="https://ss1.bdstatic.com/7Ls0a8Sm1A5BphGlnYG/sys/portrait/item/4782e7baafe799bde889b2e8aeb0e5bf86e69d833aac" alt="业主头像" class="avatar pull-left">
+                  <ul class="clearfix">
+                      <li>{$vo.community_name}&nbsp;</li>
+                      <li class="tel">{$vo.tel|yc_phone=###}&nbsp;</li>
+                      <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+
+                  </ul>
+                      <p class="comment-msg">{$vo.comment}</p>
+                  <div class="row">
+                      <div class="col-md-2 col-xs-4">
+                          {if condition="($vo.pic1 != null)"}<img src="__ROOT__/uploads/comment/{$vo.pic1}" alt="评论图片" class="img-responsive">{/if}
+
+                      </div>
+                      <div class="col-md-2 col-xs-4">
+                          {if condition="($vo.pic2 != null)"}<img src="__ROOT__/uploads/comment/{$vo.pic2}" alt="评论图片" class="img-responsive">{/if}
+
+                      </div>
+                      <div class="col-md-2 col-xs-4">
+                          {if condition="($vo.pic3 != null)"}<img src="__ROOT__/uploads/comment/{$vo.pic3}" alt="评论图片" class="img-responsive" >{/if}
+                      </div>
+                  </div>
+                  <br>
+                  <p class="clearfix">
+                      <span class="pull-left">{$vo.time}</span>
+                      <i class="fa fa-thumbs-o-up zan pull-right" onclick="zan(this,'{$vo.id}')">&nbsp;{$vo.zan}</i>
+                  </p>
+
+                  <hr>
+              </div>
+          </div>
+          {/volist}
+
+          <div class="text-c">
+              {$list->render()}
+          </div>
+
+          <div class="row">
+              <!--评论框 开始-->
+              <div class="col-sm-12 comment">
+                  <form action="{:url('index')}" onsubmit="return add_case_submit();" method="post" enctype="multipart/form-data">
+                      <div class="row">
+                          <div class="col-sm-12">
+                              <div class="form-group clearfix">
+                                  <textarea required class="form-control" name="comment" rows="5" placeholder="说点什么......"></textarea>
+                                  <input type="file" name="pic1" class="file pull-left"   accept="image/png, image/jpeg, image/jpg">
+                                  <input type="file" name="pic2" class="file pull-left"   accept="image/png, image/jpeg, image/jpg">
+                                  <input type="file" name="pic3" class="file pull-left"   accept="image/png, image/jpeg, image/jpg">
+                              </div>
+
+
+
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-sm-8">
+                              <div class="row">
+                                  <div class="col-sm-6">
+                                      <div class="form-group">
+                                          <input required class="form-control" name="name" placeholder="你的姓名">
+                                      </div>
+                                  </div>
+                                  <div class="col-sm-6">
+                                      <div class="form-group">
+                                          <input required class="form-control" name="community_name"  placeholder="小区名称">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-sm-6">
+                                      <div class="form-group">
+                                          <input required class="form-control" name="tel"  placeholder="手机号码">
+                                      </div>
+                                  </div>
+
+                                  <div class="col-sm-3">
+                                      <div class="form-group">
+                                          <div class="captcha_img">{:captcha_img()}</div>
+                                      </div>
+                                  </div>
+                                  <div class="col-sm-3">
+                                      <div class="form-group">
+                                          <input class="form-control"  required name="code"  placeholder="验证码">
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-sm-4 btn_wrap">
+                              <button class="btn btn-danger btn-large btn-submit" type="submit" name="submit">提交评论</button>
+                          </div>
+                      </div>
+
+                  </form>
+              </div>
+              <!--评论框 结束-->
+          </div>
+      </div>
+
+
+
+
+        <!--左侧 结束-->
+
+        <!--右侧 开始-->
+        <div class="col-sm-4 selected_case content" id="right_box">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="right_form">
+                        <form onsubmit="return submit_form()" class="form-horizontal" role="form" id="selected_case_detail_form">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <img src="__IMG__/comm/right_order_form_banner.png" alt="右侧预约设计" id="order_design_img">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="name" class="col-sm-4 control-label">您的姓名：</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="name" placeholder="您的姓名" name="name" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name" class="col-sm-4 control-label">小区名称：</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="address" placeholder="小区名称" name="address" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name" class="col-sm-4 control-label">装修面积：</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="area" placeholder="装修面积" name="area" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name" class="col-sm-4 control-label">联系电话：</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="tel" placeholder="联系电话" name="tel" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <p class="text"><button type="submit" class="btn btn-lg btn-danger btn-block" id="selected_case_detail_btn_order">预约设计</button></p>
+                                </div>
+                            </div>
+                            <input type="hidden" name="from" value="PC">
+                            <input type="hidden" name="remark" value="业主评价板块">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--推荐设计师-->
+            <div class="row">
+                {volist name="suggest_designer" id="suggest_designer"}
+                <div class="col-sm-12">
+                    <div class="case">
+                        <ul class="suggest_title">
+                            <li><h4>推荐设计师</h4></li>
+                        </ul>
+
+                        <div class="thumbnail-img">
+                            <a href="{:url('TeamServices/designer_info')}?id={$suggest_designer.id}"><img src="__ROOT__/uploads/{$suggest_designer.avatar}" alt="设计师头像"></a>
+                        </div>
+                        <div class="text">
+                            <p class="center"><span class="designer_name">{$suggest_designer.name}</span> &nbsp;{$suggest_designer.position}</p>
+                            <p class="center">案例作品：{$suggest_designer.numbers} 套&nbsp;&nbsp; 从业经验：{$suggest_designer.years} 年</p>
+                            <!--设计理念-->
+                            <h5 class="designer_introduction center">{$suggest_designer.introduction}</h5>
+                        </div>
+                    </div>
+                </div>
+                {/volist}
+            </div>
+            <!--推荐案例-->
+            <div class="row">
+                <div class="col-sm-12">
+                    {volist name="suggest_case" id="vo"}
+                    <div class="case">
+                        <ul class="suggest_title">
+                            <li><h4>推荐案例</h4></li>
+                        </ul>
+                        <div class="thumbnail-img">
+                            <a href="{:url('SelectedCase/selected_case_detail')}?case_id={$vo.case_id}"><img src="__ROOT__/uploads/{$vo.case_photo1}" alt="{$vo.style}"></a>
+                        </div>
+                        <div class="text clearfix">
+                            <p class="center title">
+                                <span class="proprietor_address">{$vo.community_name}{$vo.area} ㎡</span>
+                                <span class="design_style pull-right">{$vo.style}</span>
+                            </p>
+                            <div class="btn-group">
+                                <h3 class="inline pull-left"><span class="look_detail label"><a href="{:url('SelectedCase/selected_case_detail')}?case_id={$vo.case_id}">查看详情</a></span></h3>
+                                <h3 class="inline pull-right"><span class="order_design  label"><a href="">预约设计</a></span></h3>
+                            </div>
+                            <span><img src="__ROOT__/uploads/{$vo.avatar}" alt="设计师" class="designer"></span>
+                        </div>
+                    </div>
+
+                    {/volist}
+                </div>
+            </div>
+
+        </div>
+        <!--右侧 结束-->
+
+    </div>
+
+</div>
+<!--弹出模态框 开始-->
+<div class="modal fade" id="loading" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h2>请稍等...</h2>
+            </div>
+            <div class="modal-body">
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出模态框 结束-->
+{/block}
+
+{block name="custom_js"}
+<script>
+    <!--导航菜单-->
+    $('header nav ul li').removeClass('active');
+    $('header nav ul li:eq(6)').addClass('active');
+
+    //tab 选中样式
+    if ((getQueryString("num")) !== null){
+        var num = parseInt(getQueryString("num"));
+        $('.comment ul li').eq(num).addClass('active').siblings().removeClass('active');
+    }
+
+    $('.comment ul li').click(function () {
+        localStorage.setItem('comment_page_tab_height',$(document).scrollTop());
+    });
+
+    if (localStorage.getItem('comment_page_tab_height') !== null){
+        $('html,body').animate({scrollTop:localStorage.getItem('comment_page_tab_height')},0);
+    }
+    //点赞
+    function zan(obj,id) {
+        $.ajax({
+            dateType: 'json',
+            type: 'POST',
+            url: "{:url('zan')}",
+            data: {
+                id: id
+            },
+            success: function (data) {
+                $(obj).html(data.num);
+                $(obj).css('color','#FF8016');
+
+                console.log('点赞成功！');
+            },
+            error: function (data) {
+                console.log('点赞成功！');
+            }
+        });
+    }
+
+    //验证码
+    $('.captcha_img img').addClass('img-responsive');
+
+    //表单提交
+    function add_case_submit() {
+        $('#loading').modal('show');
+        //TODO: 数据正在上传中 动画效果
+        $('.btn-submit').hide();
+        return true;
+    }
+
+//    星星评价
+
+
+</script>
+{/block}

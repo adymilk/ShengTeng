@@ -1,0 +1,252 @@
+{extend name="tpl/base"}
+
+<!--新闻动态 开始-->
+{block name="content"}
+<!--css3摇头动画-->
+<link rel="stylesheet" href="__STATIC__/lib/css3-animation.css" media="screen" type="text/css"/>
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('Index/index')}" class="maincolor">首页</a>
+        <span class="c-gray en">&gt;</span>
+        网站设置
+        <span class="c-gray en">&gt;</span>
+        <a href="{:url('WebsiteSetting/decoration_case_list')}">案例列表</a>
+        <span class="c-gray en">&gt;</span>
+        添加装修案例
+
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+    </nav>
+    <div class="Hui-article">
+        <article class="page-container">
+            <form onsubmit="return add_case_submit();" action="{:url('WebsiteSetting/add_decoration_case')}" class="form form-horizontal" role="form" enctype="multipart/form-data" id="form-case-add" method="post">
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>基本信息（必填）：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <table class="table table-border table-bordered ">
+                            <tbody>
+
+                            <tr>
+                                <th>设计师</th>
+                                <td>
+                                    <input type="text" onchange="is_Exist_Designer()" list="designers" class="input-text" placeholder="示例：谢西楼" name="designer" id="designer" required>
+                                    <datalist id="designers">
+                                        {volist name='designer_list' id='vo'}
+                                        <option value="{$vo.name}">
+                                        {/volist}
+                                    </datalist>
+                                </td>
+
+                                <th>案例户型</th>
+                                <td>
+                                    <span class="select-box">
+                                        <select class="select" size="1" name="type" required title="选择案例户型">
+                                            <option value="">选择户型</option>
+                                                <option value="二居室">二居室</option>
+                                                <option value="三居室">三居室</option>
+                                                <option value="公寓">公寓</option>
+                                                <option value="别墅">别墅</option>
+                                                <option value="小户型">小户型</option>
+                                                <option value="其他">其他</option>
+                                        </select>
+                                    </span>
+                                </td>
+                                <th>面积 /m²</th>
+                                <td><input type="tel" class="input-text" placeholder="示例：135 " name="area" required></td>
+                            </tr>
+                            <tr>
+                                <th>小区名称</th>
+                                <td><input type="text" class="input-text" placeholder="示例：湖光小区" name="community_name" required></td>
+                                <th>所在城市</th>
+                                <td><input type="text" class="input-text" placeholder="示例：合肥" name="city" required></td>
+                                <th>装修价格 ¥/万元</th>
+                                <td><input type="text" class="input-text" placeholder="示例：13.98" name="price" required></td>
+                            </tr>
+                            <tr>
+                                <th>服务店面</th>
+                                <td><input type="text" class="input-text readonly" readonly="readonly" placeholder="示例：服务店面" name="company" required value=""></td>
+                                <th>案例风格</th>
+                                <td>
+                                    <span class="select-box">
+                                        <select class="select" size="1" name="style" required title="选择案例风格">
+                                            <option value="">选择风格</option>
+                                            <option value="欧式">欧式</option>
+                                            <option value="田园">田园</option>
+                                            <option value="乡村">乡村</option>
+                                            <option value="现代简约">现代简约</option>
+                                            <option value="地中海">地中海</option>
+                                            <option value="雅典主义">雅典主义</option>
+                                            <option value="简欧">简欧</option>
+                                            <option value="其他">其他</option>
+                                        </select>
+                                    </span>
+                                </td>
+                                <th>施工队长</th>
+                                <td><input type="text" class="input-text" placeholder="示例：张步飞" name="construction_captain" required></td>
+                            </tr>
+                            <tr>
+                                <th>设计理念</th>
+                                <td colspan="5"><textarea name="design_concept" cols="" rows="" class="textarea radius" placeholder="设计理念..."  required></textarea></td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>案例图片：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <div class="row case_upload_pic">
+                            <div class="col-sm-3">
+                                <img src="__ROOT__/uploads/main.png" class="img-thumbnail">
+                                <h3 class="text-c">
+                                    <span>主图</span>
+                                    <input class="file" id="case_photo1" type="file" name="case_photo[]" required accept="image/png, image/jpeg, image/jpg" onchange="selected_img('case_photo1',0);" >
+                                </h3>
+                            </div>
+                            <div class="col-sm-3">
+                                <img src="__ROOT__/uploads/main.png" class="img-thumbnail">
+                                <h3 class="text-c">
+                                    副图
+                                    <input type="file" id="case_photo2" class="file" name="case_photo[]" required accept="image/png, image/jpeg, image/jpg" onchange="selected_img('case_photo2',1)">
+                                </h3>
+                            </div>
+                            <div class="col-sm-3">
+                                <img src="__ROOT__/uploads/main.png" class="img-thumbnail">
+                                <h3 class="text-c">
+                                    副图
+                                    <input type="file" id="case_photo3" class="file" name="case_photo[]" required accept="image/png, image/jpeg, image/jpg" onchange="selected_img('case_photo3',2)">
+                                </h3>
+                            </div>
+                            <div class="col-sm-3">
+                                <img src="__ROOT__/uploads/main.png" class="img-thumbnail">
+                                <h3 class="text-c">
+                                    副图
+                                    <input type="file" id="case_photo4" class="file" name="case_photo[]" required accept="image/png, image/jpeg, image/jpg" onchange="selected_img('case_photo4',3)">
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <input type="hidden" name="action" value="do_add">
+                <div class="row cl">
+                    <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                        <button class="btn btn-primary radius btn_submit" type="submit" name="submit"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button>
+                        <button onClick="removeIframe();" class="btn btn-default radius btn_cancel" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </article>
+    </div>
+</section>
+
+<!--弹出模态框 开始-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <div class="alert alert-info" role="alert"><h2><strong>提示！</strong>数据正在上传中 <span id="dotting">...</span></h2></div>
+            </div>
+            <div class="modal-body">
+                <div class="spinner">
+                    <h3 style="display: inline-block">数据正在玩命上传中 &nbsp;</h3>
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--弹出模态框 结束-->
+{/block}
+<!--新闻动态 结束-->
+<!--业务相关 js 开始-->
+{block name="custom_js"}
+<script type="text/javascript">
+        $(document).ready(function() {
+            //表单验证
+            //$("#form-case-add").validate();
+
+            //上传图片样式
+            $('.case_upload_pic').css('overflow','hidden')
+            //左侧菜单展开
+            $("#menu-website").find("dt").addClass('selected');
+            $("#menu-website").find("dd").show();
+            $("#menu-website").find("dd ul li:eq(2)").addClass("current");
+
+            //表格内容居中
+            $('th,td').addClass('text-c');
+            $('th').css('background-color', '#f6f6f6');
+            //图片上传样式
+            $('.case_upload_pic img').css('width', '200px');
+            $('.case_upload_pic img').css('height', '200px');
+        });
+
+    //返回前一个页面
+    function removeIframe() {
+        history.back();
+    }
+
+    //判断输入的设计师是否存在
+        function is_Exist_Designer(){
+            var designer = $('#designer').val();
+            $.ajax({
+                type: 'POST',
+                url: "{:url('WebsiteSetting/is_Exist_Designer')}",
+                data: {designer: designer},
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data.msg);
+                    if (data.isExist === "否"){
+                        alert("设计师【"+designer+"】不存在，请先添加！");
+                        location.href = "{:url('WebsiteSetting/add_designer')}"
+                    }else if (data.isExist === "是") {
+                        $("input[name='company']").val(data.company);
+                    }
+                },
+                error: function (data) {
+                    alert(data.msg);
+                }
+            });
+        }
+
+        //上传图片大小限制
+        function selected_img(id,i) {
+            var fileSize = document.getElementById(id).files[0].size;
+            if (fileSize > 524288){
+                alert("上传图片大小不要超过 512 kb！！");
+                $("#"+id+"").val(null);
+            }else {
+                function preview(file) {
+                    var reader = new FileReader()
+                    reader.onload = function(e) {
+                        $('.case_upload_pic img').eq(i).attr("src", e.target.result)
+                    }
+                    reader.readAsDataURL(file)
+                }
+
+                $(function() {
+                        var file = document.getElementById(id).files[0];
+                        preview(file)
+                })
+            }
+        }
+
+
+        //表单提交
+        function add_case_submit() {
+            $('#myModal').modal('show');
+            //TODO: 数据正在上传中 动画效果
+            $('.btn_submit, .btn_cancel').hide();
+            return true;
+        }
+
+</script>
+{/block}
+<!--业务相关 js 结束-->

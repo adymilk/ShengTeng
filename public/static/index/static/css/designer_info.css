@@ -1,0 +1,36 @@
+#top_bg{
+    background-color: black;
+    height: 415px;
+    width: 100%;
+    color: white;
+}
+/*位置导航*/
+.breadcrumb,.breadcrumb a{
+    background-color: black;
+    color: #FFFFFF;
+
+}
+
+/*设计师头像*/
+#designer_avatar{
+    width: 154px;
+    height: 154px;
+    border-radius: 50%;
+}
+.designer_introduction{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #999999;
+    font-size: 16px;
+}
+
+.content{
+    margin-top: 66px;
+}
+
+#right_box .thumbnail-img img{
+    border-radius: 0;
+}
+

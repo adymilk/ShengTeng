@@ -1,0 +1,455 @@
+
+.section1{
+    color: white;
+    font-size: 18px;
+}
+.section1 .row:first-child{
+    padding-top: 15px;
+}
+.section1 .row:first-child .text-r:nth-child(2) #bg_red{
+    height: 40px;
+    width: 210px;
+    background-color: red;
+
+    line-height: 40px;
+    text-align: center;
+    display: inline-block;
+}
+
+
+
+#tvShow{
+    width: 100%;
+    height: 888px;
+    background-size: cover;
+    background: url("../images/index/section1_bg.png") no-repeat center;
+}
+.section1 .tv_bg{
+    background: url("../images/index/section1_tv-bg.png");
+    height: 455px;
+}
+img:hover{
+    cursor: pointer;
+}
+.tvs{
+    padding-top: 34px;
+}
+.tvs ul li{
+    width: 88%;
+    text-align: center;
+    list-style: none;
+    margin-bottom: 10px;
+    padding: 5px 0;
+    line-height: 50px;
+    border-radius: 6px 0 0 6px;
+}
+.tvs ul .active{
+    box-shadow: 0 6px 13px -4px #a2a2a1;
+    background-color: white;
+}
+
+.section{
+    margin: 0 auto;
+    width:100%;
+    background-size: cover;
+    height: 888px;
+}
+#tvShow video{
+    display: none;
+    width: 503px;
+    height: 345px;
+    margin-top: 40px;
+    margin-left: 178px;
+}
+#tvShow video:first-child{
+    display: block;
+}
+
+/*工厂价直达你家*/
+.section2{
+    background: url("../images/index/section2_bg.png") no-repeat center;
+}
+.section2 img:nth-child(1){
+     position: relative;
+     top: 0;
+     left: 0;
+     width: 60%;
+ }
+.section2 img:nth-child(2){
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    height: 888px;
+}
+.section2 img:nth-child(3){
+    position: absolute;
+    left: 7%;
+    top: -52px;
+    width: 60%;
+}
+.section2 img:nth-child(4), .section2 img:nth-child(5), .section2 img:nth-child(6){
+    position: absolute;
+    z-index: 3;
+    right: 20%;
+
+}
+.section2 img:nth-child(4){
+    top: 30%;
+}
+.section2 img:nth-child(5){
+    top: 15%;
+}
+.section2 img:nth-child(6){
+    top: 42%;
+}
+
+/*一场不苦逼的装修*/
+.section3{
+    background: url("../images/index/section3_bg.png") no-repeat center;
+    color: white;
+}
+.section3 .center:first-child{
+    padding-top: 5%;
+}
+.section3 .center:nth-child(2),.section3 .center:nth-child(4){
+    position: relative;
+    width: 100%;
+    z-index: 3;
+    left: 0;
+    top: 40px;
+}
+.section3 .center:nth-child(4) img{
+    margin-top: 21px;
+    margin-left: 62px;
+}
+.section3 .center:nth-child(4){
+    top: -472px;
+}
+.section3 img:nth-child(3){
+}
+.section3 .flash{
+    animation-duration: 3s;
+}
+.section3 .slide_text{
+    position: absolute;
+    width: 100%;
+    overflow-y: hidden;
+    height: 888px;
+}
+.section3 .slide_text ul{
+    margin:20px;
+}
+
+.section3 .slide_text ul li{
+    float: left;
+    width: auto;
+    height: 30px;
+    line-height: 30px;
+    margin: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    color: rgba(255,255,255,.10);
+}
+.section3 .slide_text ul .active{
+    color: rgba(255, 242, 74, 0.47);
+}
+
+@keyframes text-change {
+    0%{ text-shadow: 0 0 4px #f00}
+    50%{ text-shadow: 0 0 40px #f00}
+    100%{ text-shadow: 0 0 4px #f00}
+}
+
+.section3 .bounce{
+    animation-duration: 10s;
+}
+.section4{
+    background: url("../images/index/section4_bg.png") no-repeat center;
+}
+.section4 p{font-size: 3.0rem}
+.section4 .row:first-child img{
+    animation-duration: 4s;
+    animation-delay: 0s;
+}
+@keyframes ad {
+    from{
+        transform: rotatey(-20deg);
+    }
+    to{
+        transform: rotatey(360deg);
+    }
+}
+.loop360{
+    animation: ad 1s steps(600) infinite;
+}
+
+.section5{
+    background: url("../images/index/section5_bg.png") no-repeat center;
+}
+.section5 img{
+    width: 100%;
+    display: none;
+    height: 100%;
+}
+.section5 .active{
+    display: block;
+}
+
+/*房间悬浮*/
+#room img{
+    height: 492px;
+    animation-duration: 9s;
+}
+.section4 #r1{
+    width: 516px;
+    height: 200px;
+    margin: -53px auto 0;
+    background: url("../images/index/section4_item03.png") no-repeat center;
+}
+
+.section4 .row:last-child{
+    position: absolute;
+    margin-top: -70px;
+    width: 1170px;
+}
+
+
+/*手机端样式*/
+@media only screen and (max-width: 767px){
+    body{
+        background-color: #efefef;
+        overflow-x: hidden;
+    }
+    video{
+        z-index: 1;
+        min-width: 100%;
+    }
+    .container .row:not(:first-child){
+        margin-top: 10px;
+        padding-bottom: 8px;
+    }
+
+    .container .row:last-child{
+        background-color: #efefef;
+    }
+    .swiper-slide img{
+        width: 100%;
+        max-width: 750px;
+        max-height: 423px;
+    }
+
+    .row{
+        background-color: white;
+    }
+    .row p{
+        background-color: white;
+    }
+    .menu{
+        margin: 19px 0;
+    }
+    .menu ul li{
+        width: 20%;
+        margin: 5px 0;
+    }
+    .menu a{
+        color: #3d3d3d;
+        display: block;
+    }
+    .menu a:active{
+        color: grey;
+    }
+    .menu .img-circle{
+        max-width: 43px;
+        max-height: 43px;
+    }
+    .menu .title{
+        font-size: 1.29rem;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+
+
+    /*装修材料品牌*/
+    .col-xs-12 .red-font{
+        display: inline-block;
+    }
+    .brand:not(:last-child){
+        margin: 5px 0;
+        border-left: 5px solid red;
+    }
+    .brand-tab ul li{
+        float: left;
+        width: 23%;
+        line-height: 30px;
+        height: 30px;
+        text-align: center;
+        border-radius: 8px;
+        background: #f5f5f5;
+        color: #666666;
+        font-size: 1.6rem;
+        margin: 5px 5px 5px 0;
+    }
+    .brand-tab ul .active{
+        background: #fef4f3;
+        border: 1px solid #f6968d;
+        color: #ee2d1b;
+    }
+    .brand .pull-right{
+        padding: 1px 8px;
+        border-radius: 10px;
+        border: 1px solid #cccccc;
+    }
+    .brand span ,.brand i,.brand span{
+        font-size: 1.6rem;
+        color: #999;
+        display: inline-block;
+        padding-left: 1.05rem;
+        margin-top: 10px;
+        vertical-align: bottom;
+    }
+    a{
+        color: #999;
+    }
+
+    .row .col-xs-12{
+        overflow: hidden;
+    }
+    .row .swiper-slide{
+        margin: 15px 3px;
+        -webkit-box-shadow: 0 2px 13px -3px rgba(0,0,0,.25);
+        box-shadow: 0 2px 13px -3px rgba(0,0,0,.25);
+        background-color: white;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 40%;
+}
+    .swiper-slide .top{
+        height: 160px;
+        text-align: center;
+        line-height: 160px;
+        border-radius: 6px 6px 0 0;
+    }
+    .swiper-slide .bottom{
+        max-height: 75px;
+        min-height: 75px;
+        padding: 5px 0;
+    }
+    .swiper-brand .swiper-slide img{
+        max-width: 100px;
+        max-height: 100px;
+        display: inline-block;
+    }
+
+    /*优惠券*/
+
+    .ticket_part{
+        width: 47.8%;
+        height: 6.57rem;
+        background: #f7f3e8;
+        float: left;
+        margin: 8px 3px;
+        text-align: center;
+        line-height: 5.57rem;
+    }
+    .ticket_part ul{
+        padding: 8px 0;
+    }
+
+    .ticket_part ul li{
+        width: 100%;
+        height: 2.97rem;
+        line-height: 2.97rem;
+        text-align: center;
+        color: #d9b77c;
+    }
+    .ticket_part ul li em{
+        font-size: 2.6rem;
+        font-style: normal;
+    }
+
+    /*装修风格*/
+
+    .swiper-style .swiper-slide .top {
+        height: 160px;
+        text-align: center;
+        line-height: 160px;
+        border-radius: 6px 6px 0 0;
+    }
+    .swiper-style .swiper-slide .top img{
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-style .swiper-slide .top .style-name{
+        font-size: 2.128rem;
+        color: #454136;
+        line-height: 1;
+        font-weight: bold;
+        position: absolute;
+        left: 9.49%;
+        top: 8.4%;
+
+    }
+    .swiper-style .swiper-slide .top .style-num{
+        display: block;
+        font-size: .085rem;
+        color: #454136;
+        line-height: 1;
+        position: absolute;
+        left: 9.49%;
+        top: 24.5%;
+    }
+
+    .style .order{
+        margin: 5px 5px;
+    }
+    .style .order img{
+        height: 6.5rem;
+    }
+    .style .order .col-xs-6{
+        padding: 0;
+    }
+    .style .order .col-xs-8{
+        padding-right: 0;
+    }
+
+    /*家装攻略*/
+    .swiper-news .swiper-slide{
+        width: 80%;
+    }
+
+    .news .description{
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        color: #999999;
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
+    .news a .news_title {
+        color: black;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: 1.5rem;
+    }
+    .news .swiper-slide{
+    }
+    .news .top img{
+        height: 100%;
+        border-radius: 6px 6px 0 0;
+    }
+    .news .bottom{
+        padding: 0 3px;
+    }
+
+    /*底部给您回电*/
+    .form-horizontal .form-group{
+        margin: 8px 0;
+    }
+}
+

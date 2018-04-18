@@ -1,0 +1,62 @@
+{extend name="tpl/base"}
+{block name="custom_css"}
+<link rel="stylesheet" href="__CSS__/contact_us.css">
+{/block}
+{block name="title"}联系我们{/block}
+
+{block name="content"}
+<div class="container contact_us">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>全国 {$count} 家分公司列表</h2>
+            <p>还在不断增加中......</p>
+        </div>
+    </div>
+
+
+    <div class="row">
+        {volist name="list" id="vo" mod="2"}
+        <div class="col-sm-6 ">
+            <div class="card case">
+                <a href="{$vo.url}" target="_blank"><h3>{$vo.company_name}</h3></a>
+                <p>地址：{$vo.address}</p>
+                <p>电话：{$vo.tel}</p>
+            </div>
+        </div>
+        {eq name="mod" value="1"}</div> <div class="row">{/eq}
+        {/volist}
+    </div>
+    <!--map begin-->
+    <div class="row">
+        <div class="col-md-12">
+        </div>
+    </div>
+    <!--map end-->
+</div>
+
+
+{/block}
+
+{block name="custom_js"}
+<!--背景动画插件-->
+<script src="__ROOT__/static/index/lib/js/quietflow.min.js"></script>
+<script>
+//    背景动画
+    $("body").quietflow({
+        theme : "bouncingBalls",
+        specificColors : [
+            "rgba(255, 10, 50, .5)",
+            "rgba(10, 255, 50, .5)",
+            "rgba(10, 50, 255, .5)",
+            "rgba(0, 0, 0, .5)"
+        ]
+    });
+    <!--导航菜单-->
+
+    $('header nav ul li').removeClass('active');
+    $('header nav ul li:eq(8)').addClass('active');
+</script>
+
+<!--高德地图-->
+
+{/block}

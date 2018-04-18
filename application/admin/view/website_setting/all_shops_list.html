@@ -1,0 +1,122 @@
+{extend name="tpl/base"}
+
+<!--业主案例 开始-->
+{block name="content"}
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('Index/index')}" class="maincolor">首页</a>
+        <span class="c-gray en">&gt;</span>
+        网站设置
+        <span class="c-gray en">&gt;</span>
+        全国门店列表
+
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+    </nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <div class="cl pd-5 bg-1 bk-gray mt-20">
+				<span class="l">
+				    <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
+                    <a class="btn btn-primary radius" data-title="添加新闻" href="{:url('WebsiteSetting/add_shop')}"><i class="Hui-iconfont">&#xe600;</i> 添加门店</a>
+				</span>
+                <span class="r">共有数据：<strong>{$count}</strong> 条</span>
+            </div>
+            <div class="mt-20">
+                <table class="table table-border table-bordered table-bg table-hover table-sort">
+                    <thead>
+                    <tr class="text-c">
+                        <th width="25"><input type="checkbox" name="" value=""></th>
+                        <th width="20">ID</th>
+                        <th width="50">门店名称</th>
+                        <th width="80">门店地址</th>
+                        <th width="50">所属城市</th>
+                        <th width="50">门店电话</th>
+                        <th width="50">案例总数</th>
+                        <th width="50">设计师总数</th>
+                        <th width="50">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {volist name="list" id="vo"}
+                    <tr class="text-c">
+                        <td><input type="checkbox" value="" name=""></td>
+                        <td>{$vo.company_id}</td>
+                        <td class="text-c">{$vo.company_name}</td>
+                        <td>{$vo.address}</td>
+                        <td>{$vo.city}</td>
+                        <td>{$vo.tel}</td>
+                        <td>{$vo.count_case}</td>
+                        <td>{$vo.count_designers}</td>
+                        <td class="f-14 td-manage">
+                            <a style="text-decoration:none" class="ml-5"  href="{:url('WebsiteSetting/edit_shop_information')}?company_id={$vo.company_id}" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
+                            <a style="text-decoration:none" class="ml-5" onClick="article_del(this,'{$vo.company_id}')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+                    </tr>
+                    {/volist}
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </div>
+</section>
+{/block}
+<!--业主案例 结束-->
+
+<!--业务相关 js 开始-->
+{block name="custom_js"}
+<script type="text/javascript" src="__STATIC__/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="__STATIC__/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript">
+    $('.table-sort').dataTable({
+        "aaSorting": [[ 1, "desc" ]],//默认第几个排序
+        "bStateSave": true,//状态保存
+        "aoColumnDefs": [
+            //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+            {"orderable":false,"aTargets":[0,6]}// 不参与排序的列
+        ]
+    });
+
+    /*资讯-添加*/
+    function article_add(title,url,w,h){
+        var index = layer.open({
+            type: 2,
+            title: title,
+            content: url
+        });
+        layer.full(index);
+    }
+    /*资讯-编辑*/
+    function article_edit(title,url,id,w,h){
+        var index = layer.open({
+            type: 2,
+            title: title,
+            content: url
+        });
+        layer.full(index);
+    }
+    /*订单-删除*/
+    function article_del(obj,id){
+        layer.confirm('确认要删除吗？',function(index){
+            $.ajax({
+                type: 'POST',
+                url: "{:url('DataCenter/delOrderById')}",
+                data: {orderId:id},
+                dataType: 'json',
+                success: function(data){
+                    console.log(data);
+                    $(obj).parents("tr").remove();
+                    layer.msg('已删除!',{icon:1,time:1000});
+                    location.replace(location.href);
+                },
+                error:function(data) {
+                    console.log(data.msg);
+                },
+            });
+        });
+    }
+    //左侧菜单栏选中样式
+    $("#menu-website dt").addClass('selected');
+    $("#menu-website dd").show();
+    $("#menu-website dd ul li:eq(1)").addClass("current");
+</script>
+{/block}
+<!--业务相关 js 结束-->

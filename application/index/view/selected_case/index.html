@@ -1,0 +1,218 @@
+{extend name="tpl/base"}
+{block name="custom_css"}
+<link rel="stylesheet" href="__CSS__/selected_case.css">
+{/block}
+{block name="title"}精选案例{/block}
+
+{block name="content"}
+
+<div class="top-full-img">
+    <img src="__IMG__/selected_case/index/top-banner.png" alt="" class="img-responsive">
+    <!--分类筛选 开始-->
+    <div class="categories_wrap hidden-sm hidden-xs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-lg-6 categories">
+                    <div class="row style">
+                        <div class="col-sm-4 col-lg-4 col-md-4">
+                            <h2 class="center">装修风格</h2>
+                        </div>
+                        <div class="col-sm-8 col-lg-8 col-md-8">
+                            <div class="row ">
+                                <ul>
+                                    <li class="active"><a href="{:url('index')}">不限</a></li>
+                                    <li><a href="{:url('index')}?c=style&style=European">欧式</a></li>
+                                    <li><a href="{:url('index')}?c=style&style=Countryside">田园</a></li>
+                                    <li><a href="{:url('index')}?c=style&style=village">乡村</a></li>
+                                    <li><a href="{:url('index')}?c=style&style=modern">现代</a></li>
+                                    <li><a href="{:url('index')}?c=style&style=mix">混搭</a></li>
+                                    <li><a href="{:url('index')}?c=style&style=Mediterranean">地中海</a></li>
+                                    <li><a href="{:url('index')}?c=style&style=other">其他</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--虚线-->
+                    <div class="hr"></div>
+
+                    <div class="row type">
+                        <div class="col-sm-4">
+                            <h2 class="center">装修户型</h2>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <ul>
+                                    <li class="active"><a href="{:url('index')}">不限</a></li>
+                                    <li><a href="{:url('index')}?c=type&type=2">二居室</a></li>
+                                    <li><a href="{:url('index')}?c=type&type=3">三居室</a></li>
+                                    <li><a href="{:url('index')}?c=type&type=other">其他</a></li>
+                                </ul>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <!--虚线-->
+                    <div class="hr"></div>
+
+                    <div class="row area">
+                        <div class="col-sm-4">
+                            <h2 class="center">房屋面积</h2>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <ul>
+                                    <li class="active"><a href="{:url('index')}">不限</a></li>
+                                    <li><a href="{:url('index')}?c=area&area=100">100m²</a></li>
+                                    <li><a href="{:url('index')}?c=area&area=140">140m²</a></li>
+                                    <li><a href="{:url('index')}?c=area&area=other">其他</a></li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--分类筛选 结束-->
+</div>
+
+
+
+
+<div class="container selected_case content">
+    <div class="row">
+        {volist name="list" id="vo" mod="3" empty="暂时没有数据"}
+
+        <div class="col-sm-4">
+            <div class="case">
+                <div class="thumbnail-img">
+                    <a href="{:url('SelectedCase/selected_case_detail')}?case_id={$vo.case_id}"><img src="__ROOT__/uploads/{$vo.case_photo1}" alt="{$vo.style}"></a>
+                </div>
+                <div class="text clearfix">
+                    <p class="center title">
+                        <span class="proprietor_address">{$vo.community_name}&nbsp;&nbsp;{$vo.area} ㎡</span>
+                        <span class="design_style pull-right">{$vo.style}</span>
+                    </p>
+                    <div class="btn-group">
+                        <h3 class="inline pull-left"><span class="look_detail label"><a href="{:url('SelectedCase/selected_case_detail')}?case_id={$vo.case_id}">查看详情</a></span></h3>
+                        <h3 class="inline pull-right"><span class="order_design  label"><a href="">预约设计</a></span></h3>
+                    </div>
+                    <span><img src="__ROOT__/uploads/{$vo.avatar}" alt="设计师" class="designer img-circle img-responsive"></span>
+                </div>
+            </div>
+        </div>
+        {eq name="mod" value="2"}</div> <div class="row">{/eq}
+
+        {/volist}
+    </div>
+
+
+
+
+    <!--分页 开始-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 center">
+                {$list->render()}
+            </div>
+
+        </div>
+    </div>
+
+    <!--分页 结束-->
+</div>
+{/block}
+
+{block name="custom_js"}
+<script>
+    <!--导航菜单-->
+    $('header nav ul li').removeClass('active');
+    $('header nav ul li:eq(1)').addClass('active');
+
+    //读取顶筛选a链接点击时滚动条距离顶部的距离
+    $("html,body").animate({scrollTop:localStorage.getItem('top-height')}, 0);
+    //当a链接被点击的时候，localStorage 存储当前滚动条距离顶部的距离
+    $('.categories a').click(function () {
+        localStorage.setItem("top-height",$(document).scrollTop());
+    });
+
+    $('.style ul li').click(function () {
+        var i = $(this).index();
+        if (i === 0){
+            localStorage.clear();
+        }
+        localStorage.setItem('style-click-item',i);
+    });
+    $('.type ul li').click(function () {
+        var i = $(this).index();
+        if (i === 0){
+            localStorage.clear();
+        }
+        localStorage.setItem('type-click-item',i);
+    });
+    $('.area ul li').click(function () {
+        var i = $(this).index();
+        if (i === 0){
+            localStorage.clear();
+        }
+        localStorage.setItem('area-click-item',i);
+    });
+
+    if (localStorage.getItem('style-click-item') !== null){
+        $('.style ul li').eq(localStorage.getItem('style-click-item')).addClass('active').siblings().removeClass('active');
+    }
+    if (localStorage.getItem('type-click-item') !== null){
+        $('.type ul li').eq(localStorage.getItem('type-click-item')).addClass('active').siblings().removeClass('active');
+    }
+    if (localStorage.getItem('area-click-item') !== null){
+        $('.area ul li').eq(localStorage.getItem('area-click-item')).addClass('active').siblings().removeClass('active');
+    }
+
+    //   动态修改a链接
+    switch (getQueryString("c")){
+        case 'style':
+            for (var i=1; i<= $('.type a').length; i ++){
+                $('.type a').eq(i).attr('href',$('.type a').eq(i).attr('href')+"&style="+getQueryString("style")+"&area="+getQueryString("area"));
+            }
+            for (var i=1; i<= $('.area a').length; i ++){
+                $('.area a').eq(i).attr('href',$('.area a').eq(i).attr('href')+"&style="+getQueryString("style")+"&type="+getQueryString("type"));
+            }
+            for (var i=1; i<= $('.style a').length; i ++){
+                $('.style a').eq(i).attr('href',$('.style a').eq(i).attr('href')+"&type="+getQueryString("type")+"&area="+getQueryString("area"));
+            }
+            break;
+        case 'type':
+            for (var i=1; i<= $('.style a').length; i ++){
+                $('.style a').eq(i).attr('href',$('.style a').eq(i).attr('href')+"&type="+getQueryString("type")+"&area="+getQueryString("area"));
+            }
+            for (var i=1; i<= $('.area a').length; i ++){
+                $('.area a').eq(i).attr('href',$('.area a').eq(i).attr('href')+"&type="+getQueryString("type")+"&style="+getQueryString("style"));
+            }
+            for (var i=1; i<= $('.type a').length; i ++){
+                $('.type a').eq(i).attr('href',$('.type a').eq(i).attr('href')+"&style="+getQueryString("style")+"&area="+getQueryString("area"));
+            }
+            break;
+
+        case 'area':
+            for (var i=1; i<= $('.type a').length; i ++){
+                $('.type a').eq(i).attr('href',$('.type a').eq(i).attr('href')+"&area="+getQueryString("area")+"&style="+getQueryString("style"));
+            }
+            for (var i=1; i<= $('.area a').length; i ++){
+                $('.area a').eq(i).attr('href',$('.area a').eq(i).attr('href')+"&style="+getQueryString("style")+"&type="+getQueryString("type"));
+            }
+            for (var i=1; i<= $('.style a').length; i ++){
+                $('.style a').eq(i).attr('href',$('.style a').eq(i).attr('href')+"&area="+getQueryString("area")+"&type="+getQueryString("type"));
+            }
+            break;
+    }
+
+</script>
+{/block}

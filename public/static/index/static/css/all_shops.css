@@ -1,0 +1,47 @@
+.chose-city{
+    background-color: white;
+    margin: 34px 0;
+}
+
+.chose-city ul{
+    margin: 0;
+}
+.chose-city ul li{
+    float: left;
+    text-align: center;
+
+}
+.chose-city ul li a,.chose-city ul li{
+    display: inline-block;
+    line-height: 50px;
+    width: 80px;
+    height: 50px;
+    font-size: 1.6rem;
+    color: #222222;
+}
+.chose-city ul .active a{
+    color: red;
+}
+.city img{
+    width: 100%;
+    height: 252px;
+}
+.shops-content .row:not(:last-child){
+    padding: 15px 0;
+    transition: 0.3s;
+}
+.shops-content .row:not(:last-child):hover{
+    background-color: #eeeeee;
+    border-radius: 5px;
+}
+
+.case-thumbnail img{
+    width: 100%;
+    height: 69px;
+}
+.address{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

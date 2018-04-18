@@ -1,0 +1,57 @@
+{extend name="tpl/base"}
+
+<!--业主案例 开始-->
+{block name="content"}
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('Index/index')}" class="maincolor">首页</a>
+        <span class="c-gray en">&gt;</span>
+        网站设置
+        <span class="c-gray en">&gt;</span>
+        SEO信息优化
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+    </nav>
+
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <table class="table table-border table-bg table-bordered">
+                <form action="{:url('WebsiteSetting/website_seo')}" method="get">
+                    {volist name="list" id="vo"}
+                <tr>
+                    <th width="10%">网站名称:</th>
+                    <td><input type="text" placeholder="网站名称" class="input-text radius size-M" name="website_name" value="{$vo.name}" required></td>
+                </tr><tr>
+                    <th width="10%">网站网址:</th>
+                    <td><input type="text" placeholder="网站网址" class="input-text radius size-M" readonly="readonly" name="website_url" value="{$vo.url}" style="cursor: not-allowed;" required></td>
+                </tr>
+                <tr>
+                    <th width="10%">网站描述:</th>
+                    <td><input type="text" placeholder="网站描述" class="input-text radius size-M" name="website_desc" value="{$vo.desc}" required></td>
+                </tr>
+                <tr>
+                    <th width="10%">网站关键词:</th>
+                    <td><input type="text" placeholder="网站关键词" class="input-text radius size-M" name="website_keywords" value="{$vo.keywords}" required></td>
+                </tr>
+                <tr>
+                    <th width="10%">操作:</th>
+                    <td><input class="btn btn-primary radius" type="submit" name="submit" value="确认修改" ></td>
+                </tr>
+                    {/volist}
+                </form>
+            </table>
+
+        </article>
+    </div>
+
+</section>
+{/block}
+<!--业主案例 结束-->
+
+<!--业务相关 js 开始-->
+{block name="custom_js"}
+<script>
+    $("#menu-website dt").addClass('selected');
+    $("#menu-website dd").show();
+    $("#menu-website dd ul li:eq(0)").addClass("current");
+</script>
+{/block}
+<!--业务相关 js 结束-->
