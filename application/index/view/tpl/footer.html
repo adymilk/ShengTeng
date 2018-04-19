@@ -205,7 +205,6 @@
 </div>
     <!--弹出模态框 结束-->
 <!--引入CDN-->
-<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!--wow.js 依赖animated.css 滑动位置触发动画库-->
 <script src="https://cdn.bootcss.com/wow/1.1.2/wow.min.js"></script>
@@ -214,72 +213,6 @@
 <!--图标css-->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-
-<style>
-        .activity .Dialog{
-            position: fixed;
-            width: 560px;
-            height: 487px;
-            z-index: 999;
-        }
-        
-        .activity .Dialog img{
-            max-width: 100%;
-        }
-        
-        .activity .Dialog #Dialog_close{
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 45px;
-            height: 44px;
-            background-image: url(https://i.loli.net/2018/04/19/5ad85f43d3113.png);
-        }
-        .activity .lock{
-            background: black;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            filter:alpha(opacity=30); /*IE滤镜，透明度50%*/
-            -moz-opacity:0.6; /*Firefox私有，透明度50%*/
-            opacity:0.6;/*其他，透明度50%*/
-            z-index: 998;
-            display: none;   
-        }
-</style>
-<script>
-        $(function () {
-            var sW=$(window).width();
-            var bodyH=$(document).height();
-            var top=($(window).height()-$('.Dialog').height())/2;
-            var left=($(window).width()-$('.Dialog').width())/2;
-            $('.Dialog').css('top',top).css('left',left);
-            $(window).resize(function () {
-                var top=($(window).height()-$('.Dialog').height())/2;
-                var left=($(window).width()-$('.Dialog').width())/2;
-                $('.Dialog').css('top',top).css('left',left);
-            });
-            //显示遮罩层
-        $('.lock').css({                       //遮罩层的样式
-             height:bodyH,               //遮罩层的高是body内容的高
-             width:sW,                     //遮罩层的宽是body内容的宽
-             display:"block"             //显示遮罩层
-         });
-         $('.Dialog').css('display','block');//提示框
-         $('#Dialog_close').click(function () {
-            $('.Dialog').css('display','none');//提示框
-            $('.lock').css('display','none');//提示框
-         });
-        });
-    </script>
-    <div class="activity">
-        <div class="Dialog">
-            <a href="http://0551shengteng.com/public/pages/0551/" target="_blank"><img src="https://i.loli.net/2018/04/19/5ad84e8f0069c.png"></a>
-            <span id="Dialog_close"></span>
-        </div>
-        <div class="lock">
-        </div>
-    </div>
 
 
 <!--公共页面通用js-->
