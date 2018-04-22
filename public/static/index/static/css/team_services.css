@@ -1,13 +1,7 @@
 .table tr:first-child th,.table tr:first-child td{
     width: 10%;
 }
-.case{
-    box-shadow: 0 6px 13px -11px #a2a2a1;
-    background-color: white;
-    border-radius: 5px;
-}.case .text{
-    padding: 7px;
- }
+
 .thumbnail-img img{
     height: 306px;
     width: 100%;
