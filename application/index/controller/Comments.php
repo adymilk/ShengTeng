@@ -84,8 +84,11 @@ class Comments extends Controller
             $countAll = Db::name('comment')->where('status',1)->count();
             //带图的评价
             $countPic = Db::name('comment')->where('status',1)->where('pic1|pic2|pic3','not null')->count();
+
+            $countvideo = Db::name('comment')->where('status',1)->where('video','not null')->count();
             $this->assign('countAll',$countAll);
             $this->assign('countPic',$countPic);
+            $this->assign('countvideo',$countvideo);
 
 
             //推荐设计师
