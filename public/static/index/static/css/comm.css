@@ -223,6 +223,7 @@ footer ul li:first-child{
     position: absolute;
     border-radius: 50%;
     top: 233px;
+    left: 10%;
     width: 70px;
     height: 70px;
     background-color: white;

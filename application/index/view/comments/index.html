@@ -35,9 +35,8 @@
                     <ul class="clearfix">
                         <li class="active"><a href="{:url('index')}?type=all">全部评价({$countAll})</a></li>
                         <li><a href="{:url('index')}?type=pic&num=1">晒图({$countPic})</a></li>
-                        <li><a href="{:url('index')}?type=all&num=2">服务周到(0)</a></li>
-                        <li><a href="{:url('index')}?type=all&num=3">态度好(0)</a></li>
-                        <li class="hidden-xs"><a href="{:url('index')}?type=all&num=4">价格便宜(0)</a></li>
+                        <li><a href="{:url('index')}?type=video&num=2">视频(6)</a></li>
+                        
                     </ul>
                 </div>
             </div>
@@ -46,9 +45,12 @@
               <div class="col-sm-12 comment-list">
                   <img src="https://ss1.bdstatic.com/7Ls0a8Sm1A5BphGlnYG/sys/portrait/item/4782e7baafe799bde889b2e8aeb0e5bf86e69d833aac" alt="业主头像" class="avatar pull-left">
                   <ul class="clearfix">
+                  {if condition="($vo.community_name != null)"}
                       <li>{$vo.community_name}&nbsp;</li>
                       <li class="tel">{$vo.tel|yc_phone=###}&nbsp;</li>
                       <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+                  {/if}
+                      
 
                   </ul>
                       <p class="comment-msg">{$vo.comment}</p>
@@ -64,6 +66,15 @@
                       <div class="col-md-2 col-xs-4">
                           {if condition="($vo.pic3 != null)"}<img src="__ROOT__/uploads/comment/{$vo.pic3}" alt="评论图片" class="img-responsive" >{/if}
                       </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-12 col-xs-12">
+                          {if condition="($vo.video != null)"}<video src="{$vo.video}" controls="controls" class="img-responsive"></video>
+                          {/if}
+
+                  </div>
+                      
                   </div>
                   <br>
                   <p class="clearfix">

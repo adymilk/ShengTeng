@@ -2,8 +2,7 @@
 
 <!--新闻动态 开始-->
 {block name="content"}
-<!--css3摇头动画-->
-<link rel="stylesheet" href="__STATIC__/lib/css3-animation.css" media="screen" type="text/css"/>
+
 <section class="Hui-article-box">
     <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> <a href="{:url('Index/index')}" class="maincolor">首页</a>
         <span class="c-gray en">&gt;</span>
@@ -148,15 +147,18 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-
-                <div class="alert alert-info" role="alert"><h2><strong>提示！</strong>数据正在上传中 <span id="dotting">...</span></h2></div>
+                <div class="alert alert-info" role="alert"><h2 class="text-c"><i class="Hui-iconfont Hui-iconfont-upload"></i>&nbsp;数据正在上传中,请稍等</h2></div>
             </div>
             <div class="modal-body">
                 <div class="spinner">
-                    <h3 style="display: inline-block">数据正在玩命上传中 &nbsp;</h3>
-                    <div class="bounce1"></div>
-                    <div class="bounce2"></div>
-                    <div class="bounce3"></div>
+                    <div class="round"></div>
+                    <div class="round"></div>
+                    <div class="round"></div>
+                    <div class="round"></div>
+                    <div class="round"></div>
+                    <div class="round"></div>
+                    <div class="round"></div>
+                    <div class="round"></div>
                 </div>
             </div>
 
@@ -170,6 +172,24 @@
 {block name="custom_js"}
 <script type="text/javascript">
         $(document).ready(function() {
+
+            //modal css
+            $('#myModal').modal('show');
+
+            $('.modal-dialog').css('height','100%');
+            $('.modal-content').css('top','15%');
+            $('.modal-content').css('height','400px');
+            $('.modal-body').css({'height':'200px','width':'200px','margin':'0 auto'});
+            $('.spinner').css('height','100%');
+            $('.spinner .round').css({'position':'absolute'});
+            $('.spinner .round').eq(0).css({'left':'40px','top':'0px','animation-delay':'0s'});
+            $('.spinner .round').eq(1).css({'left':'70px','top':'20px','animation-delay':'0.2s'});
+            $('.spinner .round').eq(2).css({'left':'80px','top':'40px','animation-delay':'0.4s'});
+            $('.spinner .round').eq(3).css({'left':'70px','top':'60px','animation-delay':'0.5s'});
+            $('.spinner .round').eq(4).css({'left':'40px','top':'80px','animation-delay':'0.6s'});
+            $('.spinner .round').eq(5).css({'left':'20px','top':'70px','animation-delay':'0.7s'});
+            $('.spinner .round').eq(6).css({'left':'0','top':'40px','animation-delay':'0.8s'});
+            $('.spinner .round').eq(7).css({'left':'10px','top':'20px','animation-delay':'1s'});
             //表单验证
             //$("#form-case-add").validate();
 
@@ -244,7 +264,7 @@
             $('#myModal').modal('show');
             //TODO: 数据正在上传中 动画效果
             $('.btn_submit, .btn_cancel').hide();
-            return true;
+            return false;
         }
 
 </script>
