@@ -70,7 +70,8 @@
 
                   <div class="row">
                       <div class="col-md-12 col-xs-12">
-                          {if condition="($vo.video != null)"}<video src="__ROOT__/uploads/comment/video/{$vo.video}" controls="controls" class="img-responsive"></video>
+                          {if condition="($vo.video != null)"}
+                          <video src="__ROOT__/uploads/comment/video/{$vo.video}" controls="controls" class="img-responsive" poster="{$vo.video-poster}"></video>
                           {/if}
 
                   </div>
