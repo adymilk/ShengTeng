@@ -55,22 +55,22 @@ class Comments extends Controller
             }
 
         }else{
-            $list = Db::name('comment')->where('status',1)->order('time','desc')->paginate('8');
+            $list = Db::name('comment')->where('status',1)->order('zan','desc')->paginate('8');
             if (!empty($_GET['type'])){
                 $type = $_GET['type'];
                 // $this->assign('activeIsPic','pic');
                 switch ($type){
                     case $type == 'all':
-                        $list = Db::name('comment')->where('status',1)->order('time','desc')->paginate(10);
+                        $list = Db::name('comment')->where('status',1)->order('zan','desc')->paginate(10);
                         break;
 
                     case $type == 'pic':
                         // $this->assign('activeIsPic','pic');
-                        $list = Db::name('comment')->where('status',1)->order('time','desc')->where('pic1|pic2|pic3','not null')->paginate(10);
+                        $list = Db::name('comment')->where('status',1)->order('zan','desc')->where('pic1|pic2|pic3','not null')->paginate(10);
                         break;
 
                     case $type == 'video':
-                            $list = Db::name('comment')->where('status',1)->order('time','desc')->where('video','not null')->paginate(10);
+                            $list = Db::name('comment')->where('status',1)->order('zan','desc')->where('video','not null')->paginate(10);
                         break;   
 
                     default:
