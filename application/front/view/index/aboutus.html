@@ -1,0 +1,527 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+    <title>公司介绍_盛腾豪装工厂店合肥店_合肥装修公司十佳排名★平价豪装引领行业变革</title>
+    <link rel="stylesheet" href="http://www.xqjgcd.com/Public/common/css/style.css">
+    <link rel="stylesheet" type="text/css" href="http://www.xqjgcd.com/Public/common/yyjj/css/public.css" />
+    <link rel="stylesheet" href="http://www.xqjgcd.com/Public/common/yyjj/css/jquery.mcustomscrollbar.css">
+    <link rel="stylesheet" type="text/css" href="http://www.xqjgcd.com/Public/common/yyjj/css/css.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.xqjgcd.com/Public/common/yyjj/css/jquery.fullpage.css" />
+    <script src="http://www.xqjgcd.com/Public/common/yyjj/js/jquery-1.9.1.min.js"></script>
+    <meta name='keywords' content="" />
+    <meta name='description' content="" />
+</head>
+<script>
+    //给div层中的关闭添加onclick事件：
+    function CloseDiva() {
+        document.getElementById("item1 bo_Box").style.display = "none";
+    }
+</script>
+<script type="text/javascript">
+    var circle_data = ['首屏', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'];
+</script>
+
+<body>
+<div class="item1 bo_Box" id="item1 bo_Box">
+    <div class="bo_title">我要装修</div>
+    <div class="bo_form">
+        <form id="form_tan" action="#" method="post" style="background-color:#fff;">
+            <div class="mx" style="margin-top:5%;">
+                <label><i>* </i>楼盘名字：</label>
+                <input type="text" name="hourse" id="userName2" value="" placeholder="请输入您的楼盘名称">
+            </div>
+            <div class="mx">
+                <label><i>* </i>您的名字：</label>
+                <input type="text" name="name" id="userName" value="" placeholder="请输入您的姓名">
+            </div>
+            <div class="mx">
+                <label><i>* </i>联系电话：</label>
+                <input type="tel" name="mobile" id="mobile" maxlength="11" value="" placeholder="请输入您的手机号码">
+            </div>
+
+            <p class="mx">
+                <font style="text-align: center;" color="red" size="-1" id="cmresult_tan"></font>
+            </p>
+            <input type="button" id="submitBtn" class="submit" value="立即提交" onclick="">
+        </form>
+    </div>
+    <div class="close" onclick="javascript:CloseDiva();"><img src="http://www.xqjgcd.com/Public/common/yyjj/images/bo_close.jpg"></div>
+    <script src="http://www.xqjgcd.com/Public/common/js/layer/layer.js"></script>
+    <script type="text/javascript">
+        $("#submitBtn").click(function() {
+
+            var name = $("#userName").val();
+            var tel = $("#mobile").val();
+            var community = $("#userName2").val();
+            if (!/^1[34578]\d{9}$/.test(tel)) {
+                layer.tips('格式不正确，请重新输入', '#mobile', { tips: [1, '#75b43f'], time: 2000 });
+                $("#mobile").val('');
+                return false;
+            };
+            $.ajax({
+                url: '/index/addorder',
+                type: "post",
+                async: false,
+                data: { name: name, tel: tel, community:community },
+                dataType: 'json',
+                success: function(res) {
+                    if (res.status == 200) {
+                        layer.msg('预约成功!', { time: 3000, icon: 1 });
+                        event.preventDefault();
+                    } else {
+                        alert(res.message);
+                        return false;
+                    }
+                    $('.bo_Box').hide();
+                },
+                error: function() {
+                    layer.msg('请求失败!', { time: 3000, icon: 5 });
+                }
+            });
+            return false;
+        });
+
+
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('.close').click(function() {
+                $('.bo_Box,.bo_fide').hide()
+            })
+            $('.boPro').click(function() {
+                $('.item0,.bo_fide').show()
+                return false
+            })
+            $('.boOrder').click(function() {
+                $('.item1,.bo_fide').show()
+                return false
+            })
+        })
+    </script>
+    <script type="text/javascript">
+        function design_order(design_name) {
+            $('.item1,.bo_fide').show();
+            $('.bo_title').html('预约装修');
+            $('#type_tan').val(2);
+            $('#design_new').val(design_name);
+            $('#design_name_tan').val(design_name);
+            $('#design_div').show();
+        }
+        function order_show(hourse_name) {
+            if (hourse_name) {
+                $('.item1,.bo_fide').show();
+                $('.bo_title').html('我要装修');
+                $('#type_tan').val(1);
+                $('#hourse_tan').val(hourse_name);
+            } else {
+                $('.item1,.bo_fide').show();
+                $('.bo_title').html('我要装修');
+                $('#type_tan').val(1);
+                $('#design_new').val('');
+                $('#design_name_tan').val('');
+                $('#design_div').hide();
+            }
+        }
+    </script>
+</div>
+<div class="quality">
+
+    <!-- head s -->
+    <script src="__FRONT_PC_JS__/nav.js"></script>
+    <div class="headtou">
+        <div class="headTop zclear">
+            <div class="wd1220 zclear">
+                <div class="c01 zleft">
+                    <img src="http://www.xqjgcd.com/Public/common/images/city.png" alt="" style="display: inline;">
+                    <span>合肥<i>切换</i></span>
+                </div>
+                <div class="c02 zright">
+                    <span class="span01">欢迎来到盛腾豪装工厂店</span>
+                    <span class="span02">0551-65660788</span>
+                    <span class="span03" id="headerspan03id">微信公众号</span>
+                    <img src="http://www.xqjgcd.com/Public/common/images/weixinewm.jpg" alt="" class="ewmimg">
+                </div>
+            </div>
+            <script>
+                $('#headerspan03id').mouseover(function() {
+                    $('.ewmimg').show();
+                }).mouseout(function() {
+                    $('.ewmimg').hide();
+                })
+            </script>
+        </div>
+        <div class="headNav">
+            <div class="wd1220 fm">
+                <!--LOGO-->
+                <a class="logo" style="margin-top: 0;" href="/"><img src="__FRONT_PC_IMG__/logo.png" style="vertical-align: top;"></a>
+                <!--导航-->
+                <div class="nav">
+                    <ul>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="{:url('baojia')}">快速报价<img class="hot" src="http://www.xqjgcd.com/Public/common/images/hot.gif" alt="HOT"></a></a>
+                        </li>
+                        <li><a href="#">工厂价大全包</a></li>
+                        <li data-nav="0">
+                            <a href="#">
+                                装修案例
+                                <!--<img class="navIcon" src="__FRONT_PC_IMG__/nav.png">-->
+
+                            </a>
+                        </li>
+                        <li><a href="#">设计大赛
+                            <img class="navNew" src="http://www.xqjgcd.com/Public/common/images/new_3.png" alt="NEW">
+                        </a></li>
+                        <li data-nav="1">
+                            <a href="#">
+                                德系净醛整装
+                                <!--<img class="navIcon" src="__FRONT_PC_IMG__/nav.png">-->
+                            </a>
+                        </li>
+                        <li><a href="#">装修攻略</a></li>
+                        <li data-nav="2">
+                            <a href="{:url('aboutus')}">
+                                关于盛腾
+                                <!--<img class="navIcon" src="__FRONT_PC_IMG__/nav.png">-->
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- hide e -->
+
+
+
+    <div class="quality_cont">
+        <div class="scroll protection1 pr section" style="overflow: hidden;">
+            <div class="cont pa pr" style="background:none; margin:0; border:none; left: 50%; top:32%; width:700px;margin-left:-350px;">
+                <img src="__FRONT_PC_IMG__/aboutUs.png" />
+            </div>
+        </div>
+        <!--第1屏结束-->
+        <div class="scroll protection2 clearfix protection_box section">
+            <div class="cont pr fl pr">
+                <div class="pic pa" style="background-image: url(http://www.xqjgcd.com/Public/common/yyjj/imagesbg/1.jpg);">
+                    <div class="box" style="float:left; width:50%;height:100%;">
+                        <div class="top fl">
+                            <h2>中国大型家居产业集团</h2>
+                            <p style="text-indent:2em;">盛腾豪装工厂店是拥有十余年传统装修经验的安徽本土品牌在互联网+形势下转型的创新型家装企业，专注于F2C高端成品家装模式，以互联整合为导向，将家装设计、基础装修、主材产品、家具选购、软装配饰、家用电器、家居用品有机结合，横向一体化的涵盖了整个家居产业链，真正实现家庭装修的一站式服务，为装修业主全面打造拎包入住式家装解决方案。</p>
+                        </div>
+                    </div>
+                    <div class="box" style="float:left;text-align:left;width:50%;height:100%; margin-top:10%;">
+                        <div class="list fl">
+                            <h2 style="font-size:34px;">盛腾豪装工厂店</h2>
+                            <h2 style="font-size:42px;">透明装修，幸福生活</h2>
+                            <h2 style="font-size:17px; font-weight:normal;">Magpie family Howard shop</br>Transparent decoration  Happy life</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--第2屏结束-->
+        <div class="scroll protection3 clearfix protection_box green section">
+            <div class="cont fr pr">
+                <div class="pic pa" style="background-image: url(http://www.xqjgcd.com/Public/common/yyjj/imagesbg/2.jpg);">
+                    <div class="box" style="z-index:999; position:relative;float:left; left:50%;top:10%;">
+                        <div class="list fl">
+                            <h2 style="font-size:40px;">200+项品牌荣誉</h2>
+                            <h2 style="font-size:40px;">每年增加10余项荣誉</h2>
+
+                            <h2 style="font-size:22px; font-weight:normal;">安徽家装协会最具影响力品牌</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">安徽家装行业零投诉企业</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">安徽广电观众最信赖品牌</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">安徽消费者放心品牌</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">安徽设计达标企业</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">安徽省“守合同 重信用”企业</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">安徽家装行业先进企业</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">安徽家装行业协会理事单位</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">......</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--第4屏结束-->
+        <div class="scroll protection5 clearfix protection_box green section">
+            <div class="cont fr pr">
+                <div class="pic fl pa" style="background-image: url(http://www.xqjgcd.com/Public/common/yyjj/imagesbg/4.jpg);">
+                    <div class="box" style="width:50%;height:100%;float:left;">
+                        <div class="list fl" style="z-index:999; position:relative;float:right;margin-right:5%; margin-top:22%; ">
+                            <ul class="clearfix">
+                                <li class="fl pr" style="border:none; width:170px; height:196px;">
+                                    <img src="http://www.xqjgcd.com/Public/common/yyjj/images/g1.png" width="170px" height="196px" />
+                                </li>
+                                <li class="fl pr" style="border:none; width:170px; height:196px;">
+                                    <img src="http://www.xqjgcd.com/Public/common/yyjj/images/g2.png" width="170px" height="196px" />
+                                </li>
+                                <li class="fl pr" style="border:none; width:170px; height:196px;">
+                                    <img src="http://www.xqjgcd.com/Public/common/yyjj/images/g3.png" width="170px" height="196px" />
+                                </li>
+                                <li class="fl pr" style="border:none; width:170px; height:196px;">
+                                    <img src="http://www.xqjgcd.com/Public/common/yyjj/images/g4.png" width="170px" height="196px" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="box" style="z-index:999; position:relative;float:left;width:50%;height:100%;float:left;">
+                        <div class="list fl" style="margin-left: 17%;margin-top:22%;">
+                            <h2 style="font-size:34px;">十余年德标工艺</h2>
+                            <h2 style="font-size:22px;">郑重承诺：所有工程决不转包</h2>
+                            <h2 style="font-size:22px; font-weight:normal; margin-top:10%;">行业首推8S标准工程</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">自有研发14大特色工艺</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">202道施工节点科学管控</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">8重质检体制</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">荣获多项荣誉</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">为您打造高于行业标准的无忧工程</h2>
+                            <a href="javascript:;" onclick="openZoosUrl();return false;">
+                                <div style="line-height:60px; width:275px; color:#fff;font-size:22px; background-color:#1B1B1B;text-align:center;float:right;margin-top:5%;">无忧工程 ></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--第6屏结束-->
+        <div class="scroll protection7 clearfix protection_box green section">
+            <div class="cont fr pr">
+                <div class="pic pa" style="background-image: url(http://www.xqjgcd.com/Public/common/yyjj/imagesbg/6.jpg);">
+                    <div class="box" style="z-index:999; position:relative;float:left; left:53%;">
+                        <div class="list fl" style="margin-top:45%;">
+                            <h2 style="font-size:40px;">全球知名品牌合作</h2>
+                            <h2 style="font-size:40px;">提供一站式整体家装解决方案</h2>
+                            <h2 style="font-size:22px; font-weight:normal;margin-top:10%;">178家全球知名品牌合作</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">2000多种家装常用材料采购、检验、储存</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">出库、运输的专业全球产业链</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">打造幸福家居生活</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--第7屏结束-->
+        <div class="scroll protection8 clearfix protection_box section">
+            <div class="cont fl pr">
+                <div class="pic  pa" style="background-image: url(http://www.xqjgcd.com/Public/common/yyjj/imagesbg/7.jpg);">
+                    <div class="top fr" style="float:left; margin-top:10%;margin-left:8%; width:50%;">
+                        <h2 style="font-size:37px; color:#ED7020;">生态工艺   健康环保</h2>
+                        <p style="font-size:22px;color:#fff; margin-top:10%;">不断研发并升级生态工艺，甄选国内、国际知名品牌</br>材料合作商，材料健康环保，施工更有保障。</p>
+                        <ul class="clearfix" style="margin-top:10%;">
+                            <li class="fl pr" style="border:none; margin-right:1%;">
+                                <img src="http://www.xqjgcd.com/Public/common/yyjj/images/p1.png" width="249px" height="155px" />
+                            </li>
+                            <li class="fl pr" style="border:none;">
+                                <img src="http://www.xqjgcd.com/Public/common/yyjj/images/p2.png" width="249px" height="155px" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--第8屏结束-->
+        <div class="scroll protection9 clearfix protection_box green section">
+            <div class="cont fr pr">
+                <div class="pic fl pa" style="background-image: url(http://www.xqjgcd.com/Public/common/yyjj/imagesbg/8.jpg);">
+                    <div class="box" style="width:50%;height:100%;float:left; padding:0;">
+                        <div class="list fl" style="width:700px; margin-top:25%; margin-left:10%; height:auto;">
+                            <ul class="clearfix" style="width:700px;">
+                                <li class="fl pr" style="border:none; margin:0; height:196px;">
+                                    <img src="http://www.xqjgcd.com/Public/common/yyjj/images/g11.png" width="171px" height="196px" />
+                                </li>
+                                <li class="fl pr" style="border:none; margin:0;height:196px;">
+                                    <img src="http://www.xqjgcd.com/Public/common/yyjj/images/g22.png" width="171px" height="196px" />
+                                </li>
+                                <!--<li class="fl pr" style="border:none; margin:0;height:196px;">
+                                    <img src="http://www.xqjgcd.com/Public/common/yyjj/images/g33.png" width="171px" height="196px" />
+                                </li>-->
+                                <li class="fl pr" style="border:none; margin:0; margin-left:20%; margin-top:3%;height:196px;">
+                                    <img src="http://www.xqjgcd.com/Public/common/yyjj/images/g44.png" width="171px" height="196px" />
+                                </li>
+                                <li class="fl pr" style="border:none; margin:0; margin-top:3%;height:196px;">
+                                    <img src="http://www.xqjgcd.com/Public/common/yyjj/images/g55.png" width="171px" height="196px" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="box" style="z-index:999; position:relative;float:left; width:50%;height:100%;margin-top:10%;">
+                        <div class="list fl" style="margin-top:0;">
+                            <h2 style="font-size:34px;">汇聚精英力量   筑造良心工程</h2>
+                            <h2 style="font-size:22px;">做一个工程，树一个样板</h2>
+                            <h2 style="font-size:22px; font-weight:normal; margin-top:10%;">数百余自有施工工人</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">200+精英设计师</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">100+客服精英</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">100+专家型质检团队</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">用精雕细琢的“匠心”精神</h2>
+                            <h2 style="font-size:22px; font-weight:normal;">为您打造一个安心家！</h2>
+                            <a href="javascript:;" onclick="openZoosUrl();return false;">
+                                <div style="line-height:60px; width:275px; color:#fff;font-size:22px; background-color:#1B1B1B;text-align:center;float:right;margin-top:5%;">无忧工程 ></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--第9屏结束-->
+        <div class="scroll protection9 clearfix protection_box green section">
+            <div class="cont fr pr">
+                <div class="pic fl pa" style="background-image: url(http://www.xqjgcd.com/Public/common/yyjj/imagesbg/activity_service_bg.jpg);">
+                    <div class="top fr" style="float:left; margin-top:15%;margin-left:10%; width:50%;">
+                        <h2 style="font-size:37px; color:#ED7020;">全案设计  整装服务  精准施工</h2>
+                        <p style="font-size:22px;color:#fff; margin-top:5%;">我们提供一站式整装设计，建立客户专属的管家式服务</br>，以1+N的服务团队模式，装修施工和材料管理十余</br>年的经验的智慧结晶，精准地服务每一位客户，真正</br>做到让客户省力、省钱、省心。</p>
+                    </div>
+                    <div style="float:left; position:relative; z-index:9999;bottom:32%;width:50%; margin-left:50%;">
+                        <style>
+                            .ul li {
+                                margin-right: 3%;
+                            }
+                        </style>
+                        <ul class="ul">
+                            <li class="fl pr" style="border:none; width:95px; height:95px;">
+                                <img src="http://www.xqjgcd.com/Public/common/yyjj/images/n1.png" width="95px" height="95px" />
+                            </li>
+                            <li class="fl pr" style="border:none; width:95px; height:95px;">
+                                <img src="http://www.xqjgcd.com/Public/common/yyjj/images/n2.png" width="95px" height="95px" />
+                            </li>
+                            <li class="fl pr" style="border:none; width:95px; height:95px;">
+                                <img src="http://www.xqjgcd.com/Public/common/yyjj/images/n3.png" width="95px" height="95px" />
+                            </li>
+                            <li class="fl pr" style="border:none; width:95px; height:95px;">
+                                <img src="http://www.xqjgcd.com/Public/common/yyjj/images/n4.png" width="95px" height="95px" />
+                            </li>
+                            <li class="fl pr" style="border:none; width:95px; height:95px;">
+                                <img src="http://www.xqjgcd.com/Public/common/yyjj/images/n5.png" width="95px" height="95px" />
+                            </li>
+                        </ul>
+                        <div style="clear:both;"></div>
+                        <ul class="ul" style="margin-top:10%;">
+                            <li class="fl pr" style="border:none; width:95px; height:95px;">
+                                <img src="http://www.xqjgcd.com/Public/common/yyjj/images/n6.png" width="95px" height="95px" />
+                            </li>
+                            <li class="fl pr" style="border:none; width:95px; height:95px;">
+                                <img src="http://www.xqjgcd.com/Public/common/yyjj/images/n7.png" width="95px" height="95px" />
+                            </li>
+                            <li class="fl pr" style="border:none; width:95px; height:95px;">
+                                <img src="http://www.xqjgcd.com/Public/common/yyjj/images/n8.png" width="95px" height="95px" />
+                            </li>
+                            <li class="fl pr" style="border:none; width:95px; height:95px;">
+                                <img src="http://www.xqjgcd.com/Public/common/yyjj/images/n9.png" width="95px" height="95px" />
+                            </li>
+                            <li class="fl pr" style="border:none; width:95px; height:95px;">
+                                <img src="http://www.xqjgcd.com/Public/common/yyjj/images/n10.png" width="95px" height="95px" />
+                            </li>
+                        </ul>
+                        <div style="clear:both;"></div>
+                        <ul class="ul" style="margin-top:10%;">
+                            <li class="fl pr" style="border:none; width:95px; height:95px;">
+                                <img src="http://www.xqjgcd.com/Public/common/yyjj/images/n11.png" width="95px" height="95px" />
+                            </li>
+                            <li class="fl pr" style="border:none; width:95px; height:95px;">
+                                <img src="http://www.xqjgcd.com/Public/common/yyjj/images/n12.png" width="95px" height="95px" />
+                            </li>
+                            <li class="fl pr" style="border:none; width:95px; height:95px;">
+                                <img src="http://www.xqjgcd.com/Public/common/yyjj/images/n13.png" width="95px" height="95px" />
+                            </li>
+                            <li class="fl pr" style="border:none; width:95px; height:95px;">
+                                <img src="http://www.xqjgcd.com/Public/common/yyjj/images/n14.png" width="95px" height="95px" />
+                            </li>
+                            <li class="fl pr" style="border:none; width:95px; height:95px;">
+                                <img src="http://www.xqjgcd.com/Public/common/yyjj/images/n15.png" width="95px" height="95px" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--第9屏结束-->
+        <div class="scroll protection10 clearfix protection_box pr section">
+            <h2 style="bottom:75%;">【品质服务 全国联保】</h2>
+            <div class="pic pa"><img src="http://www.xqjgcd.com/Public/common/images/weixinewm.jpg" width="100%" height="100%" /></div>
+            <p style="bottom:30%;">服务承诺：及时、准确、守时、诚信</p>
+            <p style="bottom:25%;">咨询热线：0551-65660788</p>
+            <p style="bottom:20%;">微信：aqxiquejia</p>
+        </div>
+
+    </div>
+    <!--底部/e-->
+    <!--右侧悬浮导航/s-->
+    <div class="fixed-right-nav">
+        <a href="javascript:window.scroll(0,0)" class="backtop"><i></i></a>
+        <a href="javascript:;" onclick="openZoosUrl();return false;" target="_blank" onclick="move();" class="msg"><i></i>免费咨询</a>
+        <a href="javascript:;" class="decora" id="decoraid"><i></i>我要装修</a>
+    </div>
+    <script>
+        function move() {
+            ja.trackEvent('enterim');
+            zhuge.track('点击咨询');
+            doyoo.util.openChat('g=10059956');
+            return false;
+        }
+    </script>
+    <!--右侧悬浮导航/e-->
+    <script src="http://www.xqjgcd.com/Public/common/yyjj/js/jquery-1.9.1.min.js"></script>
+    <script src="http://www.xqjgcd.com/Public/common/yyjj/js/public.js"></script>
+    <script src="http://www.xqjgcd.com/Public/common/yyjj/js/sea.js" id="seajsnode"></script>
+    <script src="http://www.xqjgcd.com/Public/common/yyjj/js/jquery.slimscroll.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://www.xqjgcd.com/Public/common/yyjj/js/jquery.fullpage.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://www.xqjgcd.com/Public/common/yyjj/js/header.js"></script>
+    <script src="http://www.xqjgcd.com/Public/common/yyjj/js/ad_common.js"></script>
+    <script type="text/javascript">
+        //头部基础脚本
+        A6.headFn();
+        //底部计算器
+        A6.counter();
+        //show_ad('100000', 'js-show-ad');
+        //导航收缩
+        $(function() {
+            $('.quality_cont').fullpage({
+                scrollOverflow: true,
+                verticalCentered: true,
+                css3: true,
+                verticalCentered: true,
+                navigation: true,
+                navigationPosition: 'left',
+                navigationColor: '#fff',
+                navigationTooltips: circle_data
+            });
+            $('.swiper_content .title span').click(function() {
+                if ($(this).hasClass('on')) {
+                    return false;
+                } else {
+                    $(this).addClass('on').siblings().removeClass('on');
+                    var index = $(this).index();
+                    $(this).parents('.swiper_content').find('li').fadeOut().eq(index).fadeIn();
+                };
+            });
+            var yhw = {
+                num: function() {
+                    yhw.height = $(window).height() - 170;
+                    $('.footer_content').css({
+                        height: yhw.height - $('.footer_num').height() < 0 ? 0 : yhw.height - $('.footer_num').height()
+                    })
+                }
+            };
+            $('.backtop').click(function() {
+                $.fn.fullpage.moveTo(1, 0);
+            });
+        });
+    </script>
+
+    <!--<script src="http://www.xqjgcd.com/Public/common/js/y-common.js"></script>-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?f1e1da07d13ec0347c9cd522fd640ff8";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+</body>
+</html>

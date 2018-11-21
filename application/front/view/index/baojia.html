@@ -1,0 +1,615 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <title>快速报价_盛腾豪装工厂店合肥店_合肥装修公司十佳排名★平价豪装引领行业变革</title>
+
+    <link rel="shortcut icon" href="http://www.xqjgcd.com/Public/common/images/favicon.ico" />
+    <link rel="stylesheet" href="http://www.xqjgcd.com/Public/common/css/style.css">
+
+    <script src="http://www.xqjgcd.com/Public/common/js/1.7.2.jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.xqjgcd.com/Public/Js/uaredirect.js"></script>
+    <script type="text/javascript">
+        uaredirect("http://wap.xqjgcd.com/");
+    </script>
+
+    <link rel="stylesheet" href="http://www.xqjgcd.com/Public/common/css/y-baojia.css">
+    <script src="http://www.xqjgcd.com/Public/common/js/jquery.calculator.js" type="text/JavaScript"></script>
+    <!--<script src="http://www.xqjgcd.com/Public/common/js/jquery.order.js" type="text/JavaScript"></script>-->
+
+</head>
+
+<body>
+<!-- header -->
+
+<!-- head s -->
+<script src="__FRONT_PC_JS__/nav.js"></script>
+<div class="headtou">
+    <div class="headTop zclear">
+        <div class="wd1220 zclear">
+            <div class="c01 zleft">
+                <img src="http://www.xqjgcd.com/Public/common/images/city.png" alt="">
+                <span>合肥<i>切换</i></span>
+            </div>
+            <div class="c02 zright">
+                <span class="span01">欢迎来到盛腾豪装工厂店</span>
+                <span class="span02">0551-65660788</span>
+                <span class="span03" id="headerspan03id">微信公众号</span>
+                <img src="http://www.xqjgcd.com/Public/common/images/weixinewm.jpg" alt="" class="ewmimg">
+            </div>
+        </div>
+        <script>
+            $('#headerspan03id').mouseover(function() {
+                $('.ewmimg').show();
+            }).mouseout(function() {
+                $('.ewmimg').hide();
+            })
+        </script>
+    </div>
+    <div class="headNav">
+        <div class="wd1220 fm">
+            <!--LOGO-->
+            <a class="logo" style="margin-top: 0;" href="/"><img src="__FRONT_PC_IMG__/logo.png" style="vertical-align: top;"></a>
+            <!--导航-->
+            <div class="nav">
+                <ul>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="{:url('baojia')}">快速报价<img class="hot" src="http://www.xqjgcd.com/Public/common/images/hot.gif" alt="HOT"></a></a>
+                    </li>
+                    <li><a href="#">工厂价大全包</a></li>
+                    <li data-nav="0">
+                        <a href="#">
+                            装修案例
+                            <!--<img class="navIcon" src="__FRONT_PC_IMG__/nav.png">-->
+
+                        </a>
+                    </li>
+                    <li><a href="#">设计大赛
+                        <img class="navNew" src="http://www.xqjgcd.com/Public/common/images/new_3.png" alt="NEW">
+                    </a></li>
+                    <li data-nav="1">
+                        <a href="#">
+                            德系净醛整装
+                            <!--<img class="navIcon" src="__FRONT_PC_IMG__/nav.png">-->
+                        </a>
+                    </li>
+                    <li><a href="#">装修攻略</a></li>
+                    <li data-nav="2">
+                        <a href="{:url('aboutus')}">
+                            关于盛腾
+                            <!--<img class="navIcon" src="__FRONT_PC_IMG__/nav.png">-->
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- hide e -->
+
+
+<!-- 快速报价 s -->
+<div class="calculator">
+    <div class="budget clearfix">
+        <div class="form-order">
+            <h1 class="head">装修计算器<span class="tips">今天已有 658 位业主获取了装修预算</span></h1>
+            <form class="orderAddForm">
+                <div class="form-row">
+                    <label>所在城市：<span class="require">*</span></label>
+                    <select class="half" disabled="disabled">
+                        <option>安徽</option>
+                    </select>
+                    <select class="half" disabled="disabled">
+                        <option>合肥</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label>房屋面积：<span class="require">*</span></label>
+                    <input type="text" required="required" class="input area valid" name="area" id="area" data-type="float" placeholder="输入您的房屋面积（/㎡）">
+                </div>
+                <div class="form-row">
+                    <label>房屋户型：<span class="require">*</span></label>
+                    <select class="third" data-type="room" id="zshi">
+                        <option value="1室">1室</option>
+                        <option value="2室">2室</option>
+                        <option value="3室">3室</option>
+                        <option value="4室">4室</option>
+                        <option value="5室">5室</option>
+                        <option value="6室">6室</option>
+                    </select>
+                    <select class="third" data-type="hall" id="zting">
+                        <option value="1厅">1厅</option>
+                        <option value="2厅">2厅</option>
+                        <option value="3厅">3厅</option>
+                    </select>
+                    <select class="third" data-type="kitchen" id="zchu">
+                        <option value="1厨">1厨</option>
+                        <option value="2厨">2厨</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label></label>
+                    <select class="half" data-type="toilet" id="zwei">
+                        <option value="1卫">1卫</option>
+                        <option value="2卫">2卫</option>
+                        <option value="3卫">3卫</option>
+                    </select>
+                    <select class="half" data-type="balcony" id="zyang">
+                        <option value="1阳台">1阳台</option>
+                        <option value="2阳台">2阳台</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label>您的电话：<span class="require">*</span></label>
+                    <input type="text" class="input valid" name="tel" placeholder="报价结果将发送到您的手机" autocomplete="off" required="required">
+                    <input type="hidden" class="remark" name="remark" value="null">
+                    <input type="hidden" class="name" name="name" value="null">
+                    <input type="hidden" class="address" name="address" value="null">
+                    <input type="hidden" class="from" name="from" value="">
+                </div>
+            </form>
+        </div>
+        <div class="sheet">
+            <h1 class="head">您家的装修预算 <strong class="dqb" style="font-weight: bold;color: red;">0</strong> 万元</h1>
+            <ul class="list" style="padding: 10px 0;margin-top:10px;">
+                <li class="clearfix">
+                    <p class="items">人工基材费：</p>
+                    <p><span class="fees rengong">?</span>万元</p>
+                </li>
+                <li class="clearfix">
+                    <p class="items">主材费：</p>
+                    <p><span class="fees zhucai">?</span>万元</p>
+                </li>
+                <li class="clearfix">
+                    <p class="items">家具费：</p>
+                    <p><span class="fees jiaju">?</span>万元</p>
+                </li>
+                <li class="clearfix">
+                    <p class="items">家电费：</p>
+                    <p><span class="fees jiadian">?</span>万元</p>
+                </li>
+                <li class="clearfix">
+                    <p class="items">设计管理费：</p>
+                    <p><span class="fees sheji">?</span>万元</p>
+                </li>
+                <li class="clearfix">
+                    <p class="items">装修市场原价：</p>
+                    <p><span class="fees zong">?</span>万元</p>
+                </li>
+            </ul>
+        </div>
+        <input type="button" class="compute conduct">
+    </div>
+</div>
+<script type="text/javascript">
+    $(function() {
+        var obj = $(".calculator");
+        var cal = new Calculator();
+        var order = new Order($("#budgetOrder"));
+
+        function showResult(obj, res) {
+            obj.find(".rengong").text(res.rengong);
+            obj.find(".zhucai").text(res.zhucai);
+            obj.find(".jiaju").text(res.jiaju);
+            obj.find(".jiadian").text(res.jiadian);
+            obj.find(".sheji").text(res.sheji);
+            obj.find(".zong").text(res.zong);
+            obj.find(".dqb").text(res.dqb);
+        }
+
+        //数字跳动效果
+        // var run = setInterval(function() {
+        //     var res = cal.compute(cal.randParam());
+        //     showResult(obj, res);
+        // }, 300);
+        //
+        // obj.find("select").on("change", function() {
+        //     var name = $(this).attr("data-type");
+        //     // cal.setParam(name, parseInt($(this).val()));
+        //     obj.find(".remark").val(cal.getParam());
+        // });
+
+        // obj.find(".area").on("blur", function() {
+        //     cal.setParam("area", parseFloat($(this).val()));
+        // });
+
+
+        // order.submit("/index/addorder.html", function(res) {
+        //     alert(res["message"]);
+        // });
+    })
+</script>
+<div class="wraper">
+    <div style="width: 668px;margin:0 auto;    padding: 30px 0 0 0;">
+        <img src="http://www.xqjgcd.com/Public/common/images/baojia/icon.png" alt="">
+    </div>
+    <div class="title">
+        <p style="color:#333333; font-size: 28px;    width: 373px; margin: auto;">常见的装修问题 你中招了嘛？</p>
+    </div>
+    <ul class="take_care clearFix">
+        <li>
+            <p style="margin-top: 40px;">预算老不够,</p>
+            <p>开始说好的10万，</p>
+            <p>结果花了20万。</p>
+            <p>增项层出不穷，</p>
+            <p>远远超出预算！</p>
+        </li>
+        <li>
+            <p style="margin-top: 40px;">猫腻多，</p>
+            <p>工艺和材料不合格，</p>
+            <p>装完还得修，</p>
+            <p>请不要骗我！</p>
+        </li>
+        <li>
+            <p style="margin-top: 40px;">空间规划不合理，</p>
+            <p>设计方案不规范，</p>
+            <p>施工太粗糙，</p>
+            <p>这样的装修值不值？</p>
+        </li>
+    </ul>
+    <div class="title1 clearFix">
+        <p style="color:#333333; font-size: 28px; margin: auto;text-align:center;">不用那么困扰 盛腾豪装工厂店为您解决问题！</p>
+    </div>
+    <ul class="solution clearFix">
+        <li>
+            <div class="tips fr">
+                <span class="tip_span fl">0增项</span>
+                <p class="tip_p fl">0增项，10不限，省钱省心，告别隐患</p>
+            </div>
+            <div class="tips fr">
+                <span class="tip_span fl">6大保障</span>
+                <p class="tip_p fl">价格透明 项目透明 设计透明 材料透明 施工透明 服务透明</p>
+            </div>
+        </li>
+        <li>
+            <div class="tips fr">
+                <span class="tip_span fl">工  艺</span>
+                <p class="tip_p fl">自有研发14大特色施工工艺，202道施工节点，雕琢走心生活</p>
+            </div>
+            <div class="tips fr">
+                <span class="tip_span fl">材  料</span>
+                <p class="tip_p fl">精选一线品牌环保主材与基材，为家庭带来 100%的健康保证</p>
+            </div>
+        </li>
+        <li>
+            <div class="tips fr">
+                <span class="tip_span fl">空  间</span>
+                <p class="tip_p fl">极致收纳系统，生活空间至少多出30%</p>
+            </div>
+            <div class="tips fr">
+                <span class="tip_span fl">设计</span>
+                <p class="tip_p fl">不看效果图，样板房实景体验</p>
+            </div>
+        </li>
+    </ul>
+    <div class="title2">
+        <p style="color:#333333; font-size: 28px;text-align: center;    width: 373px; margin: auto;">盛腾工厂价大全包</p>
+    </div>
+    <p style="color:#333333; font-size: 27px;text-align: center;    width: 450px; margin: auto;">——工厂店 工厂价 省心又省钱——</p>
+
+    <div class="p_w" style="height:600px;">
+        <script type="text/javascript" src="http://www.xqjgcd.com/Public/common/js/global.js"></script>
+        <script type="text/javascript">
+            window.onload = function() {
+                var aDiv = getClass(document, '.list2');
+                var oUl = getClass(document, '.nav2')[0],
+                    aBtn = getTagName(oUl, 'li');
+                var timer = null,
+                    t = 0,
+                    b = 0;
+                fnAutoPlay(aDiv[0])
+                //自动播放每一组播放完回调自已切换下一组
+                function fnAutoPlay(e, n) {
+                    var aLi = getTagName(e, 'li'),
+                        aP = getTagName(e, 'p');
+                    var n = n || 0;
+                    fnActive(aLi, aP, n % aLi.length)
+
+                }
+                for (var i = 0; i < aDiv.length; i++) {
+                    fnMouse(aDiv[i])
+                }
+                //鼠标移入停止播放
+                function fnMouse(e) {
+                    var aLi = getTagName(e, 'li'),
+                        aP = getTagName(e, 'p'),
+                        aImg = getTagName(e, 'img');
+                    for (var i = 0; i < aLi.length; i++) {
+                        (function(index) {
+                            aP[index].onmouseover = aLi[index].onmouseover = function() {
+                                clearInterval(timer)
+                                fnActive(aLi, aP, index)
+                            }
+                            aP[index].onmouseout = aLi[index].onmouseout = function() {
+                                fnAutoPlay(e, index)
+                            }
+                        })(i)
+                    }
+                }
+
+                function fnActive(ele, ele2, n) {
+                    for (var i = 0; i < ele.length; i++) {
+                        ele[i].className = ''
+                        ele2[i].style.display = 'none'
+                    }
+                    ele[n].className = 'cur'
+                    ele2[n].style.display = 'block'
+                }
+                //主菜单移入事件 如果不是选中状态清0 当前下的所有li的Active清空,默认第一个选中
+                //主菜单移开事件 如果当前选中状态记录N的值，移开后继续从N开始
+                for (var i = 0; i < aBtn.length; i++) {
+                    (function(index) {
+                        aBtn[index].onmouseover = function() {
+                            clearInterval(timer)
+                            if (aBtn[index].className != 'cur') {
+                                b = 0
+                                var aLi = getTagName(aDiv[index], 'li')
+                                var aP = getTagName(aDiv[index], 'p')
+                                fnActive(aLi, aP, b)
+                            }
+                            fnActive(aBtn, aDiv, index)
+                        }
+                        aBtn[index].onmouseout = function() {
+                            fnAutoPlay(aDiv[index], b)
+                            t = index
+                        }
+                    })(i)
+                }
+            }
+        </script>
+        <div id="wrap2" class="box2">
+            <ul class="nav2">
+                <li class='cur' style="margin-left:45px;">
+                    <div class="calcitem1"></div>拎包入住
+                </li>
+                <li style="margin-left:120px;">
+                    <div class="calcitem"></div>基准包
+                </li>
+                <li style="margin-left:116px;">
+                    <div class="calcitem2"></div>主材包
+                </li>
+                <li style="margin-left:116px;">
+                    <div class="calcitem3"></div>家具包
+                </li>
+                <li style="margin-left:116px;">
+                    <div class="calcitem4"></div>装修总价
+                </li>
+            </ul>
+            <div class="list2 show2">
+                <ul class="list2_nav2" style="display:none;">
+                    <li class="cur">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+                <div class="list2_bd">
+                    <div class="fg_c" style="display: block;">
+                        <div class="fg_img_s02"><a href="javascript:;" target="_top"><img src="http://www.xqjgcd.com/Public/common/images/img-bao0-01.jpg" /><div class="fg_img_words" style="bottom:0; top:auto; height:140px;"><p style="padding:45px 15px 0;"> 含全部瓦工、木工、水电工、油漆工、安装工、保洁工等人工费用; 水管、电线、水泥、黄砂、油漆、乳胶漆、腻子膏、石膏线、防水材料；全房地板、木门、橱柜、厨卫墙地砖、卫浴、集成吊顶不用您东奔西走；连门槛石、地漏、水龙头、抽纸盒、马桶刷、毛巾架都包啦! 不用您出一分力，不用您买一颗钉！而且还包含全房品牌家具！所用材料均是国内知名品牌，正品正牌，假一罚十！总之装修后家里一应俱全，啥都不缺，业主拎包即可入住。 </p></div></a></div>
+                    </div>
+                    <p style="display:none;"><img src="http://www.xqjgcd.com/Public/common/images/img-bao0-01.jpg" /></p>
+                    <p style="display:none;"><img src="http://www.xqjgcd.com/Public/common/images/img-bao1-02.jpg" /></p>
+                    <p style="display:none;"><img src="http://www.xqjgcd.com/Public/common/images/img-bao1-03.jpg" /></p>
+                </div>
+            </div>
+            <div class="list2">
+                <ul class="list2_nav2" style="display:none;">
+                    <li class="cur">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+                <div class="list2_bd">
+                    <p><img src="http://www.xqjgcd.com/Public/common/images/img-bao1-01.jpg" /></p>
+                    <p style="display:none;"><img src="http://www.xqjgcd.com/Public/common/images/img-bao1-02.jpg" /></p>
+                    <p style="display:none;"><img src="http://www.xqjgcd.com/Public/common/images/img-bao1-03.jpg" /></p>
+                </div>
+            </div>
+            <div class="list2">
+                <ul class="list2_nav2" style="display:none;">
+                    <li class="cur">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+                <div class="list2_bd">
+                    <p><img src="http://www.xqjgcd.com/Public/common/images/img-bao2-01.jpg" /></p>
+                    <p style="display:none;"><img src="http://www.xqjgcd.com/Public/common/images/img-bao2-02.jpg" /></p>
+                    <p style="display:none;"><img src="http://www.xqjgcd.com/Public/common/images/img-bao2-03.jpg" /></p>
+                    <p style="display:none;"><img src="http://www.xqjgcd.com/Public/common/images/img-bao2-04.jpg" /></p>
+                </div>
+            </div>
+            <div class="list2">
+                <ul class="list2_nav2" style="display:none;">
+                    <li class="cur">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+                <div class="list2_bd">
+                    <p><img src="http://www.xqjgcd.com/Public/common/images/img-bao3-02.jpg" /></p>
+                    <p style="display:none;"><img src="http://www.xqjgcd.com/Public/common/images/img-bao3-03.jpg" /></p>
+                    <p style="display:none;"><img src="http://www.xqjgcd.com/Public/common/images/img-bao3-04.jpg" /></p>
+                    <p style="display:none;"><img src="http://www.xqjgcd.com/Public/common/images/img-bao3-05.jpg" /></p>
+                </div>
+            </div>
+            <div class="list2">
+                <ul class="list2_nav2" style="display:none;">
+                    <li class="cur">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+                <div class="list2_bd">
+                    <p><a target="_blank" href="https://ryak66.kuaishang.cn/bs/im.htm?cas=58022___870916&fi=68735"><img src="http://www.xqjgcd.com/Public/common/images/img-bao3-03.jpg" /></a></p>
+                    <p style="display:none;"><img src="http://www.xqjgcd.com/Public/common/images/img-bao3-03.jpg" /></p>
+                    <p style="display:none;"><img src="http://www.xqjgcd.com/Public/common/images/img-bao3-04.jpg" /></p>
+                    <p style="display:none;"><img src="http://www.xqjgcd.com/Public/common/images/img-bao3-05.jpg" /></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="width: 513px;margin:auto;padding:60px 0;">
+        <a class="apply_show_btn" orderid="132" style="    display: block;cursor: pointer;"><img src="http://www.xqjgcd.com/Public/common/images/baojia/baojia_btn.png" alt=""></a>
+    </div>
+</div>
+<!-- 全局报名弹出框 s -->
+<div id="apply_show" class="apply_show" style="display: none;">
+    <div class="apply_frame">
+        <h3>报名装修立享5大免费特权</h3>
+        <a class="close_frame" href="javascript:;" rel="nofollow">×</a>
+        <div class="chart"></div>
+        <form action="" name="submit" method="post">
+            <div class="submit_box">
+                <div class="user_b">
+                    <input class="user" name="userName" id="userName" type="text" placeholder="请输入您的姓名">
+                </div>
+                <div class="tel_b">
+                    <input class="tel" name="mobile" id="mobile" type="text" placeholder="请输入您的电话号码">
+                </div>
+                <p class="apply_secrecy">*我们承诺将严格保密您的信息，请放心填写</p>
+                <a href="javascript:;" class="submit_btn" rel="nofollow" id="submitBtn">免费申请</a>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    $(function() {
+        /*全局报名框弹出/成功弹框关闭*/
+        (function() {
+            $('.apply_show_btn').click(function() {
+                var orderId = $(this).attr('orderid');
+                var cityId = $(this).attr('cityid');
+                var _this = $('#apply_show');
+                _this.fadeIn();
+
+                _this.find('input#orderTypeID').val(orderId);
+                _this.find('input#cityID').val(cityId);
+                _this.find('.close_frame').click(function() {
+                    _this.fadeOut();
+                });
+            });
+
+            $('#succeed_show').find('.close').click(function() {
+                $('#succeed_show').hide();
+            });
+        })();
+    });
+</script>
+<!-- 全局报名弹出框 e -->
+<!-- 快速报价 e -->
+
+<!-- footer -->
+
+<!-- 底部开始 s-->
+<div class="shj_index_footer_box">
+    <div class="shj_index_footer">
+        <div class="shj_index_footer_top_box">
+            <div class="shj_index_footer_daohang">
+                <ul>
+                    <li><a href="/yyjj">了解盛腾 </a></li>
+                    <li><a href="/yyjj">公司简介</a></li>
+                    <li><a href="#" target="_blank">联系我们</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/strategy/">装修攻略 </a></li>
+                    <li><a href="/strategy/">装修流程</a></li>
+                    <li><a href="/strategy/">装修选材</a></li>
+                    <li><a href="/strategy/">软装配饰</a></li>
+                    <li><a href="/strategy/">家居风水</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/dxjqzz">德系整装</a></li>
+                    <li><a href="/pzzc">品质主材</a></li>
+                    <li><a href="/gcgy">工程工艺</a></li>
+                    <li><a href="/hbjc">环保基材</a></li>
+                </ul>
+            </div>
+            <div class="shj_index_footer_ewm_box">
+                <div class="shj_index_footer_ewm">
+                    <img src="http://www.xqjgcd.com/Public/common/images/weixinewm.jpg" alt="">
+                    <h5>盛腾客服微信</h5>
+                </div>
+                <a href="javascript:;" target="_blank">
+                    <div class="shj_index_footer_ewm">
+                        <img src="http://www.xqjgcd.com/Public/common/images/xl.jpg" alt="">
+                        <h5>盛腾官方微博</h5>
+                    </div>
+                </a>
+                <a href="javascript:;" target="_blank">
+                    <div class="shj_index_footer_ewm">
+                        <img src="http://www.xqjgcd.com/Public/common/images/weixinewm.jpg" alt="">
+                        <h5>盛腾微信公众号</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="shj_index_footer_tel">
+                <img src="http://www.xqjgcd.com/Public/common/images/foottel.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="shj_index_footer_bottom">
+        <div class="shj_index_footer_webinfo">
+            <h6>版权所有：盛腾豪装工厂店合肥店&nbsp;&nbsp; 备案号：皖ICP备18010946号&nbsp;&nbsp;地 址：合肥市宜秀区天柱山东路凯旋尊邸小区北门独栋商业体</h6>
+            <div class="shj_index_footer_hyrz">
+                <a key="550bd5d4efbfb0594700315b" logo_size="83x30" logo_type="business" href="#" target="_blank">
+                    <img src="http://www.xqjgcd.com/Public/common/images/hy_83x30.png" alt="安全联盟认证" width="83" height="30" style="border: none;"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<script src="http://www.xqjgcd.com/Public/common/js/y-common.js"></script>-->
+<script src="http://www.xqjgcd.com/Public/common/js/layer/layer.js"></script>
+<script src="http://www.xqjgcd.com/Public/common/js/wc_self.js"></script>
+
+
+<!-- 底部开始 e-->
+
+
+<script>
+    //提交客户报名信息到后台
+    $('input.compute').click(function () {
+
+        $('input[name=from]').val(window.location.href)
+        if ($('.orderAddForm').find("input[name='tel']").val() != ''){
+            $.ajax({
+                type: "POST",
+                url: "{:url('index/Index/orderAdd')}",
+                data : $(".orderAddForm").serialize(),
+                beforeSend:function(){
+                    $('#selected_case_detail_form').attr('onsubmit','return false;');
+                    $('#selected_case_detail_btn_order').html("数据提交中...");
+                    $('input.compute').hide();
+                },
+                success: function(data) {
+                    alert(data.msg);
+                    $('#selected_case_detail_btn_order').html("预约成功").removeClass('btn-danger').addClass('btn-success');
+                    $('input.compute').show();
+                },
+                error:function (data) {
+                    alert(data.msg);
+                }
+            });
+        } else {
+            alert('手机号不能为空！')
+        }
+
+        return false;
+    });
+    // 提交客户报名信息到后台
+
+
+
+    // 装修需要多少钱动态数字
+    randomAmount();
+    function randomAmount() {
+        var amount = Math.floor(Math.random() * 90000 + 100000);
+        $(".dqb").text(amount);
+        setTimeout(randomAmount, 250);
+    }
+    // 装修需要多少钱动态数字
+
+</script>
+
+</body>
+</html>

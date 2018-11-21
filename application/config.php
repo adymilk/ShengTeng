@@ -56,7 +56,7 @@ return [
     // +----------------------------------------------------------------------
 
     // 默认模块名
-    'default_module'         => 'index',
+    'default_module'         => 'front',
     // 禁止访问模块
     'deny_module_list'       => ['common'],
     // 默认控制器名
@@ -146,7 +146,16 @@ return [
         '__CSS__' => '/static/index/static/css',
         '__JS__' => '/static/index/static/js',
         '__STATIC__' => '/static/admin',
-        '__LOGIN__' => '/static/login'
+        '__LOGIN__' => '/static/login',
+
+
+        '__FRONT_WAP_JS__' => '/static/front/wap/js',
+        '__FRONT_WAP_CSS__' => '/static/front/wap/css',
+        '__FRONT_WAP_IMG__' => '/static/front/wap/img',
+
+        '__FRONT_PC_JS__' => '/static/front/pc/js',
+        '__FRONT_PC_CSS__' => '/static/front/pc/css',
+        '__FRONT_PC_IMG__' => '/static/front/pc/img',
 
     ],
     // 默认跳转页面对应的模板文件

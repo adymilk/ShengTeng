@@ -7,8 +7,8 @@ namespace Composer\Autoload;
 class ComposerStaticInit66cf6575aa1640c96d5bbc0ccea3d748
 {
     public static $files = array (
-        '9b552a3cc426e3287cc811caefa3cf53' => __DIR__ . '/..' . '/topthink/think-helper/src/helper.php',
         '1cfd2761b63b0a29ed23657ea394cb2d' => __DIR__ . '/..' . '/topthink/think-captcha/src/helper.php',
+        '9b552a3cc426e3287cc811caefa3cf53' => __DIR__ . '/..' . '/topthink/think-helper/src/helper.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -45,8 +45,8 @@ class ComposerStaticInit66cf6575aa1640c96d5bbc0ccea3d748
         ),
         'think\\' => 
         array (
-            0 => __DIR__ . '/..' . '/topthink/think-image/src',
-            1 => __DIR__ . '/../..' . '/thinkphp/library/think',
+            0 => __DIR__ . '/../..' . '/thinkphp/library/think',
+            1 => __DIR__ . '/..' . '/topthink/think-image/src',
         ),
         'app\\' => 
         array (

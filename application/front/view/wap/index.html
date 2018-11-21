@@ -1,0 +1,588 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>喜鹊家豪装工厂店合肥店_合肥装修公司十佳排名★平价豪装引领行业变革</title>
+
+    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="applicable-device" content="mobile">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://wap.xqjgcd.com/Public/common/css/common.css">
+    <link rel="stylesheet" href="http://wap.xqjgcd.com/Public/common/layui/css/layui.css">
+    <link rel="stylesheet" href="http://wap.xqjgcd.com/Public/common/css/swiper-3.4.0.min.css">
+    <link rel="shortcut icon" href="http://wap.xqjgcd.com/Public/common/images/favicon.ico" />
+    <script src="http://wap.xqjgcd.com/Public/common/js/js.js"></script>
+    <script src="http://wap.xqjgcd.com/Public/common/js/jquery-1.8.2.min.js"></script>
+    <script src="http://wap.xqjgcd.com/Public/common/js/swiper-3.4.0.min.js"></script>
+    <script src="http://wap.xqjgcd.com/Public/common/js/TouchSlide.1.1.js"></script>
+    <script src="http://wap.xqjgcd.com/Public/common/js/jquery.order.js"></script>
+    <script src="http://wap.xqjgcd.com/Public/common/js/jquery.calculator.js"></script>
+
+    <style>
+        .hcenter {
+            display: block;
+            background: url('__FRONT_WAP_IMG__/logo.png') no-repeat center;
+            /* background-size: 50%; */
+            position: absolute;
+            width: 60%;
+            height: 48px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+    </style>
+</head>
+
+<body>
+<!-- 头部 s -->
+<script src="__FRONT_WAP_JS__/y-header.js"></script>
+<!-- 头部 e -->
+<!--内容 s -->
+
+<div class="indexbanner">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="/baoming/index.html?wangluo" target="_blank"> <img src="http://wap.xqjgcd.com/Public/common/images/index/banner002.jpg" width="100%;"></a> </div>
+            <div class="swiper-slide"><a href="javascript:void(0)" onclick="LR_HideInvite();openZoosUrl();return false;" target="_blank"> <img src="http://wap.xqjgcd.com/Public/common/images/index/banner002.jpg" width="100%;"></a> </div>
+            <div class="swiper-slide"><a href="javascript:void(0)" onclick="LR_HideInvite();openZoosUrl();return false;" target="_blank"> <img src="http://wap.xqjgcd.com/Public/common/images/index/banner002.jpg" width="100%;"></a> </div>
+            <!--<div class="swiper-slide"><a href="#" target="_blank"> <img src="http://wap.xqjgcd.com/Public/common/images/index/banner004.jpg" width="100%;"></a> </div>-->
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <script>
+        var mySwiper = new Swiper ('.swiper-container', {
+            loop: true,
+            // 如果需要分页器
+            pagination: '.swiper-pagination',
+            autoplay : 3000,
+        })
+    </script>
+</div>
+<!-- banner e -->
+
+<!-- 报名通道 s -->
+<form class="orderAddForm">
+
+<div class="baoming1 zt_orderDiv">
+        <h1>抢免费设计名额</h1>
+        <p>已有<b>25</b>名业主成功报名</p>
+        <input type="text" name="name" id="name" placeholder="请输入您的姓名" class="input1 com_order_reName">
+        <input type="text" name="tel" id="tel" placeholder="请输入您的手机号" class="input2 com_order_telPhone">
+        <input type="hidden" class="remark" name="remark" value="null">
+        <input type="hidden" class="address" name="address" value="null">
+        <input type="hidden" class="from" name="from" value="">
+        <input type="hidden" class="area" name="area" value="null">
+        <a href="javascript:void(0)" class="zt_bm1 com_order_button order_submit_btn">立即申请</a>
+</div>
+</form>
+
+<script>
+
+    $('.order_submit_btn').click(function () {
+
+        $('input[name=from]').val(window.location.href)
+        if ($(this).parent().find("input[name='tel']").val() !== ''){
+            $.ajax({
+                type: "POST",
+                url: "{:url('index/Index/orderAdd')}",
+                data : $(".orderAddForm").serialize(),
+                beforeSend:function(){
+                    $('.orderAddForm').attr('onsubmit','return false;');
+                    $('.order_submit_btn').html("数据提交中...");
+                    $('input.compute').hide();
+                },
+                success: function(data) {
+                    alert(data.msg);
+                    $('.orderAddForm').attr('onsubmit','return false;');
+                    $('.order_submit_btn').html("提交成功！");
+                    $('input.compute').show();
+                },
+                error:function (data) {
+                    alert(data.msg);
+                }
+            });
+        } else {
+            alert('手机号不能为空！')
+        }
+
+        return false;
+    });
+</script>
+<!-- 报名通道 e -->
+
+<!-- 豪礼 s -->
+<div class="free-design-gift-wrap">
+    <div class="free-design-gift-box">
+        0元即可享受市场价5000元的设计服务
+    </div>
+    <div class="free-design-gift-box">
+        专业设计师免费帮您设计平面设计图
+    </div>
+    <div class="free-design-gift-circle">
+        壕礼
+    </div>
+</div>
+<!-- 豪礼 e -->
+
+<!-- 首页8大导航 s -->
+<div class="indexnav">
+    <ul class="zflexb zflexw">
+        <li>
+            <a href="/diary/index.html">
+                <img src="http://wap.xqjgcd.com/Public/common/images/nav/nav5.png" alt="">
+                <span>免费报价</span>
+            </a>
+        </li>
+        <li>
+            <a href="/vr/index.html">
+                <img src="http://wap.xqjgcd.com/Public/common/images/nav/nav6.png" alt="">
+                <span>VR体验馆</span>
+            </a>
+        </li>
+        <li>
+            <a href="/case/index.html">
+                <img src="http://wap.xqjgcd.com/Public/common/images/nav/nav1.png" alt="">
+                <span>装修案例</span>
+            </a>
+        </li>
+        <li>
+            <a href="/quanbao/index.html">
+                <img src="http://wap.xqjgcd.com/Public/common/images/nav/nav4.png" alt="">
+                <span>工厂价大全包</span>
+            </a>
+        </li>
+    </ul>
+    <ul class="zflexb zflexw">
+        <li>
+            <a href="/pzzc/index.html">
+                <img src="http://wap.xqjgcd.com/Public/common/images/nav/nav3.png" alt="">
+                <span>品牌主材</span>
+            </a>
+        </li>
+        <li>
+            <a href="/gcgy/index.html">
+                <img src="http://wap.xqjgcd.com/Public/common/images/nav/nav7.png" alt="">
+                <span>工程工艺</span>
+            </a>
+        </li>
+        <!--<li>
+            <a href="/strategy/index.html">
+                <img src="http://wap.xqjgcd.com/Public/common/images/nav/nav2.png" alt="">
+                <span>装修攻略</span>
+            </a>
+        </li>-->
+        <li>
+            <a href="/baoming/index.html?wangluo">
+                <img src="http://wap.xqjgcd.com/Public/common/images/nav/nav2.png" alt="">
+                <span>设计大赛</span>
+            </a>
+        </li>
+        <li>
+            <a href="/huodong/index.html">
+                <img src="http://wap.xqjgcd.com/Public/common/images/nav/nav8.png" alt="">
+                <span>最新活动</span>
+            </a>
+        </li>
+
+    </ul>
+</div>
+<!-- 首页8大导航 e -->
+
+<div class="fzx">fgx</div>
+
+<!-- 工厂价大全包 s -->
+<div class="indextitle"><i></i>
+    <font>喜鹊家工厂价大全包</font><a href="/Quanbao/index.html" title="喜鹊家工厂价大全包">更多&gt;&gt;</a></div>
+<div class="zztc fg">
+    <ul class="zztc_list">
+        <li id="rg">人工</li>
+        <li id="jc">基材</li>
+        <li id="zc">主材</li>
+        <li id="jj">家具</li>
+        <li id="rz">软装</li>
+        <li id="jd">家电</li>
+        <div class="zztc_list_change"></div>
+    </ul>
+    <!--人工-->
+    <div class="swiper-container swiper-container1">
+        <div class="zztc_list_tu1 swiper-wrapper">
+            <div class="swiper-slide">
+                <section class="rg_1"><img src="http://wap.xqjgcd.com/Public/common/images/index/tcrengong.jpg" />
+                    <div class="zztc_list_mb"><h3 style="font-size:0.26rem;">包含八大工种:</h3>
+                        <p>水电工、木工、瓦工、油漆工、安装工、保洁工等</p>
+                    </div>
+                </section>
+            </div>
+            <div class="swiper-slide">
+                <section class="jc_1"><img src="http://wap.xqjgcd.com/Public/common/images/index/tcjicai.jpg" />
+                    <div class="zztc_list_mb"><h3>基材:</h3>
+                        <p style=" line-height: 180%; ">水泥、黄沙、腻子粉、防水材料、漆类、胶类、石膏类、木工材料、水电材料、开关面板、插座、电线、网线等</p>
+                    </div>
+                </section>
+            </div>
+            <div class="swiper-slide">
+                <section class="zc_1"><img src="http://wap.xqjgcd.com/Public/common/images/index/tczhucai.jpg" />
+                    <div class="zztc_list_mb"><h3>主材:</h3>
+                        <p>地砖、墙砖、地板、橱柜。衣柜、集成吊顶、移动木门、木套、门吸、门锁等</p>
+                    </div>
+                </section>
+            </div>
+            <div class="swiper-slide">
+                <section class="jj_1"><img src="http://wap.xqjgcd.com/Public/common/images/index/tcjiaju.jpg" />
+                    <div class="zztc_list_mb"><h3>家具:</h3>
+                        <p>床、床头柜、衣柜、沙发、茶几、电视柜、餐桌、餐椅、书桌、书椅、鞋柜等</p>
+                    </div>
+                </section>
+            </div>
+            <div class="swiper-slide">
+                <section class="rz_1"><img src="http://wap.xqjgcd.com/Public/common/images/index/tcruanzhuang.jpg" />
+                    <div class="zztc_list_mb"><h3>软装:</h3>
+                        <p>全房窗帘、全房灯饰、全房饰品等</p>
+                    </div>
+                </section>
+            </div>
+            <div class="swiper-slide">
+                <section class="jd_1"><img src="http://wap.xqjgcd.com/Public/common/images/index/tcjiadian.jpg" />
+                    <div class="zztc_list_mb"><h3>家电:</h3>
+                        <p>电视、冰箱、洗衣机、热水器、燃气灶、抽油烟机、微波炉、电磁炉、电饭煲等</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!--人工 end-->
+    <script>
+        var swiper1 = new Swiper('.swiper-container1', {
+            loop: true,
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            onSlideChangeStart: function(swiper1) { //滑动开始
+
+            },
+            onSlideChangeEnd: function(swiper1) { //滑动结束
+                $(".zztc_list li").css('color', '#000000');
+                $(".zztc_list_change").animate({ "left": swiper1.realIndex * 16 + "%" }, 200, function() {
+                    $(".zztc_list li").eq(swiper1.realIndex).css('color', '#FFFFFF');
+                });
+            }
+        });
+    </script>
+</div>
+<div class="fzx">fgx</div>
+
+<!-- 工厂价大全包 e -->
+
+<!-- 装修案例 s -->
+<div class="indextitle"><i></i><font>装修案例</font><a href="/case/index.html" title="喜鹊家装饰装修案例">更多&gt;&gt;</a></div>
+
+<div class="indexanli" style="margin:0 2%;">
+    <ul class="anli-box">
+        <li>
+            <a href="/case/details/id/519.html"><img src="http://anqing.xqjgcd.com/Public/Upload/Case/201809/5baf16a540cdf.jpg" alt="置地百悦府"><p>置地百悦府</p></a>
+        </li><li>
+        <a href="/case/details/id/518.html"><img src="http://anqing.xqjgcd.com/Public/Upload/Case/201809/5baf166fbbe74.jpg" alt="置地百悦府"><p>置地百悦府</p></a>
+    </li><li>
+        <a href="/case/details/id/517.html"><img src="http://anqing.xqjgcd.com/Public/Upload/Case/201809/5baf16309897a.jpg" alt="置地百悦府"><p>置地百悦府</p></a>
+    </li><li>
+        <a href="/case/details/id/516.html"><img src="http://anqing.xqjgcd.com/Public/Upload/Case/201809/5baf15d67548b.jpg" alt="置地百悦府"><p>置地百悦府</p></a>
+    </li>
+    </ul>
+    <table class="index-table-nav" style="padding:0 2%;">
+        <tbody>
+        <tr>
+            <td style="border-left:0; padding: 1%;"><a class="size_1 db" href="/case/index.html"><img src="http://wap.xqjgcd.com/Public/common/images/index/anli-1.png" width="90%" alt="现代简约"></a>现代简约</td>
+            <td style="padding: 1%;"><a href="/case/index.html" class="size_1 db" href="#"><img src="http://wap.xqjgcd.com/Public/common/images/index/anli-2.png" width="90%" alt="欧式"></a>&nbsp;&nbsp;&nbsp;欧式&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td style="padding: 1%;"><a href="/case/index.html" class="size_1 db" href="#"><img src="http://wap.xqjgcd.com/Public/common/images/index/anli-3.png" width="90%" alt="新中式"></a>&nbsp;&nbsp;新中式&nbsp;&nbsp;</td>
+            <td style="padding: 1%;"><a href="/case/index.html" class="size_1 db" href="#"><img src="http://wap.xqjgcd.com/Public/common/images/index/anli-4.png" width="90%" alt="北欧"></a>&nbsp;&nbsp;&nbsp;北欧&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td style="padding: 1%;"><a href="/case/index.html" class="size_1 db" href="#"><img src="http://wap.xqjgcd.com/Public/common/images/index/anli-5.png" width="90%" alt="更多"></a>&nbsp;&nbsp;&nbsp;更多&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<!-- 装修案例 e -->
+
+<div class="fzx">fgx</div>
+
+<!-- VR体验馆 s -->
+<div class="indextitle"><i></i><font>VR体验馆</font><a href="/vr/index.html" title="喜鹊家装饰装修案例">更多&gt;&gt;</a></div>
+<div class="VR">
+    <div class="VR_lun">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" data="绿地二期巴赫公馆150平全景">
+                    <img src="http://wap.xqjgcd.com/Public/common/images/index/VR_1.jpg" alt="VR">
+                    <div class="layer">
+                        <div class="go_btn"></div>
+                        <a href="/vr/details/id/292.html" ></a>
+                    </div>
+                </div>
+                <div class="swiper-slide" data="宜城水岸130平全景">
+                    <img src="http://wap.xqjgcd.com/Public/common/images/index/VR_3.jpg" alt="VR">
+                    <div class="layer">
+                        <div class="go_btn"></div>
+                        <a href="/vr/details/id/294.html" ></a>
+                    </div>
+                </div>
+                <div class="swiper-slide" data="东方天韵125平全景">
+                    <img src="http://wap.xqjgcd.com/Public/common/images/index/VR_2.jpg" alt="VR">
+                    <div class="layer">
+                        <div class="go_btn"></div>
+                        <a href="/vr/details/id/296.html"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="name">
+        <span class="">绿地二期巴赫公馆150平全景</span>
+    </p>
+    <script>
+        (function () {
+            var swiper = new Swiper('.VR_lun .swiper-container', {
+                effect: 'coverflow',
+                centeredSlides: true,
+                loop: true,
+                /*autoplay : 3000,*/
+                autoplayDisableOnInteraction : true,
+                slidesPerView: 3,
+                coverflow: {
+                    rotate: 40,
+                    stretch: -10,
+                    depth: 150,
+                    modifier: 1,
+                    slideShadows : false
+                },
+                onTransitionStart: function(swiper){
+                    $('.VR .name span').text($(swiper.slides[swiper.activeIndex]).attr('data'));
+                }
+            });
+        })();
+    </script>
+</div>
+<!-- VR体验馆 e -->
+
+<div class="fzx">fgx</div>
+
+<!-- 设计师 s -->
+<!--<div class="indextitle"><i></i><font>设计团队</font><a href="/designer/index.html" title="喜鹊家装饰装修案例">更多&gt;&gt;</a></div>
+<div class="shj-sjs">
+    <div class="shj-sjs-con">
+        <div class="swiper-container swiper-container-sjs">
+            <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="/designer/details/id/126.html" class="a01">
+                            <img src="http://anqing.xqjgcd.com/Public/Upload/Designer/201805/5aeee1b54d687.jpg" alt="李月琴" />
+                            <h4>李月琴</h4>
+                            <h6>总监设计师</h6>
+                        </a>
+                        <a href="javascript:void(0)" onclick="openZoosUrl();return false;" class="a02 zblock">预约咨询</a>
+                </div><div class="swiper-slide">
+                        <a href="/designer/details/id/129.html" class="a01">
+                            <img src="http://anqing.xqjgcd.com/Public/Upload/Designer/201805/5aeee3a3b8e37.jpg" alt="吴伟" />
+                            <h4>吴伟</h4>
+                            <h6>VIP设计师</h6>
+                        </a>
+                        <a href="javascript:void(0)" onclick="openZoosUrl();return false;" class="a02 zblock">预约咨询</a>
+                </div><div class="swiper-slide">
+                        <a href="/designer/details/id/127.html" class="a01">
+                            <img src="http://anqing.xqjgcd.com/Public/Upload/Designer/201805/5aeee254a2e98.jpg" alt="贾钦豪" />
+                            <h4>贾钦豪</h4>
+                            <h6>高级设计师</h6>
+                        </a>
+                        <a href="javascript:void(0)" onclick="openZoosUrl();return false;" class="a02 zblock">预约咨询</a>
+                </div><div class="swiper-slide">
+                        <a href="/designer/details/id/128.html" class="a01">
+                            <img src="http://anqing.xqjgcd.com/Public/Upload/Designer/201805/5aeee2a8630da.jpg" alt="郑坤" />
+                            <h4>郑坤</h4>
+                            <h6>优秀设计师</h6>
+                        </a>
+                        <a href="javascript:void(0)" onclick="openZoosUrl();return false;" class="a02 zblock">预约咨询</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var sjsSwiper = new Swiper ('.swiper-container-sjs', {
+            loop: true,
+            slidesPerView: 'auto',
+            centeredSlides: false,
+            slideToClickedSlide:false,
+        });
+</script> -->
+<!-- 设计师 e -->
+
+<!--<div class="fzx">fgx</div>-->
+
+<!-- 家装知识 s -->
+<div class="indextitle"><i></i><font>家装知识</font><a href="/strategy/index.html" title="喜鹊家装饰装修案例">更多&gt;&gt;</a></div>
+<ul class="indexxb">
+    <div class="indexxbright">
+        <p style="margin-bottom: 10px; background:#91b821 url(/Public/common/images/index/xb2.png) no-repeat 30%; background-size:10%;">小白必读</p>
+        <p style=" background:#4d4a4a url(/Public/common/images/index/xb3.png) no-repeat 30%; background-size:8%;">软装配饰</p>
+    </div>
+    <div class="indexxbleft">
+        <p>装修流程</p>
+    </div>
+</ul>
+<div class="indexknowledge" style="margin:0 2%;">
+    <div class="kl-box">
+        <div style="overflow: auto;padding-bottom: 10px;" onclick="window.location.href='/strategy/details/id/345.html';return false">
+            <div class="kl-left">
+                <h3>家庭装修套餐有哪些陷阱？</h3>
+                <p>  套餐装修陷阱一：价格陷阱价格应该是在整个装修中业主首要参考的指标，装修公司正是抓住客户这一心理点，制定了一些价格较低的套餐。但一些公司会以低价做宣传，而在后期中逐渐增额增项。所以作为消费者，不要一心想到图便宜而钻进了装修公司设计好的坑。套餐装修陷阱二：主材陷阱套餐装修里面的主材是重要部分，装修公司会以大品牌、低价格的宣传来吸引客户，而事实上，等业主签合同交定金的时候，真正供客户选择的品牌以及产品是</p>
+                <a href="/strategy/details/id/345.html">装修流程</a>
+            </div>
+            <div class="kl-right">
+                <img src="http://anqing.xqjgcd.com/Public/Upload/Strategy/201810/5bcac198445bd.jpg" alt="文章图片">
+            </div>
+        </div><div style="overflow: auto;padding-bottom: 10px;" onclick="window.location.href='/strategy/details/id/343.html';return false">
+        <div class="kl-left">
+            <h3>喜鹊家豪装工厂店</h3>
+            <p>喜鹊家豪装工厂店是拥有十余年传统装修经验的安徽本土品牌在互联网+形势下转型的创新型家装企业，专注于F2C高端成品家装模式，以互联整合为导向，将家装设计、基础装修、主材产品、家具选购、软装配饰、家用电器、家居用品有机结合，横向一体化的涵盖了整个家居产业链，真正实现家庭装修的一站式服务，为装修业主全面打造拎包入住式家装解决方案。</p>
+            <a href="/strategy/details/id/343.html">装修流程</a>
+        </div>
+        <div class="kl-right">
+            <img src="http://anqing.xqjgcd.com/Public/Upload/Strategy/201805/5b0cc1625a1aa.png" alt="文章图片">
+        </div>
+    </div><div style="overflow: auto;padding-bottom: 10px;" onclick="window.location.href='/strategy/details/id/342.html';return false">
+        <div class="kl-left">
+            <h3>绿植养护之甘草怎么栽培？</h3>
+            <p>甘草有着国老之称，相信懂的中药的人都认可国老这个称谓，对于甘草来说确实是实至名归，甘草可以止咳可以调和诸药可以缓和药性等等都是甘草在方剂配伍中的应用，甘草有这么广泛的用途你肯定想自己种来一些来赏玩或是应用，那么绿植养护之甘草怎么栽培、甘草怎么管理呢，小编就把自己所学陈列给大家以供大家学习。</p>
+            <a href="/strategy/details/id/342.html">装修流程</a>
+        </div>
+        <div class="kl-right">
+            <img src="http://anqing.xqjgcd.com/Public/Upload/Strategy/201805/5b068581e5f27.jpg" alt="文章图片">
+        </div>
+    </div><div style="overflow: auto;padding-bottom: 10px;" onclick="window.location.href='/strategy/details/id/210.html';return false">
+        <div class="kl-left">
+            <h3>玄关风水禁忌</h3>
+            <p>  玄关风水禁忌有哪些？对于玄关风水禁忌也是有很多的，现在的建筑设计都是进门就直对客厅，我们为了防止穿堂风直泄而出，就会用玄关来进行遮掩。很多人觉得玄关风水作用不大，其实不然玄关风水知识对于我们整个住宅风水都是非常重要的，下面我们就来介绍一下玄关风水禁忌。</p>
+            <a href="/strategy/details/id/210.html">装修流程</a>
+        </div>
+        <div class="kl-right">
+            <img src="http://anqing.xqjgcd.com/Public/Upload/Strategy/201805/5b04d53e9faa0.png" alt="文章图片">
+        </div>
+    </div>
+    </div>
+</div>
+<!-- 家装知识 e -->
+
+<div class="indextel">
+    <a href="tel:05565202086" class="telzx">装修咨询热线：：<img src="http://wap.xqjgcd.com/Public/common/images/telico.png" alt=""><i>0551-65660788</i></a>
+</div>
+
+<!-- 内容 e -->
+<!-- 底部 s -->
+
+<script src="http://wap.xqjgcd.com/Public/common/js/common.js"></script>
+<script src="http://wap.xqjgcd.com/Public/common/layer/layer.js"></script>
+<script type="text/javascript">
+    $(function() {
+        // $('.com_order_button').on('click', function() {
+        //
+        //     var reName = $(this).parents('form').find('input[name=name]').val() ? $(this).parents('form').find('input[name=name]').val() : $('#name').val();
+        //     var telPhone = $(this).parents('form').find('input[name=tel]').val() ? $(this).parents('form').find('input[name=tel]').val() : $('#tel').val();
+        //     var area = $(this).parents('form').find('input[name=area]').val() ? $(this).parents('form').find('input[name=area]').val() : $('#area').val();
+        //     var community = $(this).parents('form').find('input[name=community]').val() ? $(this).parents('form').find('input[name=community]').val() : $('#community').val();
+        //
+        //     var check_tel = /^1[3|4|5|6|7|8|9][0-9]\d{8}$/; //定义验证手机正则
+        //     var check_area = /^\d{1,3}$/; //定义验证面积正则
+        //
+        //
+        //     if( $(this).parents('form').find('input[name=name]').val() !== undefined ){
+        //         if (reName == '') {
+        //             alert('请输入您的姓名');
+        //             $(this).$('#name').focus();
+        //             return false;
+        //         }
+        //     }
+        //
+        //
+        //     if ( $(this).parents('form').find('input[name=area]').val() !== undefined ) {
+        //         if (area == '') {
+        //             alert('请输入房屋面积');
+        //             $('#area').fous();
+        //             return false;
+        //         }
+        //     } else {
+        //         var area = 0;
+        //     }
+        //
+        //     if (!check_tel.test(telPhone)) {
+        //         alert("请输入正确的手机号码");
+        //         $('#tel').focus();
+        //         return false;
+        //     }
+        //     $.ajax({
+        //         url: "/index/addorder.html",
+        //         type: "POST",
+        //         dataType: "json",
+        //         data: { name: reName, tel: telPhone, area: area, community: community },
+        //         success: function(Data) {
+        //             if (Data.status == 200) {
+        //                 layer.msg('预约成功！', { time: 3000 });
+        //                 $('#tel').val('');
+        //                 $('#name').val('');
+        //                 $('#area').val('');
+        //
+        //                 $(".form_box").hide();
+        //                 $('.baoming_bg').hide();
+        //                 $(".baoming_bgsc").show();
+        //                 $('.sc_box').show();
+        //
+        //                 $('.closetcbm').click(function() {
+        //                     $('.sc_box').hide();
+        //                     $(".baoming_bgsc").hide();
+        //                 });
+        //                 $('.close_btn').click(function() {
+        //                     $('.sc_box').hide();
+        //                     $(".baoming_bgsc").hide();
+        //                 });
+        //             } else {
+        //                 layer.msg(Data.message, { time: 3000 });
+        //             }
+        //
+        //
+        //
+        //         },
+        //         error: function() {
+        //             layer.msg('网络出错!');
+        //         }
+        //     });
+        //
+        // });
+    })
+</script>
+
+
+<div class="fzx">fgx</div>
+<div class="footer">
+    <p class="p01">地址：合肥史河路与潜山北路交口</p>
+    <p class="p03">版权所有：安徽盛腾装饰设计有限公司</p>
+</div>
+
+<!-- 底部 e -->
+
+</body>
+
+</html>

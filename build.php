@@ -21,4 +21,10 @@ return [
         'view'       => ['index/index'],
     ],
     // 其他更多的模块定义
+    'front'     => [
+        '__file__'   => ['common.php'],
+        '__dir__'    => [ 'controller', 'view'],
+        'controller' => ['Index', 'Index', 'Index'],
+        'view'       => ['index/index'],
+    ],
 ];
